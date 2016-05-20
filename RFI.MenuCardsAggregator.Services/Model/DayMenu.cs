@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RFI.MenuCardsAggregator.Services.Model
 {
-    public class Menu
+    public class DayMenu
     {
         public DateTime Date { get; set; }
 

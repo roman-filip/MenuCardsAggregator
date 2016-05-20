@@ -10,7 +10,7 @@ namespace RFI.MenuCardsAggregator.Services.Model
     {
         public string RestaurantName { get; set; }
 
-        public List<Menu> Menu { get; set; }
+        public List<DayMenu> Menu { get; set; }
 
         public MenuCard(string restaurantName)
         {

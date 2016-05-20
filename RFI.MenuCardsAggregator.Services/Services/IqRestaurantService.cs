@@ -9,6 +9,8 @@ namespace RFI.MenuCardsAggregator.Services.Services
 {
     public class IqRestaurantService : IRestaurantService
     {
+        private IHttpService _httpService;
+
         public string RestaurantName
         {
             get { return "IQ Restaurant"; }
@@ -18,11 +20,20 @@ namespace RFI.MenuCardsAggregator.Services.Services
 
         public IqRestaurantService()
         {
+            _httpService = new HttpService();
+        }
+
+        public IqRestaurantService(IHttpService httpService)
+        {
+            _httpService = httpService;
+
             Uri = @"http://www.iqrestaurant.cz/brno/getData.svc?type=brnoMenuHTML";
         }
 
         public MenuCard GetMenuCard()
         {
+            var pageData = _httpService.Get(Uri);
+
             return new MenuCard(RestaurantName);
         }
     }
