@@ -50,6 +50,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="BaseRestaurantServiceTest.cs" />
     <Compile Include="HttpServiceMock.cs" />
     <Compile Include="IqRestaurantServiceTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
