@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-
-namespace RFI.MenuCardsAggregator.Services.Model
+﻿namespace RFI.MenuCardsAggregator.Services.Model
 {
     public class Food
     {
@@ -14,5 +7,7 @@ namespace RFI.MenuCardsAggregator.Services.Model
         public decimal Price { get; set; }
 
         public int Weight { get; set; }
+
+        public bool IsWeekFood { get; set; }
     }
 }
