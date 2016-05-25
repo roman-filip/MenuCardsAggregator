@@ -29,6 +29,11 @@ namespace RFI.MenuCardsAggregator.Services.Services
         public IqRestaurantService(IHttpService httpService)
         {
             _httpService = httpService;
+
+
+            _httpService = new HttpService();
+
+            Uri = @"http://www.iqrestaurant.cz/brno/getData.svc?type=brnoMenuHTML";
         }
 
         public MenuCard GetMenuCard()
