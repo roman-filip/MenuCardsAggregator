@@ -1,6 +1,10 @@
-﻿using System;
+﻿using RFI.MenuCardsAggregator.Services.Model;
+using RFI.MenuCardsAggregator.Services.Services;
+using RFI.MenuCardsAggregator.Web.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -9,81 +13,55 @@ namespace RFI.MenuCardsAggregator.Web.Controllers
     public class MenuCardsController : Controller
     {
         // GET: MenuCards
-        public ActionResult MenuCards()
+        public async Task<ActionResult> MenuCards(MenuCardsViewModel model)
         {
-            return View();
+            model.MenuCards = await GetAllMenuCardsAsync();
+
+            return View(model);
         }
 
-        // GET: MenuCards/Details/5
-        public ActionResult Details(int id)
+        private static async Task<IEnumerable<MenuCard>> GetAllMenuCardsAsync()
         {
-            return View();
-        }
+            IRestaurantService[] restaurantServices = new[] { new IqRestaurantService() };
+            var tasks = new List<Task<MenuCard>>();
 
-        // GET: MenuCards/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
+            restaurantServices.ToList().ForEach(service => tasks.Add(service.GetMenuCardAsync()));
+            await Task.WhenAll(tasks);
 
-        // POST: MenuCards/Create
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
-        {
-            try
+            var menuCards = new List<MenuCard>(tasks.Count);
+            tasks.ForEach(task =>
             {
-                // TODO: Add insert logic here
+                task.Result.DayMenus.RemoveAll(dayMenu => dayMenu.Date.Date != DateTime.Now.Date);
+                menuCards.Add(task.Result);
+            });
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            return menuCards;
         }
 
-        // GET: MenuCards/Edit/5
-        public ActionResult Edit(int id)
+
+
+
+
+
+        private static IEnumerable<MenuCard> GetMenuCardsMock()
         {
-            return View();
-        }
-
-        // POST: MenuCards/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
+            return new List<MenuCard>
             {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: MenuCards/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: MenuCards/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+                new MenuCard("Kometa")
+                {
+                    DayMenus = new List<DayMenu>
+                    {
+                        new DayMenu { Date = DateTime.Now, Foods = new List<Food> { new Food { Name = "Food 1" }, new Food { Name = "Food 2"} } },
+                        new DayMenu { Date = DateTime.Now.AddDays(1), Foods = new List<Food> { new Food { Name = "Food 3" }, new Food { Name = "Food 4"} } }}
+                    },
+                    new MenuCard("IQ") { DayMenus = new List<DayMenu>
+                    {
+                        new DayMenu { Date = DateTime.Now, Foods = new List<Food> { new Food { Name = "Food 10" }, new Food { Name = "Food 20"} } },
+                        new DayMenu { Date = DateTime.Now.AddDays(1), Foods = new List<Food> { new Food { Name = "Food 30" }, new Food { Name = "Food 40"} } },
+                        new DayMenu { Date = DateTime.Now.AddDays(2), Foods = new List<Food> { new Food { Name = "Food 300" } } }
+                    }
+                }
+            };
         }
     }
 }

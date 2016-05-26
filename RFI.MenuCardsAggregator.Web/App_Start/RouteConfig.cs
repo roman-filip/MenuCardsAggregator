@@ -15,7 +15,7 @@ namespace RFI.MenuCardsAggregator.Web
 
             routes.MapRoute(
                 name: "Default",
-                url: "MenuCards/{controller}/{action}/{id}",
+                url: "MenuCardsAggregator/{controller}/{action}/{id}",
                 defaults: new { controller = "MenuCards", action = "MenuCards", id = UrlParameter.Optional }
             );
         }

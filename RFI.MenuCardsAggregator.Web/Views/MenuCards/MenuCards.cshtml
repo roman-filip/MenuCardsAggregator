@@ -1,5 +1,19 @@
-﻿@*@model RFI.LazarusJokes.Web.Models.JokesViewModel*@
+﻿@model RFI.MenuCardsAggregator.Web.Models.MenuCardsViewModel
 
 @{
     ViewBag.Title = "Přehled jídelních lístků";
+}
+
+@foreach (var menuCard in Model.MenuCards)
+{
+    <h2>@menuCard.RestaurantName</h2>
+    foreach (var dayMenu in menuCard.DayMenus)
+    {
+        foreach (var food in dayMenu.Foods)
+        {
+            @Html.DisplayFor(_ => food.Name)
+            <br />
+        }
+    }
+    <hr />
 }
