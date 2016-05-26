@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using RFI.MenuCardsAggregator.Services.Services;
 
 namespace RFI.MenuCardsAggregator.Services.Tests
@@ -14,9 +15,9 @@ namespace RFI.MenuCardsAggregator.Services.Tests
 
         #region Implementation of IHttpService
 
-        public string Get(string uri)
+        public Task<string> GetAsync(string uri)
         {
-            return _func.Invoke();
+            return Task.Factory.StartNew(() => _func.Invoke());
         }
 
         #endregion

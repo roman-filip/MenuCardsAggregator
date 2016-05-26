@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace RFI.MenuCardsAggregator.Services.Services
@@ -10,9 +7,16 @@ namespace RFI.MenuCardsAggregator.Services.Services
     {
         #region Implementation of IHttpService
 
-        public string Get(string uri)
+        public async Task<string> GetAsync(string uri)
         {
-            throw new NotImplementedException();
+            using (var client = new HttpClient())
+            {
+                var response = await client.GetAsync(uri);
+                response.EnsureSuccessStatusCode();
+
+                var result = await response.Content.ReadAsStringAsync();
+                return result;
+            }
         }
 
         #endregion

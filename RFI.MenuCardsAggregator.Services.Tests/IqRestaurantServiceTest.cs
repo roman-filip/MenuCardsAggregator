@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RFI.MenuCardsAggregator.Services.Model;
 using RFI.MenuCardsAggregator.Services.Services;
@@ -10,11 +11,11 @@ namespace RFI.MenuCardsAggregator.Services.Tests
     public class IqRestaurantServiceTest : BaseRestaurantServiceTest
     {
         [TestMethod]
-        public void OneDayMenuTest()
+        public async Task OneDayMenuTest()
         {
             var data = File.ReadAllText(@"TestData\IqOneDayMenu.txt");
             IRestaurantService service = new IqRestaurantService(new HttpServiceMock(() => data));
-            var menuCard = service.GetMenuCard();
+            var menuCard = await service.GetMenuCardAsync();
 
             Assert.IsNotNull(menuCard);
             Assert.AreEqual("IQ Restaurant", menuCard.RestaurantName);
@@ -23,11 +24,11 @@ namespace RFI.MenuCardsAggregator.Services.Tests
         }
 
         [TestMethod]
-        public void WholeWeekMenuTest()
+        public async Task WholeWeekMenuTest()
         {
             var data = File.ReadAllText(@"TestData\IqWholeWeekMenu.txt");
             IRestaurantService service = new IqRestaurantService(new HttpServiceMock(() => data));
-            var menuCard = service.GetMenuCard();
+            var menuCard = await service.GetMenuCardAsync();
 
             Assert.IsNotNull(menuCard);
             Assert.AreEqual("IQ Restaurant", menuCard.RestaurantName);

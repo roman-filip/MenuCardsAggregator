@@ -16,9 +16,9 @@ namespace RFI.MenuCardsAggregator.Services.Services
 
         public string Uri { get; set; }
 
-        public MenuCard GetMenuCard()
+        public Task<MenuCard> GetMenuCardAsync()
         {
-            return new MenuCard(RestaurantName);
+            throw new NotImplementedException();
         }
     }
 }

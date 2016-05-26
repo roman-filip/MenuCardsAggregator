@@ -1,7 +1,9 @@
-﻿namespace RFI.MenuCardsAggregator.Services.Services
+﻿using System.Threading.Tasks;
+
+namespace RFI.MenuCardsAggregator.Services.Services
 {
     public interface IHttpService
     {
-        string Get(string uri);
+        Task<string> GetAsync(string uri);
     }
 }

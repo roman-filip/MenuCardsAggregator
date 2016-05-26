@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Globalization;
 using System.Linq;
+using System.Threading.Tasks;
 using HtmlAgilityPack;
 using RFI.MenuCardsAggregator.Services.Model;
 
@@ -29,18 +30,13 @@ namespace RFI.MenuCardsAggregator.Services.Services
         public IqRestaurantService(IHttpService httpService)
         {
             _httpService = httpService;
-
-
-            _httpService = new HttpService();
-
-            Uri = @"http://www.iqrestaurant.cz/brno/getData.svc?type=brnoMenuHTML";
         }
 
-        public MenuCard GetMenuCard()
+        public async Task<MenuCard> GetMenuCardAsync()
         {
             var menuCard = new MenuCard(RestaurantName);
 
-            var htmlDocument = GetHtmlDocument();
+            var htmlDocument = await GetHtmlDocumentAsync();
 
             var dateDivNodes = htmlDocument.DocumentNode.QuerySelectorAll(".date");
             foreach (var dateDivNode in dateDivNodes)
@@ -59,11 +55,11 @@ namespace RFI.MenuCardsAggregator.Services.Services
             return menuCard;
         }
 
-        private HtmlDocument GetHtmlDocument()
+        private async Task<HtmlDocument> GetHtmlDocumentAsync()
         {
-            var webPage = _httpService.Get(Uri);
+            var webPage = _httpService.GetAsync(Uri);
             var htmlDocument = new HtmlDocument();
-            htmlDocument.LoadHtml(webPage);
+            htmlDocument.LoadHtml(await webPage);
             return htmlDocument;
         }
 
