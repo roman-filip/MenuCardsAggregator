@@ -16,6 +16,11 @@ namespace RFI.MenuCardsAggregator.Services.Services
 
         public string Uri { get; set; }
 
+        public KometaRestaurantService()
+        {
+            Uri = "http://arena.kometapub.cz/tydenni-menu.php";
+        }
+
         public Task<MenuCard> GetMenuCardAsync()
         {
             throw new NotImplementedException();

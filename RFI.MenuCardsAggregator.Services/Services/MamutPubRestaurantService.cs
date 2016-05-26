@@ -7,17 +7,20 @@ using RFI.MenuCardsAggregator.Services.Model;
 
 namespace RFI.MenuCardsAggregator.Services.Services
 {
-    public class SpielberkCafeRestaurantService : IRestaurantService
+    public class MamutPubRestaurantService : IRestaurantService
     {
-        public string RestaurantName { get; private set; }
+        public string RestaurantName
+        {
+            get { return "Mamut Pub"; }
+        }
 
         public string Uri { get; set; }
 
-        public SpielberkCafeRestaurantService()
+        public MamutPubRestaurantService()
         {
-            Uri = @"http://www.spielberkcafe.cz/denni_menu.html";
+            Uri = "http://www.mamut-pub.cz/tydenni-menu/";
         }
-
+        
         public Task<MenuCard> GetMenuCardAsync()
         {
             throw new NotImplementedException();
