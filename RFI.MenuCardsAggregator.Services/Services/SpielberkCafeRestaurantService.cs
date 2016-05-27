@@ -7,18 +7,23 @@ using RFI.MenuCardsAggregator.Services.Model;
 
 namespace RFI.MenuCardsAggregator.Services.Services
 {
-    public class SpielberkCafeRestaurantService : IRestaurantService
+    public class SpielberkCafeRestaurantService : BaseRestaurantService
     {
-        public string RestaurantName { get; private set; }
-
-        public string Uri { get; set; }
+        public override string RestaurantName
+        {
+            get { return "Spielberk café"; }
+        }
 
         public SpielberkCafeRestaurantService()
         {
             Uri = @"http://www.spielberkcafe.cz/denni_menu.html";
         }
 
-        public Task<MenuCard> GetMenuCardAsync()
+        public SpielberkCafeRestaurantService(IHttpService httpService)
+            : base(httpService)
+        { }
+
+        public override Task<MenuCard> GetMenuCardAsync()
         {
             throw new NotImplementedException();
         }

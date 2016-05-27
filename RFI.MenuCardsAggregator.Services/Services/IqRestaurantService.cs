@@ -7,32 +7,25 @@ using RFI.MenuCardsAggregator.Services.Model;
 
 namespace RFI.MenuCardsAggregator.Services.Services
 {
-    public class IqRestaurantService : IRestaurantService
+    public class IqRestaurantService : BaseRestaurantService
     {
-        private readonly IHttpService _httpService;
-
         private readonly CultureInfo _czCultureInfo = new CultureInfo("cs-CZ");
 
-        public string RestaurantName
+        public override string RestaurantName
         {
             get { return "IQ Restaurant"; }
         }
 
-        public string Uri { get; set; }
-
         public IqRestaurantService()
         {
-            _httpService = new HttpService();
-
             Uri = @"http://www.iqrestaurant.cz/brno/getData.svc?type=brnoMenuHTML";
         }
 
         public IqRestaurantService(IHttpService httpService)
-        {
-            _httpService = httpService;
-        }
+            : base(httpService)
+        { }
 
-        public async Task<MenuCard> GetMenuCardAsync()
+        public override async Task<MenuCard> GetMenuCardAsync()
         {
             var menuCard = new MenuCard(RestaurantName);
 
@@ -53,14 +46,6 @@ namespace RFI.MenuCardsAggregator.Services.Services
                 menuCard.DayMenus.Add(dayMenu);
             }
             return menuCard;
-        }
-
-        private async Task<HtmlDocument> GetHtmlDocumentAsync()
-        {
-            var webPage = _httpService.GetAsync(Uri);
-            var htmlDocument = new HtmlDocument();
-            htmlDocument.LoadHtml(await webPage);
-            return htmlDocument;
         }
 
         private void FillInDate(DayMenu dayMenu, HtmlNode dateDivNode)
@@ -89,17 +74,6 @@ namespace RFI.MenuCardsAggregator.Services.Services
                 };
                 dayMenu.Foods.Add(food);
             }
-        }
-
-        private static int GetIntFomHtmlNode(HtmlNode node)
-        {
-            var nodeContent = node.InnerText;
-            return Convert.ToInt32(nodeContent.Trim());
-        }
-
-        private static string GetStringFomHtmlNode(HtmlNode node)
-        {
-            return node.InnerText.Trim();
         }
     }
 }

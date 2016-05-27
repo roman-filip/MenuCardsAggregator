@@ -7,21 +7,23 @@ using RFI.MenuCardsAggregator.Services.Model;
 
 namespace RFI.MenuCardsAggregator.Services.Services
 {
-    public class KometaRestaurantService : IRestaurantService
+    public class KometaRestaurantService : BaseRestaurantService
     {
-        public string RestaurantName
+        public override string RestaurantName
         {
             get { return "Kometa Pub"; }
         }
-
-        public string Uri { get; set; }
 
         public KometaRestaurantService()
         {
             Uri = "http://arena.kometapub.cz/tydenni-menu.php";
         }
 
-        public Task<MenuCard> GetMenuCardAsync()
+        public KometaRestaurantService(IHttpService httpService)
+            : base(httpService)
+        { }
+
+        public override Task<MenuCard> GetMenuCardAsync()
         {
             throw new NotImplementedException();
         }

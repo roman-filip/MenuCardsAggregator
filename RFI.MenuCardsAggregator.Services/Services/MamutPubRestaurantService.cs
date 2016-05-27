@@ -7,21 +7,23 @@ using RFI.MenuCardsAggregator.Services.Model;
 
 namespace RFI.MenuCardsAggregator.Services.Services
 {
-    public class MamutPubRestaurantService : IRestaurantService
+    public class MamutPubRestaurantService : BaseRestaurantService
     {
-        public string RestaurantName
+        public override string RestaurantName
         {
             get { return "Mamut Pub"; }
         }
-
-        public string Uri { get; set; }
 
         public MamutPubRestaurantService()
         {
             Uri = "http://www.mamut-pub.cz/tydenni-menu/";
         }
-        
-        public Task<MenuCard> GetMenuCardAsync()
+
+        public MamutPubRestaurantService(IHttpService httpService)
+            : base(httpService)
+        { }
+
+        public override Task<MenuCard> GetMenuCardAsync()
         {
             throw new NotImplementedException();
         }
