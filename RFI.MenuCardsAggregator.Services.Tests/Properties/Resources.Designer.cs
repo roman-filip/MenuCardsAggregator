@@ -59,14 +59,5 @@ namespace RFI.MenuCardsAggregator.Services.Tests.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;div class=&quot;date&quot;&gt;&lt;div class=&quot;day&quot;&gt;23&lt;/div&gt;&lt;div class=&quot;month&quot;&gt;květen&lt;/div&gt;&lt;/div&gt;&lt;h3 class=&quot;iqGreen mainSectionFont menuDayName&quot;&gt;Pondělí&lt;/h3&gt;&lt;dl class=&quot;menuDayItems&quot;&gt;&lt;dt&gt;&lt;span class=&quot;soupIcon&quot;&gt;&lt;/span&gt;Polévka: 0,33l Podkrkonošské kyselo&lt;/dt&gt;&lt;dd&gt;22,- (&lt;a href=&quot;/img/alergeny_webready.jpg&quot; class=&quot;colorbox&quot;&gt;&lt;span class=&quot;alergeny&quot;&gt;1,3,7&lt;/span&gt;&lt;/a&gt;)&lt;/dd&gt;&lt;dt&gt;&lt;span class=&quot;soupIcon&quot;&gt;&lt;/span&gt;Polévka: 0,33l Polévka z domácího kuřete a kukuřice&lt;/dt&gt;&lt;dd&gt;22,- (&lt;a href=&quot;/img/alergeny_webready.jpg&quot; class=&quot;colorbox&quot;&gt;&lt;span clas [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string String1 {
-            get {
-                return ResourceManager.GetString("String1", resourceCulture);
-            }
-        }
     }
 }
