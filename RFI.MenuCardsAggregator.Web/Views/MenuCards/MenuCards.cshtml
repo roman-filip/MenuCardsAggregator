@@ -12,6 +12,8 @@
         foreach (var food in dayMenu.Foods)
         {
             @Html.DisplayFor(_ => food.Name)
+            @Html.Raw(" - ")
+            <b>@Html.DisplayFor(_ => food.Price)</b>
             <br />
         }
     }

@@ -22,7 +22,7 @@ namespace RFI.MenuCardsAggregator.Web.Controllers
 
         private static async Task<IEnumerable<MenuCard>> GetAllMenuCardsAsync()
         {
-            IRestaurantService[] restaurantServices = new[] { new IqRestaurantService() };
+            var restaurantServices = new IRestaurantService[] { new IqRestaurantService(), new KometaRestaurantService() };
             var tasks = new List<Task<MenuCard>>();
 
             restaurantServices.ToList().ForEach(service => tasks.Add(service.GetMenuCardAsync()));
