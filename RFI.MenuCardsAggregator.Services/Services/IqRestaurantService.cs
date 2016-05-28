@@ -9,8 +9,6 @@ namespace RFI.MenuCardsAggregator.Services.Services
 {
     public class IqRestaurantService : BaseRestaurantService
     {
-        private readonly CultureInfo _czCultureInfo = new CultureInfo("cs-CZ");
-
         public override string RestaurantName
         {
             get { return "IQ Restaurant"; }
@@ -50,11 +48,10 @@ namespace RFI.MenuCardsAggregator.Services.Services
 
         private void FillInDate(DayMenu dayMenu, HtmlNode dateDivNode)
         {
-            var day = GetIntFomHtmlNode(dateDivNode.QuerySelector(".day"));
+            var day = GetStringFomHtmlNode(dateDivNode.QuerySelector(".day"));
             var month = GetStringFomHtmlNode(dateDivNode.QuerySelector(".month"));
-            var stringDate = string.Format("{0} {1} {2}", day, month, DateTime.Now.Year);
 
-            dayMenu.Date = DateTime.ParseExact(stringDate, "d MMMM yyyy", _czCultureInfo);
+            dayMenu.Date = CreateDate(day, month, DateTime.Now.Year.ToString());
         }
 
         private static void FillInFoods(DayMenu dayMenu, HtmlNode foodsDlNode, bool isWeekFood)
@@ -62,14 +59,11 @@ namespace RFI.MenuCardsAggregator.Services.Services
             foreach (var dtNode in foodsDlNode.GetChildElements().Where(element => element.Name == "dt"))
             {
                 dtNode.RemoveChild(dtNode.GetChildElements().ElementAt(0)); // Remove span element
-
                 var ddNode = dtNode.NextSiblingElement();
-                var ddNodeInnerText = GetStringFomHtmlNode(ddNode);
-                var stringPrice = ddNodeInnerText.Substring(0, ddNodeInnerText.IndexOf(','));
                 var food = new Food
                 {
                     Name = GetStringFomHtmlNode(dtNode),
-                    Price = Convert.ToDecimal(stringPrice),
+                    Price = GetPriceFromHtmlNode(ddNode),
                     IsWeekFood = isWeekFood
                 };
                 dayMenu.Foods.Add(food);

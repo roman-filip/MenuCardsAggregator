@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Threading.Tasks;
 using HtmlAgilityPack;
 using RFI.MenuCardsAggregator.Services.Model;
@@ -7,7 +8,9 @@ namespace RFI.MenuCardsAggregator.Services.Services
 {
     public abstract class BaseRestaurantService : IRestaurantService
     {
-        protected IHttpService _httpService;
+        private static readonly CultureInfo CzCultureInfo = new CultureInfo("cs-CZ");
+
+        private readonly IHttpService _httpService;
 
         protected BaseRestaurantService()
         {
@@ -45,7 +48,20 @@ namespace RFI.MenuCardsAggregator.Services.Services
 
         protected static string GetStringFomHtmlNode(HtmlNode node)
         {
-            return node.InnerText.Trim();
+            return node.InnerText.Replace("&nbsp;", " ").Trim();
+        }
+
+        protected static decimal GetPriceFromHtmlNode(HtmlNode node)
+        {
+            var innerText = node.InnerText;
+            var priceStr = innerText.Substring(0, innerText.IndexOf(','));
+            return Convert.ToDecimal(priceStr);
+        }
+
+        protected static DateTime CreateDate(string day, string monthName, string year)
+        {
+            var stringDate = string.Format("{0} {1} {2}", day, monthName, year);
+            return DateTime.ParseExact(stringDate, "d MMMM yyyy", CzCultureInfo);
         }
     }
 }
