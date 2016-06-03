@@ -25,7 +25,7 @@ namespace RFI.MenuCardsAggregator.Services.Services
 
         public override async Task<MenuCard> GetMenuCardAsync()
         {
-            var menuCard = new MenuCard(RestaurantName);
+            var menuCard = new MenuCard(RestaurantName, Uri);
 
             var htmlDocument = await GetHtmlDocumentAsync();
 

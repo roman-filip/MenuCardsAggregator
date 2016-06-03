@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using HtmlAgilityPack;
@@ -27,7 +25,7 @@ namespace RFI.MenuCardsAggregator.Services.Services
 
         public async override Task<MenuCard> GetMenuCardAsync()
         {
-            var menuCard = new MenuCard(RestaurantName);
+            var menuCard = new MenuCard(RestaurantName, Uri);
 
             var htmlDocument = await GetHtmlDocumentAsync();
             var dayH3Nodes = htmlDocument.DocumentNode.QuerySelectorAll(".subh3");

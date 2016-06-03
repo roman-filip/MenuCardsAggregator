@@ -22,7 +22,12 @@ namespace RFI.MenuCardsAggregator.Web.Controllers
 
         private static async Task<IEnumerable<MenuCard>> GetAllMenuCardsAsync()
         {
-            var restaurantServices = new IRestaurantService[] { new IqRestaurantService(), new KometaRestaurantService() };
+            var restaurantServices = new IRestaurantService[] 
+            {
+                new IqRestaurantService(),
+                new KometaRestaurantService(),
+                new MamutPubRestaurantService()
+            };
             var tasks = new List<Task<MenuCard>>();
 
             restaurantServices.ToList().ForEach(service => tasks.Add(service.GetMenuCardAsync()));
@@ -36,32 +41,6 @@ namespace RFI.MenuCardsAggregator.Web.Controllers
             });
 
             return menuCards;
-        }
-
-
-
-
-
-
-        private static IEnumerable<MenuCard> GetMenuCardsMock()
-        {
-            return new List<MenuCard>
-            {
-                new MenuCard("Kometa")
-                {
-                    DayMenus = new List<DayMenu>
-                    {
-                        new DayMenu { Date = DateTime.Now, Foods = new List<Food> { new Food { Name = "Food 1" }, new Food { Name = "Food 2"} } },
-                        new DayMenu { Date = DateTime.Now.AddDays(1), Foods = new List<Food> { new Food { Name = "Food 3" }, new Food { Name = "Food 4"} } }}
-                    },
-                    new MenuCard("IQ") { DayMenus = new List<DayMenu>
-                    {
-                        new DayMenu { Date = DateTime.Now, Foods = new List<Food> { new Food { Name = "Food 10" }, new Food { Name = "Food 20"} } },
-                        new DayMenu { Date = DateTime.Now.AddDays(1), Foods = new List<Food> { new Food { Name = "Food 30" }, new Food { Name = "Food 40"} } },
-                        new DayMenu { Date = DateTime.Now.AddDays(2), Foods = new List<Food> { new Food { Name = "Food 300" } } }
-                    }
-                }
-            };
         }
     }
 }
