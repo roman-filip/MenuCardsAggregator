@@ -8,7 +8,7 @@ using RFI.MenuCardsAggregator.Services.Services;
 namespace RFI.MenuCardsAggregator.Services.Tests
 {
     [TestClass]
-    public class MamutPubRestaurantServiceTest:BaseRestaurantServiceTest
+    public class MamutPubRestaurantServiceTest : BaseRestaurantServiceTest
     {
         [TestMethod]
         public async Task WholeWeekMenuTest()
