@@ -32,6 +32,12 @@ namespace RFI.MenuCardsAggregator.Services.Tests
         {
             Assert.AreEqual(new DateTime(2016, 5, 30), dayMenu.Date);
             Assert.AreEqual(5, dayMenu.Foods.Count);
+
+            AssertFood("Zeleninový krém (7,9)", 0, dayMenu.Foods[0]);
+            AssertFood("A. 120g Kuřecí steak s pepřovou omáčkou a pečenými bramborami (1,3,7)", 0, dayMenu.Foods[1]);
+            AssertFood("B. 120g Vepřový flamendr se zeleninou a bramboráčky (1,3,7,10)", 0, dayMenu.Foods[2]);
+            AssertFood("C. 300g Špenátové tagliatelle s kuřecími kousky, sušenými rajčaty, rukolou a sýrem Gran Moravia (1,3,7)", 0, dayMenu.Foods[3]);
+            AssertFood("D. 200g FILÍROVANÝ HOVĚZÍ FLANK STEAK podávaný s pečenými bramborami,     fazolovými lusky s karotkou a bylinkovou omáčkou (7)", 0, dayMenu.Foods[4]);
         }
 
         private void AssertTuesdayFoods(DayMenu dayMenu)
@@ -42,25 +48,48 @@ namespace RFI.MenuCardsAggregator.Services.Tests
 
             // TODO - fix tuesday food count
 
-
+            AssertFood("Drůbeží vývar s bylinkovým svítkem (1,3,9)", 0, dayMenu.Foods[0]);
+            AssertFood("A. 120g Plněný smažený kuřecí řízek poličanem a sýrem gouda s bramborovou kaší a pikantním dipem (1,3,7)", 0, dayMenu.Foods[1]);
+            AssertFood("B. 250g SLANÉ PALAČINKY plněné kuřecím masem, zeleninou a pečenou cibulkou, ochucené sýrem niva s mrkvovým salátkem", 0, dayMenu.Foods[2]);
+            AssertFood("C. 300g Jarní salátek s ředkvičkou, hroznovým vínem a sýrem NIVA s dresingem se šalotkou a francouzskou hořčicí,", 0, dayMenu.Foods[3]);
+            AssertFood("plátky bagetky (1,3,7,10)", 0, dayMenu.Foods[4]);
+            AssertFood("D. 150g Okoun pečený na másle, servírovaný se šafránovou omáčkou a grilovanými cherry rajčaty, šťouchané brambory (4,7)", 0, dayMenu.Foods[5]);
         }
 
         private void AssertWednesdayFoods(DayMenu dayMenu)
         {
             Assert.AreEqual(new DateTime(2016, 6, 1), dayMenu.Date);
             Assert.AreEqual(5, dayMenu.Foods.Count);
+
+            AssertFood("Hrachová s osmaženým chlebem (1,3,9)", 0, dayMenu.Foods[0]);
+            AssertFood("A. 120g Dušené hovězí na česneku, provoněná majoránkou na kroupovém rizotu s restovanou kořenovou zeleninou (1,9)", 0, dayMenu.Foods[1]);
+            AssertFood("B. 300g Francouzské brambory s okurkovým salátkem (1,3,7,12)", 0, dayMenu.Foods[2]);
+            AssertFood("C. 300g Penne con pollo - kuřecí maso, rajčatové pesto, mladá cibulka, sýr Grana Padano (1,3,7)", 0, dayMenu.Foods[3]);
+            AssertFood("D. 200g Filovaná plněná vepřová panenka sýrem cheddar se šťouchanými bramborami a slaninovou omáčkou (7,12)", 0, dayMenu.Foods[4]);
         }
 
         private void AssertThursdayFoods(DayMenu dayMenu)
         {
             Assert.AreEqual(new DateTime(2016, 6, 2), dayMenu.Date);
             Assert.AreEqual(5, dayMenu.Foods.Count);
+
+            AssertFood("Hovězí vývar se zeleninou a nudlemi (1,3,9)", 0, dayMenu.Foods[0]);
+            AssertFood("A. 120g Kuřecí roláda plněná jarní nádivkou se silnou šťávou a jasmínovou rýží (1,3,9)", 0, dayMenu.Foods[1]);
+            AssertFood("B. 150g Chicken Korma (prsa,jogurt,mandle,citron,česnek,kurkuma,…) s rýží basmati (7)", 0, dayMenu.Foods[2]);
+            AssertFood("C. 100g Smažené mozzarellové prsty v bylinkové strouhance na listovém salátu s bazalkovo česnekovým dipem a bagetkou (1,3,7)", 0, dayMenu.Foods[3]);
+            AssertFood("D. 120g Tuňák na špízu - cherry rajčata, sezam, vlažný salát z restovaných fazolových lusků, cukety a brambor (4,7,11,12)", 0, dayMenu.Foods[4]);
         }
 
         private void AssertFridayFoods(DayMenu dayMenu)
         {
             Assert.AreEqual(new DateTime(2016, 6, 3), dayMenu.Date);
             Assert.AreEqual(5, dayMenu.Foods.Count);
+
+            AssertFood("Řecká fasolada (9)", 0, dayMenu.Foods[0]);
+            AssertFood("A. 120g Filírovaný krůtí steak podávaný s tagliatelli a omáčkou Quatro Formagio (1,3,7)", 0, dayMenu.Foods[1]);
+            AssertFood("B. 300g Bavorské karbanátky (kýta, šunka, Eidam, niva, žampiony) s bramborovou kaší a okurkem (1,3,7)", 0, dayMenu.Foods[2]);
+            AssertFood("C. 300g Kuřecí kousky se smetanovým špenátem, česnekem a bramborovými noky (1,3,7)", 0, dayMenu.Foods[3]);
+            AssertFood("D. 200g Pečený pstruh na tagliatellovém lůžku s ořechovým pestem a cherry rajčaty (1,3,4)", 0, dayMenu.Foods[4]);
         }
     }
 }
