@@ -24,10 +24,10 @@ namespace RFI.MenuCardsAggregator.Web.Controllers
         {
             var restaurantServices = new IRestaurantService[]
             {
+                new SpielberkCafeRestaurantService(),
                 new IqRestaurantService(),
                 new KometaRestaurantService(),
-                new MamutPubRestaurantService(),
-                new SpielberkCafeRestaurantService()
+                new MamutPubRestaurantService()
             };
             var tasks = new List<Task<MenuCard>>();
 

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using HtmlAgilityPack;
 using RFI.MenuCardsAggregator.Services.Model;
@@ -10,6 +9,8 @@ namespace RFI.MenuCardsAggregator.Services.Services
 {
     public class SpielberkCafeRestaurantService : BaseRestaurantService
     {
+        private readonly Dictionary<char, decimal> _menuPrices = new Dictionary<char, decimal>();
+
         public override string RestaurantName
         {
             get { return "Spielberk café"; }
@@ -29,21 +30,23 @@ namespace RFI.MenuCardsAggregator.Services.Services
             var menuCard = new MenuCard(RestaurantName, Uri);
 
             var htmlDocument = await GetHtmlDocumentAsync();
+
+            PrepareFoodPrices(htmlDocument);
+
             var date = GetMondayDate(htmlDocument);
+            menuCard.DayMenus.Add(GetMenuForDay(htmlDocument, "Pondělí", date));
 
-            menuCard.DayMenus.Add(GetFoodForDay(htmlDocument, "Pondělí", date));
             date = date.AddDays(1);
+            menuCard.DayMenus.Add(GetMenuForDay(htmlDocument, "Úterý", date));
 
-            menuCard.DayMenus.Add(GetFoodForDay(htmlDocument, "Úterý", date));
             date = date.AddDays(1);
+            menuCard.DayMenus.Add(GetMenuForDay(htmlDocument, "Středa", date));
 
-            menuCard.DayMenus.Add(GetFoodForDay(htmlDocument, "Středa", date));
             date = date.AddDays(1);
+            menuCard.DayMenus.Add(GetMenuForDay(htmlDocument, "Čtvrtek", date));
 
-            menuCard.DayMenus.Add(GetFoodForDay(htmlDocument, "Čtvrtek", date));
             date = date.AddDays(1);
-
-            menuCard.DayMenus.Add(GetFoodForDay(htmlDocument, "Pátek", date));
+            menuCard.DayMenus.Add(GetMenuForDay(htmlDocument, "Pátek", date));
 
             return menuCard;
         }
@@ -59,17 +62,57 @@ namespace RFI.MenuCardsAggregator.Services.Services
             return date;
         }
 
-        private DayMenu GetFoodForDay(HtmlDocument htmlDocument, string dayName, DateTime date)
+        private void PrepareFoodPrices(HtmlDocument htmlDocument)
+        {
+            var menuPricesTitleNode = htmlDocument.DocumentNode.SelectSingleNode(".//p[text()='Cena menu:']");
+            var menuPricesNode = menuPricesTitleNode.NextSiblingElement();
+            var menuPricesStr = GetStringFomHtmlNode(menuPricesNode);
+            var menuPrices = menuPricesStr.Split(new[] { ",- Kč" }, StringSplitOptions.RemoveEmptyEntries);
+            foreach (var menuPrice in menuPrices)
+            {
+                var menuPriceParts = menuPrice.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                var foodPrice = Convert.ToDecimal(menuPriceParts.Last());
+                foreach (var menuPricePart in menuPriceParts)
+                {
+                    if (menuPricePart.Length == 1 && char.IsLetter(menuPricePart, 0))
+                    {   // Food code
+                        _menuPrices[menuPricePart[0]] = foodPrice;
+                    }
+                    else if (menuPricePart == "polévky")
+                    {   // Soup
+                        _menuPrices['P'] = foodPrice;
+                    }
+                }
+            }
+        }
+
+        private DayMenu GetMenuForDay(HtmlDocument htmlDocument, string dayName, DateTime date)
         {
             var dayMenu = new DayMenu { Date = date };
 
             var dayNode = htmlDocument.DocumentNode.SelectSingleNode(string.Format(".//p[text()='{0}']", dayName));
-
             var pNode = dayNode.NextSiblingElement();
             var nodeText = GetStringFomHtmlNode(pNode);
             while (!string.IsNullOrEmpty(nodeText))
             {
-                dayMenu.Foods.Add(new Food { Name = nodeText });
+                Food food;
+                if (nodeText[1] == '.')
+                {   // Normal food with food code
+                    food = new Food
+                    {
+                        Name = nodeText.Substring(3),
+                        Price = _menuPrices[nodeText[0]]
+                    };
+                }
+                else
+                {   // Food is soup
+                    food = new Food
+                    {
+                        Name = nodeText,
+                        Price = _menuPrices['P']
+                    };
+                }
+                dayMenu.Foods.Add(food);
 
                 pNode = pNode.NextSiblingElement();
                 nodeText = GetStringFomHtmlNode(pNode);
