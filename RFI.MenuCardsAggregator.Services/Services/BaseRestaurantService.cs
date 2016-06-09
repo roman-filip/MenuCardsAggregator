@@ -57,6 +57,13 @@ namespace RFI.MenuCardsAggregator.Services.Services
             var priceStr = innerText.Substring(0, innerText.IndexOf(','));
             return Convert.ToDecimal(priceStr);
         }
+        
+        protected static decimal GetPriceFromHtmlNodeWithKc(HtmlNode node)
+        {
+            var innerText = node.InnerText;
+            var priceStr = innerText.Split(' ')[0];
+            return Convert.ToDecimal(priceStr);
+        }
 
         protected static DateTime CreateDate(string day, string monthName, string year)
         {
