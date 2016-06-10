@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Globalization;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using HtmlAgilityPack;
 using RFI.MenuCardsAggregator.Services.Model;
@@ -11,6 +12,21 @@ namespace RFI.MenuCardsAggregator.Services.Services
         private static readonly CultureInfo CzCultureInfo = new CultureInfo("cs-CZ");
 
         private readonly IHttpService _httpService;
+
+        private Regex _regexPrice;
+
+        private Regex RegexPrice
+        {
+            get
+            {
+                return _regexPrice ?? (_regexPrice = new Regex(string.Format(".*?(\\d+)({0})", CurrencySymbol), RegexOptions.IgnoreCase | RegexOptions.Singleline));
+            }
+        }
+
+        protected virtual string CurrencySymbol
+        {
+            get { return string.Empty; }
+        }
 
         protected BaseRestaurantService()
         {
@@ -51,18 +67,17 @@ namespace RFI.MenuCardsAggregator.Services.Services
             return node.InnerText.Replace("&nbsp;", " ").Trim();
         }
 
-        protected static decimal GetPriceFromHtmlNode(HtmlNode node)
+        protected decimal GetPriceFromHtmlNode(HtmlNode node)
         {
-            var innerText = node.InnerText;
-            var priceStr = innerText.Substring(0, innerText.IndexOf(','));
-            return Convert.ToDecimal(priceStr);
-        }
-        
-        protected static decimal GetPriceFromHtmlNodeWithKc(HtmlNode node)
-        {
-            var innerText = node.InnerText;
-            var priceStr = innerText.Split(' ')[0];
-            return Convert.ToDecimal(priceStr);
+            var innerText = GetStringFomHtmlNode(node);
+            Match match = RegexPrice.Match(innerText);
+            if (match.Success)
+            {
+                var priceStr = match.Groups[1].ToString();
+                return Convert.ToDecimal(priceStr);
+            }
+
+            return 0;
         }
 
         protected static DateTime CreateDate(string day, string monthName, string year)
@@ -70,7 +85,7 @@ namespace RFI.MenuCardsAggregator.Services.Services
             var stringDate = string.Format("{0} {1} {2}", day, monthName, year);
             return DateTime.ParseExact(stringDate, "d MMMM yyyy", CzCultureInfo);
         }
-        
+
         protected static DateTime CreateDate(string date)
         {
             return DateTime.ParseExact(date, "d.M.yyyy", CzCultureInfo);

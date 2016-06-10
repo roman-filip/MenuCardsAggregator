@@ -63,7 +63,7 @@ namespace RFI.MenuCardsAggregator.Services.Services
             }
         }
 
-        private static void FillInFoods(DayMenu dayMenu, HtmlNode foodsTableNode)
+        private void FillInFoods(DayMenu dayMenu, HtmlNode foodsTableNode)
         {
             foreach (var foodTrNode in foodsTableNode.GetChildElements().Skip(1))
             {

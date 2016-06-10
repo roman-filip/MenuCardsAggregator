@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using HtmlAgilityPack;
@@ -9,6 +8,11 @@ namespace RFI.MenuCardsAggregator.Services.Services
 {
     public class IqRestaurantService : BaseRestaurantService
     {
+        protected override string CurrencySymbol
+        {
+            get { return ",-"; }
+        }
+
         public override string RestaurantName
         {
             get { return "IQ Restaurant"; }
@@ -54,7 +58,7 @@ namespace RFI.MenuCardsAggregator.Services.Services
             dayMenu.Date = CreateDate(day, month, DateTime.Now.Year.ToString());
         }
 
-        private static void FillInFoods(DayMenu dayMenu, HtmlNode foodsDlNode, bool isWeekFood)
+        private void FillInFoods(DayMenu dayMenu, HtmlNode foodsDlNode, bool isWeekFood)
         {
             foreach (var dtNode in foodsDlNode.GetChildElements().Where(element => element.Name == "dt"))
             {

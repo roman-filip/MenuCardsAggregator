@@ -59,6 +59,7 @@
     <Compile Include="Services\KometaRestaurantService.cs" />
     <Compile Include="Services\MamutPubRestaurantService.cs" />
     <Compile Include="Services\MyFoodRestaurantService.cs" />
+    <Compile Include="Services\NaTahuRestaurantService.cs" />
     <Compile Include="Services\SpielberkCafeRestaurantService.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -11,6 +11,11 @@ namespace RFI.MenuCardsAggregator.Services.Services
     {
         private readonly Dictionary<char, decimal> _menuPrices = new Dictionary<char, decimal>();
 
+        protected override string CurrencySymbol
+        {
+            get { return ",- Kč"; }
+        }
+
         public override string RestaurantName
         {
             get { return "Spielberk café"; }
@@ -67,7 +72,7 @@ namespace RFI.MenuCardsAggregator.Services.Services
             var menuPricesTitleNode = htmlDocument.DocumentNode.SelectSingleNode(".//p[text()='Cena menu:']");
             var menuPricesNode = menuPricesTitleNode.NextSiblingElement();
             var menuPricesStr = GetStringFomHtmlNode(menuPricesNode);
-            var menuPrices = menuPricesStr.Split(new[] { ",- Kč" }, StringSplitOptions.RemoveEmptyEntries);
+            var menuPrices = menuPricesStr.Split(new[] { CurrencySymbol }, StringSplitOptions.RemoveEmptyEntries);
             foreach (var menuPrice in menuPrices)
             {
                 var menuPriceParts = menuPrice.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);

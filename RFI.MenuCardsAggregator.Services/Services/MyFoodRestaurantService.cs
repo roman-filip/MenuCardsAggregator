@@ -8,6 +8,11 @@ namespace RFI.MenuCardsAggregator.Services.Services
 {
     public class MyFoodRestaurantService : BaseRestaurantService
     {
+        protected override string CurrencySymbol
+        {
+            get { return " Kč"; }
+        }
+
         public override string RestaurantName
         {
             get { return "My Food"; }
@@ -32,7 +37,7 @@ namespace RFI.MenuCardsAggregator.Services.Services
             return menuCard;
         }
 
-        private static void ProcessDays(MenuCard menuCard, HtmlDocument htmlDocument, DateTime date)
+        private void ProcessDays(MenuCard menuCard, HtmlDocument htmlDocument, DateTime date)
         {
             var jidlaDivNode = htmlDocument.DocumentNode.QuerySelector(".jidla");
             foreach (var dayFoodsDivNode in jidlaDivNode.GetChildElements())
@@ -47,7 +52,7 @@ namespace RFI.MenuCardsAggregator.Services.Services
             }
         }
 
-        private static DayMenu GetDayMenu(DateTime date, HtmlNode dayFoodsDivNode)
+        private DayMenu GetDayMenu(DateTime date, HtmlNode dayFoodsDivNode)
         {
             var dayMenu = new DayMenu { Date = date };
             var foodsLiNode = dayFoodsDivNode.SelectNodes("*//li");
@@ -60,7 +65,7 @@ namespace RFI.MenuCardsAggregator.Services.Services
                 var food = new Food
                 {
                     Name = foodLiNode.ChildNodes[0].InnerText,
-                    Price = GetPriceFromHtmlNodeWithKc(foodLiNode.ChildNodes[1])
+                    Price = GetPriceFromHtmlNode(foodLiNode.ChildNodes[1])
                 };
                 dayMenu.Foods.Add(food);
             }

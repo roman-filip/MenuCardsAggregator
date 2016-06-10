@@ -28,7 +28,8 @@ namespace RFI.MenuCardsAggregator.Web.Controllers
                 new IqRestaurantService(),
                 new MyFoodRestaurantService(),
                 new KometaRestaurantService(),
-                new MamutPubRestaurantService()
+                new MamutPubRestaurantService(),
+                new NaTahuRestaurantService()
             };
             var tasks = new List<Task<MenuCard>>();
 

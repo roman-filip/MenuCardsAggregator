@@ -11,6 +11,11 @@ namespace RFI.MenuCardsAggregator.Services.Services
     {
         private decimal _defaultPrice;
 
+        protected override string CurrencySymbol
+        {
+            get { return ",- Kč"; }
+        }
+
         public override string RestaurantName
         {
             get { return "Mamut Pub"; }
@@ -72,9 +77,9 @@ namespace RFI.MenuCardsAggregator.Services.Services
             var food = new Food();
 
             var re = "(\\d+\\) )?(.*)";
-            if (nodeText.EndsWith(",- Kč"))
+            if (nodeText.EndsWith(CurrencySymbol))
             {
-                re += "( )(\\d+)(,- Kč)";
+                re += string.Format("( )(\\d+)({0})", CurrencySymbol);
             }
             var regex = new Regex(re, RegexOptions.IgnoreCase | RegexOptions.Singleline);
             var match = regex.Match(nodeText);
