@@ -1,0 +1,22 @@
+﻿@model RFI.MenuCardsAggregator.Web.Models.MenuCardsViewModel
+
+@{
+    ViewBag.Title = "Přehled jídelních lístků";
+}
+
+@foreach (var menuCard in Model.MenuCards)
+{
+    <h2><a href="@menuCard.RestaurantUri">@menuCard.RestaurantName</a></h2>
+    foreach (var dayMenu in menuCard.DayMenus)
+    {
+        foreach (var food in dayMenu.Foods)
+        {
+            @*@Html.DisplayFor(_ => food.Name)*@
+            @Html.Raw(food.Name)
+            @Html.Raw(" - ")
+            <b>@Html.DisplayFor(_ => food.Price)</b>
+            <br />
+        }
+    }
+    <hr />
+}
