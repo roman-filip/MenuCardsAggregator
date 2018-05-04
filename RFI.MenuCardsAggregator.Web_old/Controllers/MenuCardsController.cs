@@ -24,7 +24,6 @@ namespace RFI.MenuCardsAggregator.Web.Controllers
         {
             var restaurantServices = new IRestaurantService[]
             {
-                new SpielberkCafeRestaurantService(),
                 new IqRestaurantService(),
                 new MyFoodRestaurantService(),
                 new KometaRestaurantService(),
