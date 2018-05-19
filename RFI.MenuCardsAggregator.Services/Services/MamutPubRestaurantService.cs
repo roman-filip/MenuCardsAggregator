@@ -40,12 +40,13 @@ namespace RFI.MenuCardsAggregator.Services.Services
             var fridayDateHtml = menuStrongNode.InnerText.Split('-')[1];
             var date = CreateDate(fridayDateHtml).AddDays(-4);
 
-            var defaultPriceDivNode = menuStrongNode.NextSiblingElement().GetChildElements().Last();
+            var defaultPriceDivNode = menuStrongNode.NextSiblingElement().GetChildElements().Where(node => node.InnerText.StartsWith("Cena menu od ")).First();
             SetDefaultPrice(defaultPriceDivNode);
 
-            var wholeWeekDivNode = menuStrongNode.NextSiblingElement().GetChildElements().First();
+            var wholeWeekDivNode = menuStrongNode.NextSiblingElement()
+                .GetChildElements().First();  // First inner <div>
             DayMenu dayMenu = null;
-            foreach (var divNode in wholeWeekDivNode.GetChildElements().Where(node => node.InnerHtml != "<br>"))
+            foreach (var divNode in wholeWeekDivNode.GetChildElements().Where(node => node.InnerHtml != "<br>" && !string.IsNullOrWhiteSpace(node.InnerHtml)))
             {
                 if (!divNode.InnerHtml.StartsWith("<span"))
                 {
@@ -67,7 +68,7 @@ namespace RFI.MenuCardsAggregator.Services.Services
         private void SetDefaultPrice(HtmlNode defaultPriceDivNode)
         {
             var defaultPriceText = GetStringFomHtmlNode(defaultPriceDivNode);
-            var priceStartIndex = "cena menu ".Length;
+            var priceStartIndex = "Cena menu od ".Length;
             var priceStr = defaultPriceText.Substring(priceStartIndex, defaultPriceText.IndexOf(',') - priceStartIndex);
             _defaultPrice = Convert.ToDecimal(priceStr);
         }

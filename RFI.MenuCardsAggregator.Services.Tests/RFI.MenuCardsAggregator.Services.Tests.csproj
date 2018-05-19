@@ -11,6 +11,7 @@
     <None Remove="TestData\IqWholeWeekMenu.txt" />
     <None Remove="TestData\KometaWholeWeekMenu.html" />
     <None Remove="TestData\MamutWholeWeekMenu.html" />
+    <None Remove="TestData\MamutWholeWeekMenu_result.json" />
     <None Remove="TestData\MyFoodWholeWeekMenu.html" />
     <None Remove="TestData\NaTahuWholeWeekMenu.html" />
   </ItemGroup>
@@ -23,6 +24,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="TestData\KometaWholeWeekMenu.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\MamutWholeWeekMenu_result.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="TestData\MamutWholeWeekMenu.html">

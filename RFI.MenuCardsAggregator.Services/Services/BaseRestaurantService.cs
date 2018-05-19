@@ -88,7 +88,7 @@ namespace RFI.MenuCardsAggregator.Services.Services
 
         protected static DateTime CreateDate(string date)
         {
-            return DateTime.ParseExact(date, "d.M.yyyy", CzCultureInfo);
+            return DateTime.ParseExact(date.Trim(), "d.M.yyyy", CzCultureInfo);
         }
     }
 }
