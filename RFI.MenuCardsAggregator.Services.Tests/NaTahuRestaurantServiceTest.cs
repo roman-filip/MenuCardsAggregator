@@ -28,6 +28,18 @@ namespace RFI.MenuCardsAggregator.Services.Tests
             AssertFridayFoods(menuCard.DayMenus[4]);
         }
 
+        [TestMethod]
+        public async Task WholeWeekMenuTest2()
+        {
+            var data = File.ReadAllText(@"TestData\NaTahuWholeWeekMenu2.html");
+            IRestaurantService service = new NaTahuRestaurantService(new HttpServiceMock(() => data));
+            var menuCard = await service.GetMenuCardAsync();
+
+            var expectedMenuCard = LoadExpectedMenuCard(@"TestData\NaTahuWholeWeekMenu2_result.json");
+
+            AssertMenuCard(expectedMenuCard, menuCard);
+        }
+
         private void AssertMondayFoods(DayMenu dayMenu)
         {
             Assert.AreEqual(new DateTime(2016, 6, 6), dayMenu.Date);
