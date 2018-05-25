@@ -1,0 +1,210 @@
+﻿{
+  "RestaurantName": "Kometa Pub",
+  "DayMenus": [
+    {
+      "Date": "2018-05-28T00:00:00",
+      "Foods": [
+        {
+          "Name": "POLÉVKA: Kmínová s vejcem 3,9",
+          "Price": 0.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Bratislavská vepřová plec s dušenou rýží 1,7",
+          "Price": 95.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Kuřecí prsíčka zapečená rajčaty a balkánským sýrem s vařeným bramborem 1,3,7",
+          "Price": 95.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Smažený hermelín s hranolkami a tatarkou 1,3,7",
+          "Price": 95.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Zeleninový salát s vejcem, šunkou a sýrem, francouzský dresink, pečivo 1,3,7,11",
+          "Price": 95.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Pečený pstruh s bylinkovým máslem a medvědím česnekem, mačkaný brambor s cibulkou 3,4,7",
+          "Price": 110.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        }
+      ]
+    },
+    {
+      "Date": "2018-05-29T00:00:00",
+      "Foods": [
+        {
+          "Name": "POLÉVKA: Fazolová 1,7,9",
+          "Price": 0.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Segedínský guláš ,,Speciál“ s houskovým knedlíkem 1,3,7",
+          "Price": 95.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Italské penne se špenátem a kuřecím masem 1,3,7",
+          "Price": 95.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Vepřový steak po cikánsku s americkým bramborem 1",
+          "Price": 95.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Řecký gyros marinovaný v česneku s hranolkami a tzatziky 1,3,7",
+          "Price": 110.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "150g Pečený losos na másle s chřestem, holandskou omáčkou a novým bramborem 3,4,7",
+          "Price": 165.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        }
+      ]
+    },
+    {
+      "Date": "2018-05-30T00:00:00",
+      "Foods": [
+        {
+          "Name": "POLÉVKA: Italská s těstovinou 1,3,7,9",
+          "Price": 0.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Zbojnická vepřová kýta na česneku a slanince s dušenou rýží 1",
+          "Price": 95.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Pečené koleno se zelím a bramborovým knedlíkem 1,3,7",
+          "Price": 95.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Kuřecí prsa na grilu s dijonskou omáčkou, dolar chips 1,7,10",
+          "Price": 95.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Svíčková na smetaně s houskovým knedlíkem 1,3,7,9,10",
+          "Price": 110.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Hovězí cheeseburger s plátky slaniny, sýru, cibule a okurky s hranolkami 1,3,7",
+          "Price": 120.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        }
+      ]
+    },
+    {
+      "Date": "2018-05-31T00:00:00",
+      "Foods": [
+        {
+          "Name": "POLÉVKA: Kuřecí vývar s nudlemi a zeleninou 1,3,9",
+          "Price": 0.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Pikantní vídeňské kuřecí  smaženky s mačkaným bramborem s cibulkou a barbeque omáčkou 1,3,7",
+          "Price": 95.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Milánská roštěná s červeným vínem, bylinkové tagliatelle 1,3,7",
+          "Price": 95.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Labužnická vepřová játra s dušenou rýží 1",
+          "Price": 95.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Směs listových salátů s chřestem, kuřecím masem, bazalkovým pestem a bylinkovou bagetou 1,3",
+          "Price": 110.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Jelení sekané biftečky s brusinkovou omáčkou,červeným vínem a bramborovými kroketami 1,3,7",
+          "Price": 120.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        }
+      ]
+    },
+    {
+      "Date": "2018-06-01T00:00:00",
+      "Foods": [
+        {
+          "Name": "POLÉVKA: Frankfurtská 1,7,9",
+          "Price": 0.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Přírodní vepřová kapsa plněná zelím,uzeným masem a cibulkou s mačkaným bramborem 1",
+          "Price": 95.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Kuřecí živáňské maso pečené s hranolkami a tatarkou 1,3",
+          "Price": 95.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Kuřecí steak se zeleninovým kuskusem a rajčatovým concasé",
+          "Price": 95.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Lívanečky s brusinkovo-medovou omáčkou, tvarohem a cukrem 1,3,7",
+          "Price": 95.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Pečené kachní stehno s červeným zelím 1/2bramborový a 1/2houskový knedlík 1,3,7",
+          "Price": 125.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        }
+      ]
+    }
+  ]
+}
