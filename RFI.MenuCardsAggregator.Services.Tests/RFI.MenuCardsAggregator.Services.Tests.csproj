@@ -14,8 +14,7 @@
     <None Remove="TestData\MamutWholeWeekMenu_result.json" />
     <None Remove="TestData\MyFoodWholeWeekMenu.html" />
     <None Remove="TestData\NaTahuWholeWeekMenu.html" />
-    <None Remove="TestData\NaTahuWholeWeekMenu2.html" />
-    <None Remove="TestData\NaTahuWholeWeekMenu2_result.json" />
+    <None Remove="TestData\NaTahuWholeWeekMenu_result.json" />
   </ItemGroup>
 
   <ItemGroup>
@@ -37,10 +36,7 @@
     <Content Include="TestData\MyFoodWholeWeekMenu.html">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestData\NaTahuWholeWeekMenu2_result.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="TestData\NaTahuWholeWeekMenu2.html">
+    <Content Include="TestData\NaTahuWholeWeekMenu_result.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="TestData\NaTahuWholeWeekMenu.html">

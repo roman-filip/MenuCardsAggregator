@@ -58,7 +58,7 @@ namespace RFI.MenuCardsAggregator.Services.Services
         private void SetDefaultPrice(HtmlDocument htmlDocument)
         {
             var soupDivNode = htmlDocument.DocumentNode.SelectNodes(".//div[contains(., 'cena menu')]").Last();
-            var menuPriceNode = soupDivNode.ChildNodes[soupDivNode.ChildNodes.Count - 3];
+            var menuPriceNode = soupDivNode.ChildNodes[2];
             _defaultPrice = GetPriceFromHtmlNode(menuPriceNode);
         }
 
