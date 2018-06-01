@@ -1,0 +1,27 @@
+﻿{
+  "RestaurantName": "Tusto restaurant",
+  "DayMenus": [
+    {
+      "Date": "2018-05-21T00:00:00",
+      "Foods": [
+        {
+          "Name": "",
+          "Price": 0.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        }
+      ]
+    },
+    {
+      "Date": "2018-05-22T00:00:00",
+      "Foods": [
+        {
+          "Name": "",
+          "Price": 0.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        }
+      ]
+    }
+  ]
+}
