@@ -48,25 +48,11 @@ namespace RFI.MenuCardsAggregator.Services.Services
                 }
                 else if (childElement.Id == "t_Polevky")
                 {
-                    foreach (var soupTr in childElement.ChildNodes)
-                    {
-                        dayMenu.Foods.Add(new Food { Name = soupTr.ChildNodes[1].InnerText });
-                    }
+                    FillInFoods(childElement, dayMenu);
                 }
                 else if (childElement.Id == "t_Hlavni-chod")
                 {
-                    foreach (var foodTr in childElement.ChildNodes)
-                    {
-                        var foodName = foodTr.ChildNodes[1].InnerText.Trim();
-                        if (foodName != "!!!! Seznam alergenů je na vyžádání u obsluhy !!!!")
-                        {
-                            dayMenu.Foods.Add(new Food
-                            {
-                                Name = foodName,
-                                Price = GetPriceFromHtmlNode(foodTr.ChildNodes[2])
-                            });
-                        }
-                    }
+                    FillInFoods(childElement, dayMenu);
                 }
             }
 
@@ -94,6 +80,22 @@ namespace RFI.MenuCardsAggregator.Services.Services
             }
 
             return DateTime.MinValue;
+        }
+
+        private void FillInFoods(HtmlNode foodsTableElement, DayMenu dayMenu)
+        {
+            foreach (var foodTr in foodsTableElement.ChildNodes)
+            {
+                var foodName = foodTr.ChildNodes[1].InnerText.Trim();
+                if (foodName != "!!!! Seznam alergenů je na vyžádání u obsluhy !!!!")
+                {
+                    dayMenu.Foods.Add(new Food
+                    {
+                        Name = foodName,
+                        Price = GetPriceFromHtmlNode(foodTr.ChildNodes[2])
+                    });
+                }
+            }
         }
     }
 }
