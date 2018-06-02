@@ -1,10 +1,11 @@
 ﻿using DotVVM.Framework.Configuration;
 using DotVVM.Framework.ResourceManagement;
 using DotVVM.Framework.Routing;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace RFI.MenuCardsAggregator.Web
 {
-    public class DotvvmStartup : IDotvvmStartup
+    public class DotvvmStartup : IDotvvmStartup, IDotvvmServiceConfigurator
     {
         // For more information about this class, visit https://dotvvm.com/docs/tutorials/basics-project-structure
         public void Configure(DotvvmConfiguration config, string applicationPath)
@@ -12,6 +13,11 @@ namespace RFI.MenuCardsAggregator.Web
             ConfigureRoutes(config, applicationPath);
             ConfigureControls(config, applicationPath);
             ConfigureResources(config, applicationPath);
+        }
+
+        public void ConfigureServices(IDotvvmServiceCollection options)
+        {
+            options.AddDefaultTempStorages("Temp");
         }
 
         private void ConfigureRoutes(DotvvmConfiguration config, string applicationPath)
