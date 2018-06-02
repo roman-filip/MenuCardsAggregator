@@ -33,7 +33,7 @@ namespace RFI.MenuCardsAggregator.Web
 
             // use DotVVM
             var dotvvmConfiguration = app.UseDotVVM<DotvvmStartup>(env.ContentRootPath);
-            
+
             // use static files
             app.UseStaticFiles(new StaticFileOptions
             {

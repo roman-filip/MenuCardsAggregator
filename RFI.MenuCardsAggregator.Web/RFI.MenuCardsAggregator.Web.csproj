@@ -20,6 +20,7 @@
     <ItemGroup>
         <None Remove="dotvvm_serialized_config.json.tmp" />
         <None Remove="Views\MasterPage.dotmaster" />
+        <None Remove="Views\MenuCards.dothtml" />
     </ItemGroup>
     <ItemGroup>
         <Folder Include="wwwroot\" />

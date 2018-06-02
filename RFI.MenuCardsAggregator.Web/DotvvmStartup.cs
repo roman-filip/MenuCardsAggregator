@@ -1,4 +1,4 @@
-﻿	using DotVVM.Framework.Configuration;
+﻿using DotVVM.Framework.Configuration;
 using DotVVM.Framework.ResourceManagement;
 using DotVVM.Framework.Routing;
 
@@ -16,8 +16,8 @@ namespace RFI.MenuCardsAggregator.Web
 
         private void ConfigureRoutes(DotvvmConfiguration config, string applicationPath)
         {
-            config.RouteTable.Add("Default", "", "Views/default.dothtml");
-            config.RouteTable.AutoDiscoverRoutes(new DefaultRouteStrategy(config));    
+            config.RouteTable.Add("Default", "", "Views/MenuCards.dothtml");
+            config.RouteTable.AutoDiscoverRoutes(new DefaultRouteStrategy(config));
         }
 
         private void ConfigureControls(DotvvmConfiguration config, string applicationPath)
@@ -40,7 +40,7 @@ namespace RFI.MenuCardsAggregator.Web
             config.Resources.Register("bootstrap", new ScriptResource
             {
                 Location = new UrlResourceLocation("~/lib/bootstrap/dist/js/bootstrap.min.js"),
-                Dependencies = new[] { "bootstrap-css" , "jquery" }
+                Dependencies = new[] { "bootstrap-css", "jquery" }
             });
             config.Resources.Register("jquery", new ScriptResource
             {
