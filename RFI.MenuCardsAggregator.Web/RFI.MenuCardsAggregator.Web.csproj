@@ -34,4 +34,7 @@
     <ItemGroup>
         <DotNetCliToolReference Include="DotVVM.Compiler.Light" Version="1.1.9" />
     </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\RFI.MenuCardsAggregator.Services\RFI.MenuCardsAggregator.Services.csproj" />
+    </ItemGroup>
 </Project>
