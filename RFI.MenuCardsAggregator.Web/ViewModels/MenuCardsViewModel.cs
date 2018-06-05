@@ -45,7 +45,7 @@ namespace RFI.MenuCardsAggregator.Web.ViewModels
                     var menuCard = srv.GetMenuCardAsync().Result;
                     MenuCards.Add(menuCard);
                 }
-                catch
+                catch (Exception ex)
                 {
                     // TODO - handle exception
                     MenuCards.Add(new MenuCard($"Something wrong happend for {srv.GetType().Name}", string.Empty));
