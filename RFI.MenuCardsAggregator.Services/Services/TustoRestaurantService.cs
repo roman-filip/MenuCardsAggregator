@@ -42,9 +42,12 @@ namespace RFI.MenuCardsAggregator.Services.Services
                 Date = GetDate(dayTableNode)
             };
 
-            foreach (var trNode in dayTableNode.GetChildElements())
+            foreach (var trNode in dayTableNode.GetChildElements().Skip(1))
             {
-
+                dayMenu.Foods.Add(new Food
+                {
+                    Name = GetFoodName(trNode.GetChildElements().First())
+                });
             }
 
             return dayMenu;
@@ -73,5 +76,7 @@ namespace RFI.MenuCardsAggregator.Services.Services
 
             return DateTime.MinValue;
         }
+
+        private static string GetFoodName(HtmlNode foodNameTdNode) => foodNameTdNode.InnerText[1] == ')' ? foodNameTdNode.InnerText.Substring(3) : foodNameTdNode.InnerText;
     }
 }
