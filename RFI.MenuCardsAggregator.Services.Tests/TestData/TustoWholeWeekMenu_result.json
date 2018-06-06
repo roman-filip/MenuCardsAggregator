@@ -1,0 +1,210 @@
+﻿{
+  "RestaurantName": "Tusto restaurant",
+  "DayMenus": [
+    {
+      "Date": "2018-06-04T00:00:00",
+      "Foods": [
+        {
+          "Name": "Polévka: Kapustová s uzeninou",
+          "Price": 0.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Těstoviny s grilovaným fenyklem, žampiony, smetanou  a vepřovými kousky, zdobené parmazánem",
+          "Price": 106.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "PIZZA   (rajčatové sugo, mozzarella, eidam listové saláty, cherry rajčata, uzené tofu, bylinkové pesto)",
+          "Price": 106.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Vepřový flamendr s čerstvou zeleninou, smažené bramborové hranolky",
+          "Price": 106.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Krůtí prsa v medovo-zázvorové marinádě s jablky, basmati rýže",
+          "Price": 117.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Grilované kousky manga a kuřecích prsou s jogurtovým dipem na listových salátech cherry rajčata, bylinková bageta",
+          "Price": 120.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        }
+      ]
+    },
+    {
+      "Date": "2018-06-05T00:00:00",
+      "Foods": [
+        {
+          "Name": "Polévka: Kapustová s uzeninou",
+          "Price": 0.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Limetové rizoto s bazalkovo-rukolovým pestem a krůtími kousky, zdobené parmazánem",
+          "Price": 106.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "PIZZA   (rajčatové sugo, mozzarella, eidam klobása, niva, feferonky, kukuřice)",
+          "Price": 106.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Smažený hermelín, plněný salámem, tatarská omáčka, vařené brambory s máslem a petrželkou",
+          "Price": 106.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Steak z vepřové panenky s pečenou paprikou  a balkánským sýrem, bramborové pyré",
+          "Price": 117.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Grilované kousky manga a kuřecích prsou s jogurtovým dipem na listových salátech, cherry rajčata, bylinková bageta",
+          "Price": 120.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        }
+      ]
+    },
+    {
+      "Date": "2018-06-06T00:00:00",
+      "Foods": [
+        {
+          "Name": "Polévka: Italská kroupová",
+          "Price": 0.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Bramborové noky s mrkvovo-rajčatovým sugem, mozzarellou a kuřecími kousky, zdobené parmazánem",
+          "Price": 106.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "PIZZA   (smetana, mozzarella, eidam debrecínka, glazovaná červená cibulka, rukola)",
+          "Price": 106.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Segedínský guláš z vepřového plecka, houskové knedlíky",
+          "Price": 106.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Kuřecí prsa plněná gorgonzolou a ořechy,  cibulový quiche",
+          "Price": 117.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Grilované kousky manga a kuřecích prsou s jogurtovým dipem na listových salátech, cherry rajčata, bylinková bageta",
+          "Price": 120.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        }
+      ]
+    },
+    {
+      "Date": "2018-06-07T00:00:00",
+      "Foods": [
+        {
+          "Name": "Polévka: Minestrone",
+          "Price": 0.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Parmazánové rizoto se smetanou  a drůbežími kousky",
+          "Price": 106.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "PIZZA   (rajčatové sugo, mozzarella, eidam šunka, žampiony, oregáno)",
+          "Price": 106.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Pečená živáňská vepřová krkovice, šťouchané brambory s cibulkou",
+          "Price": 106.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Kuřecí kung-pao, čínské nudle",
+          "Price": 117.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Grilované kousky manga a kuřecích prsou s jogurtovým dipem na listových salátech, cherry rajčata, bylinková bageta",
+          "Price": 120.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        }
+      ]
+    },
+    {
+      "Date": "2018-06-08T00:00:00",
+      "Foods": [
+        {
+          "Name": "Polévka: Podkrkonošské kyselo",
+          "Price": 0.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Boloňské lasagne, zdobené parmazánem",
+          "Price": 106.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "PIZZA   (rajčatové sugo, mozzarella, eidam uzený sýr, parmazán, pecorino, gorgonzola)",
+          "Price": 106.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Steak z vepřové kotlety, hořčičná omáčka, rýžový dortík",
+          "Price": 106.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Kuřecí prsa s šalvějí balená v pancettě, rajčatová tapenáda, pečená bramborová kolečka ve směsí koření",
+          "Price": 117.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Grilované kousky manga a kuřecích prsou s jogurtovým dipem na listových salátech, cherry rajčata, bylinková bageta",
+          "Price": 120.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        }
+      ]
+    }
+  ]
+}
