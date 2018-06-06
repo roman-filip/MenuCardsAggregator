@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using HtmlAgilityPack;
 using HtmlAgilityPack.CssSelectors.NetCore;
@@ -40,10 +41,10 @@ namespace RFI.MenuCardsAggregator.Services.Services
             {
                 Date = GetDate(dayTableNode)
             };
-            
+
             foreach (var trNode in dayTableNode.GetChildElements())
             {
-                
+
             }
 
             return dayMenu;
@@ -53,6 +54,22 @@ namespace RFI.MenuCardsAggregator.Services.Services
         {
             var trNode = dayTableNode.GetChildElements().First();
             var tdNode = trNode.GetChildElements().First();
+
+            // TODO - extract to the base class
+            // Create special class for regex constants
+            const string reMess = ".*?"; // Non-greedy match on filler
+            const string reDay = "((?:(?:[0-2]?\\d{1})|(?:[3][01]{1})))(?![\\d])";
+            const string reMonth = "((?:(?:[0]?[1-9])|(?:[1]{1}[012]{1})))(?![\\d])";
+
+            var r = new Regex(reMess + reDay + reMess + reMonth + reMess, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            var m = r.Match(tdNode.InnerText);
+            if (m.Success)
+            {
+                var day = m.Groups[1].ToString();
+                var month = m.Groups[2].ToString();
+
+                return CreateDate($"{day}.{month}.{DateTime.Now.Year}");
+            }
 
             return DateTime.MinValue;
         }
