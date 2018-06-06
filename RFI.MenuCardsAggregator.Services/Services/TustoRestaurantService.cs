@@ -10,6 +10,8 @@ namespace RFI.MenuCardsAggregator.Services.Services
 {
     public class TustoRestaurantService : BaseRestaurantService
     {
+        protected override string CurrencySymbol => ",- Kč";
+
         public override string RestaurantName => "Tusto restaurant";
 
         public TustoRestaurantService()
@@ -35,7 +37,7 @@ namespace RFI.MenuCardsAggregator.Services.Services
             return menuCard;
         }
 
-        private static DayMenu GetMenuForDay(HtmlNode dayTableNode)
+        private DayMenu GetMenuForDay(HtmlNode dayTableNode)
         {
             var dayMenu = new DayMenu
             {
@@ -46,7 +48,8 @@ namespace RFI.MenuCardsAggregator.Services.Services
             {
                 dayMenu.Foods.Add(new Food
                 {
-                    Name = GetFoodName(trNode.GetChildElements().First())
+                    Name = GetFoodName(trNode.GetChildElements().First()),
+                    Price = GetPriceFromHtmlNode(trNode.GetChildElements().Last())
                 });
             }
 

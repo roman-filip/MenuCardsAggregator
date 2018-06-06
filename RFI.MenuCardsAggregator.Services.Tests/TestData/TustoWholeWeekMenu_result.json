@@ -17,7 +17,7 @@
           "IsWeekFood": false
         },
         {
-          "Name": "PIZZA (rajčatové sugo, mozzarella, eidam listové saláty, cherry rajčata, uzené tofu, bylinkové pesto)",
+          "Name": "PIZZA   (rajčatové sugo, mozzarella, eidam listové saláty, cherry rajčata, uzené tofu, bylinkové pesto)",
           "Price": 106.0,
           "Weight": 0,
           "IsWeekFood": false
@@ -58,7 +58,7 @@
           "IsWeekFood": false
         },
         {
-          "Name": "PIZZA (rajčatové sugo, mozzarella, eidam klobása, niva, feferonky, kukuřice)",
+          "Name": "PIZZA   (rajčatové sugo, mozzarella, eidam klobása, niva, feferonky, kukuřice)",
           "Price": 106.0,
           "Weight": 0,
           "IsWeekFood": false
@@ -70,7 +70,7 @@
           "IsWeekFood": false
         },
         {
-          "Name": "Steak z vepřové panenky s pečenou paprikou a balkánským sýrem, bramborové pyré",
+          "Name": "Steak z vepřové panenky s pečenou paprikou  a balkánským sýrem, bramborové pyré",
           "Price": 117.0,
           "Weight": 0,
           "IsWeekFood": false
@@ -99,7 +99,7 @@
           "IsWeekFood": false
         },
         {
-          "Name": "PIZZA (smetana, mozzarella, eidam debrecínka, glazovaná červená cibulka, rukola)",
+          "Name": "PIZZA   (smetana, mozzarella, eidam debrecínka, glazovaná červená cibulka, rukola)",
           "Price": 106.0,
           "Weight": 0,
           "IsWeekFood": false
@@ -111,7 +111,7 @@
           "IsWeekFood": false
         },
         {
-          "Name": "Kuřecí prsa plněná gorgonzolou a ořechy, cibulový quiche",
+          "Name": "Kuřecí prsa plněná gorgonzolou a ořechy,  cibulový quiche",
           "Price": 117.0,
           "Weight": 0,
           "IsWeekFood": false
@@ -128,19 +128,19 @@
       "Date": "2018-06-07T00:00:00",
       "Foods": [
         {
-          "Name": "Parmazánové rizoto se smetanou a drůbežími kousky",
+          "Name": "Polévka: Minestrone",
           "Price": 0.0,
           "Weight": 0,
           "IsWeekFood": false
         },
         {
-          "Name": "Parmazánové rizoto se smetanou a drůbežími kousky",
+          "Name": "Parmazánové rizoto se smetanou  a drůbežími kousky",
           "Price": 106.0,
           "Weight": 0,
           "IsWeekFood": false
         },
         {
-          "Name": "PIZZA (rajčatové sugo, mozzarella, eidam šunka, žampiony, oregáno)",
+          "Name": "PIZZA   (rajčatové sugo, mozzarella, eidam šunka, žampiony, oregáno)",
           "Price": 106.0,
           "Weight": 0,
           "IsWeekFood": false
@@ -181,7 +181,7 @@
           "IsWeekFood": false
         },
         {
-          "Name": "PIZZA (rajčatové sugo, mozzarella, eidam uzený sýr, parmazán, pecorino, gorgonzola)",
+          "Name": "PIZZA   (rajčatové sugo, mozzarella, eidam uzený sýr, parmazán, pecorino, gorgonzola)",
           "Price": 106.0,
           "Weight": 0,
           "IsWeekFood": false
