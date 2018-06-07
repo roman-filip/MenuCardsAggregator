@@ -39,6 +39,18 @@
           "Price": 103.0,
           "Weight": 0,
           "IsWeekFood": false
+        },
+        {
+          "Name": "150g Míchaný zeleninový salát",
+          "Price": 18.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "150g Zelný salát",
+          "Price": 18.0,
+          "Weight": 0,
+          "IsWeekFood": false
         }
       ]
     }
