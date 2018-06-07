@@ -32,13 +32,14 @@ namespace RFI.MenuCardsAggregator.Services.Services
                 .Where(d => !notFoods.Contains(d.InnerText.Trim()));
             foreach (var foodDivNode in foodDivNodes)
             {
-                var food = new Food();
+                var food = new Food { Name = GetFoodName(foodDivNode.InnerText.Trim()) };
                 dayMenu.Foods.Add(food);
-                System.Diagnostics.Debug.WriteLine(foodDivNode.InnerText);
             }
 
             menuCard.DayMenus.Add(dayMenu);
             return menuCard;
         }
+
+        private static string GetFoodName(string foodName) => foodName[1] == '.' ? foodName.Substring(3) : foodName;
     }
 }
