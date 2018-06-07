@@ -1,0 +1,46 @@
+﻿{
+  "RestaurantName": "Restaurace U Emila",
+  "DayMenus": [
+    {
+      "Date": "2018-06-07T00:00:00",
+      "Foods": [
+        {
+          "Name": "Brokolicová polévka s krutony",
+          "Price": 0.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "130g/160g Štěpánská vepřová pečeně, náš houskový knedlík",
+          "Price": 99.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Brokolicová polévka",
+          "Price": 0.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "130g/200g Kuřecí stehenní steak s grilovanou zeleninou, pečené brambory",
+          "Price": 99.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "200g/200g Hovězí líčka na červeném víně se zeleninou, bramborová kaše",
+          "Price": 118.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "420g Míchaný zeleninový salát s bylinkovým dresinkem a hovězím masem pečené sous vide, vejce",
+          "Price": 103.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        }
+      ]
+    }
+  ]
+}
