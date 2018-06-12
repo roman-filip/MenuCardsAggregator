@@ -77,6 +77,12 @@ namespace RFI.MenuCardsAggregator.Services.Services
             return DateTime.ParseExact(stringDate, "d MMMM yyyy", CzCultureInfo);
         }
 
+        protected static DateTime CreateDate(string day, string monthName)
+        {
+            var stringDate = $"{day} {monthName}";
+            return DateTime.ParseExact(stringDate, "d MMMM", CzCultureInfo);
+        }
+
         protected static DateTime CreateDate(string date)
         {
             return DateTime.ParseExact(date.Trim(), "d.M.yyyy", CzCultureInfo);
