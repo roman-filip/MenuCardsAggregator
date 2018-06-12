@@ -11,6 +11,8 @@ namespace RFI.MenuCardsAggregator.Services.Services
     {
         public override string RestaurantName => "Restaurace U Emila";
 
+        protected override string CurrencySymbol => " Kč";
+
         public UEmilaRestaurantService()
         {
             Uri = "https://www.restauraceuemila.cz/dennimenu/";
@@ -33,7 +35,11 @@ namespace RFI.MenuCardsAggregator.Services.Services
                 .Where(d => !notFoods.Contains(d.InnerText.Trim()));
             foreach (var foodDivNode in foodDivNodes)
             {
-                var food = new Food { Name = GetFoodName(foodDivNode.InnerText.Trim()) };
+                var food = new Food
+                {
+                    Name = GetFoodName(foodDivNode.InnerText.Trim()),
+                    Price = GetPriceFromHtmlNode(foodDivNode.NextSibling.NextSibling)
+                };
                 dayMenu.Foods.Add(food);
             }
 
