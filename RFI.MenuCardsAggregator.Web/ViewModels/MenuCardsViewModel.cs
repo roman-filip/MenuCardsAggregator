@@ -1,9 +1,6 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using DotVVM.Framework.ViewModel;
 using RFI.MenuCardsAggregator.Services.Model;
 using RFI.MenuCardsAggregator.Services.Services;
 
@@ -16,17 +13,17 @@ namespace RFI.MenuCardsAggregator.Web.ViewModels
         {
             new IqRestaurantService(),
             new KometaRestaurantService(),
-            new MamutPubRestaurantService(),
-            new MyFoodRestaurantService(),
+            //new MamutPubRestaurantService(),
+            //new MyFoodRestaurantService(),
             new NaTahuRestaurantService(),
             new PadowetzRestaurantService(),
+            new TustoRestaurantService(),
+            //new UEmilaRestaurantService()
         };
-
-        private readonly List<MenuCard> _menuCards = new List<MenuCard>();
 
         public string Title { get; set; }
 
-        public List<MenuCard> MenuCards => _menuCards;
+        public List<MenuCard> MenuCards { get; } = new List<MenuCard>();
 
         public MenuCardsViewModel()
         {
@@ -43,9 +40,10 @@ namespace RFI.MenuCardsAggregator.Web.ViewModels
                 try
                 {
                     var menuCard = srv.GetMenuCardAsync().Result;
+                    menuCard.DayMenus.RemoveAll(d => d.Date != DateTime.Today);
                     MenuCards.Add(menuCard);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     // TODO - handle exception
                     MenuCards.Add(new MenuCard($"Something wrong happend for {srv.GetType().Name}", string.Empty));
