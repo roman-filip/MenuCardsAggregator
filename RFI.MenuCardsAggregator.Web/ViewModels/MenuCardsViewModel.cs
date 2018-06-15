@@ -11,14 +11,14 @@ namespace RFI.MenuCardsAggregator.Web.ViewModels
         // TODO - use IoC container
         private readonly List<IRestaurantService> _restaurantServices = new List<IRestaurantService>()
         {
-            new IqRestaurantService(),
-            new KometaRestaurantService(),
-            //new MamutPubRestaurantService(),
-            //new MyFoodRestaurantService(),
-            new NaTahuRestaurantService(),
             new PadowetzRestaurantService(),
+            new NaTahuRestaurantService(),
+            new MamutPubRestaurantService(),
             new TustoRestaurantService(),
-            //new UEmilaRestaurantService()
+            //new UEmilaRestaurantService(),
+            new KometaRestaurantService(),
+            //new MyFoodRestaurantService(),
+            new IqRestaurantService()
         };
 
         public string Title { get; set; }
