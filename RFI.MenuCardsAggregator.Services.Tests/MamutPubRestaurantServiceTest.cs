@@ -19,5 +19,17 @@ namespace RFI.MenuCardsAggregator.Services.Tests
 
             AssertMenuCard(expectedMenuCard, menuCard);
         }
+
+        [TestMethod]
+        public async Task WholeWeekMenu2Test()
+        {
+            var data = File.ReadAllText(@"TestData\MamutWholeWeekMenu2.html");
+            IRestaurantService service = new MamutPubRestaurantService(new HttpServiceMock(() => data));
+            var menuCard = await service.GetMenuCardAsync();
+
+            var expectedMenuCard = LoadExpectedMenuCard(@"TestData\MamutWholeWeekMenu2_result.json");
+
+            AssertMenuCard(expectedMenuCard, menuCard);
+        }
     }
 }
