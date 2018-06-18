@@ -47,6 +47,7 @@ namespace RFI.MenuCardsAggregator.Services.Services
             return htmlDocument;
         }
 
+        // TODO - use this method instead of node.InnerText in concrete services
         protected static int GetIntFomHtmlNode(HtmlNode node)
         {
             var nodeContent = node.InnerText;
