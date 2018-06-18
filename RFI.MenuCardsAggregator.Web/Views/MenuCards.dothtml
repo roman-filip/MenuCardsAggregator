@@ -14,7 +14,8 @@
 
                     <dot:Repeater DataSource="{value: Foods}" WrapperTagName="ul">
                         <ItemTemplate>
-                            <li>{{value: Name}}</li>
+                            <%-- Wa have to use HtmlLiteral because of strange HTML from the Mamut pub --%>
+                            <li><dot:HtmlLiteral Html="{value: Name}" /></li>
                         </ItemTemplate>
                     </dot:Repeater>
                 </ItemTemplate>
