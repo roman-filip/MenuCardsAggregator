@@ -45,6 +45,7 @@ namespace RFI.MenuCardsAggregator.Services.Services
 
             var wholeWeekDivNode = menuStrongNode.NextSiblingElement()
                 .GetChildElements().First()
+                .GetChildElements().First()
                 .GetChildElements().First();  // First inner <div>
             DayMenu dayMenu = null;
             foreach (var divNode in wholeWeekDivNode.GetChildElements().Where(node => node.InnerHtml != "<br>" && !string.IsNullOrWhiteSpace(node.InnerHtml)))
