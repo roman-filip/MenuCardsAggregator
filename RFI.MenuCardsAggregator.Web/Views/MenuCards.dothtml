@@ -10,12 +10,14 @@
 
             <dot:Repeater DataSource="{value: DayMenus}" WrapperTagName="ul">
                 <ItemTemplate>
-                    <li><h4>{{value: Date}}</h4></li>
+                    <li><h4><dot:Literal Text="{value: Date}" FormatString="d.M.yyyy" /></h4></li>
 
                     <dot:Repeater DataSource="{value: Foods}" WrapperTagName="ul">
                         <ItemTemplate>
-                            <%-- Wa have to use HtmlLiteral because of strange HTML from the Mamut pub --%>
-                            <li><dot:HtmlLiteral Html="{value: Name}" /></li>
+                            <%-- We have to use HtmlLiteral because of strange HTML from the Mamut pub --%>
+                            <li>
+                                <dot:HtmlLiteral Html="{value: Name}" WrapperTagName="span" /> ({{value: Price}} ,-)
+                            </li>
                         </ItemTemplate>
                     </dot:Repeater>
                 </ItemTemplate>

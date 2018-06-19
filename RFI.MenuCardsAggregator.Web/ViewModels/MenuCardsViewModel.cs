@@ -27,7 +27,7 @@ namespace RFI.MenuCardsAggregator.Web.ViewModels
 
         public MenuCardsViewModel()
         {
-            Title = "Jidelni listky";
+            Title = "Jídelní lístky";
         }
 
         public override async Task Load()
