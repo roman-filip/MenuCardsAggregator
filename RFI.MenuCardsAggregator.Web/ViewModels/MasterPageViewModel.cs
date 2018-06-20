@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using DotVVM.Framework.ViewModel;
+﻿using DotVVM.Framework.ViewModel;
 
 namespace RFI.MenuCardsAggregator.Web.ViewModels
 {
     public class MasterPageViewModel : DotvvmViewModelBase
     {
+        public virtual string Title { get; set; }
+
+        public MasterPageViewModel()
+        {
+            Title = "Agregátor jídelních lístků";
+        }
     }
 }

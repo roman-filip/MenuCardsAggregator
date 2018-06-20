@@ -2,8 +2,6 @@
 @masterPage Views/MasterPage.dotmaster
 
 <dot:Content ContentPlaceHolderID="MainContent">
-    <h1>{{value: Title}}</h1>
-
     <dot:Repeater DataSource="{value: MenuCards}">
         <ItemTemplate>
             <h3>{{value: RestaurantName}}</h3>
@@ -16,7 +14,7 @@
                         <ItemTemplate>
                             <%-- We have to use HtmlLiteral because of strange HTML from the Mamut pub --%>
                             <li>
-                                <dot:HtmlLiteral Html="{value: Name}" WrapperTagName="span" /> ({{value: Price}} ,-)
+                                <dot:HtmlLiteral Html="{value: Name}" WrapperTagName="span" /> <b>({{value: Price}},-)</b>
                             </li>
                         </ItemTemplate>
                     </dot:Repeater>

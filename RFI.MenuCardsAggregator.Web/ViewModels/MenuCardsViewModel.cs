@@ -21,14 +21,7 @@ namespace RFI.MenuCardsAggregator.Web.ViewModels
             new IqRestaurantService()
         };
 
-        public string Title { get; set; }
-
         public List<MenuCard> MenuCards { get; } = new List<MenuCard>();
-
-        public MenuCardsViewModel()
-        {
-            Title = "Jídelní lístky";
-        }
 
         public override async Task Load()
         {
