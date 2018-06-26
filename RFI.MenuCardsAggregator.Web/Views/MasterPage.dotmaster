@@ -8,7 +8,7 @@
     <link href="css/custom.css" rel="stylesheet" />
 </head>
 <body>
-    <nav class="navbar navbar-custom">
+    <%--<nav class="navbar navbar-custom">
         <div class="container-fluid">
             <div class="navbar-header-center">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -22,7 +22,7 @@
                 <ul class="nav navbar-nav navbar-right"></ul>
             </div>
         </div>
-    </nav>
+    </nav>--%>
 
     <dot:ContentPlaceHolder ID="MainContent" />
 </body>

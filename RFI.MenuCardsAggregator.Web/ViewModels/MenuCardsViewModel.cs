@@ -23,6 +23,29 @@ namespace RFI.MenuCardsAggregator.Web.ViewModels
 
         public List<MenuCard> MenuCards { get; } = new List<MenuCard>();
 
+        public List<DateTime> Days { get; } = new List<DateTime>(5);
+
+        public DateTime SelectedDay { get; private set; }
+
+        public MenuCardsViewModel()
+        {
+            FillDays();
+        }
+
+        private void FillDays()
+        {
+            DayOfWeek day = DateTime.Now.DayOfWeek;
+            int days = day - DayOfWeek.Monday;
+            DateTime monday = DateTime.Now.Date.AddDays(-days);
+            Days.Add(monday);
+            Days.Add(monday.AddDays(1));
+            Days.Add(monday.AddDays(2));
+            Days.Add(monday.AddDays(3));
+            Days.Add(monday.AddDays(4));
+
+            SelectedDay = DateTime.Now.Date;
+        }
+
         public override async Task Load()
         {
             await base.Load();
