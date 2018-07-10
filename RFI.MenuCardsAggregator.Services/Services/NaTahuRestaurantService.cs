@@ -11,15 +11,9 @@ namespace RFI.MenuCardsAggregator.Services.Services
     {
         private decimal _defaultPrice;
 
-        protected override string CurrencySymbol
-        {
-            get { return ",- Kč"; }
-        }
+        protected override string CurrencySymbol => ",- Kč";
 
-        public override string RestaurantName
-        {
-            get { return "Na Tahu"; }
-        }
+        public override string RestaurantName => "Na Tahu";
 
         public NaTahuRestaurantService()
         {
@@ -30,7 +24,7 @@ namespace RFI.MenuCardsAggregator.Services.Services
             : base(httpService)
         { }
 
-        public async override Task<MenuCard> GetMenuCardAsync()
+        public override async Task<MenuCard> GetMenuCardAsync()
         {
             var menuCard = new MenuCard(RestaurantName, Uri);
             var htmlDocument = await GetHtmlDocumentAsync();
@@ -38,19 +32,19 @@ namespace RFI.MenuCardsAggregator.Services.Services
             SetDefaultPrice(htmlDocument);
 
             var date = GetMondayDate(htmlDocument);
-            menuCard.DayMenus.Add(GetMenuForDay(htmlDocument, "PONDĚLÍ", date));
+            menuCard.DayMenus.Add(GetMenuForDay(htmlDocument, "Pondělí", date));
 
             date = date.AddDays(1);
-            menuCard.DayMenus.Add(GetMenuForDay(htmlDocument, "ÚTERÝ", date));
+            menuCard.DayMenus.Add(GetMenuForDay(htmlDocument, "Úterý", date));
 
             date = date.AddDays(1);
-            menuCard.DayMenus.Add(GetMenuForDay(htmlDocument, "STŘEDA", date));
+            menuCard.DayMenus.Add(GetMenuForDay(htmlDocument, "Středa", date));
 
             date = date.AddDays(1);
-            menuCard.DayMenus.Add(GetMenuForDay(htmlDocument, "ČTVRTEK", date));
+            menuCard.DayMenus.Add(GetMenuForDay(htmlDocument, "Čtvrtek", date));
 
             date = date.AddDays(1);
-            menuCard.DayMenus.Add(GetMenuForDay(htmlDocument, "PÁTEK", date));
+            menuCard.DayMenus.Add(GetMenuForDay(htmlDocument, "Pátek", date));
 
             return menuCard;
         }
@@ -76,7 +70,7 @@ namespace RFI.MenuCardsAggregator.Services.Services
         {
             var dayMenu = new DayMenu { Date = date };
 
-            var soupDivNode = htmlDocument.DocumentNode.SelectNodes(string.Format(".//div[contains(., '{0}')]", dayName)).Last();
+            var soupDivNode = htmlDocument.DocumentNode.SelectNodes($".//div[contains(., '{dayName}')]").Last();
             var dayAndSoupStr = GetStringFomHtmlNode(soupDivNode);
             var soupName = dayAndSoupStr.Split(':')[1].Trim();
             dayMenu.Foods.Add(new Food { Name = soupName });
@@ -85,6 +79,10 @@ namespace RFI.MenuCardsAggregator.Services.Services
             while (foodDivNode != null && !foodDivNode.GetChildElements().Any())
             {
                 var foodStr = GetStringFomHtmlNode(foodDivNode);
+                if (string.IsNullOrEmpty(foodStr))
+                {
+                    break;
+                }
                 var foodName = foodStr.Substring(3);
                 var foodPrice = _defaultPrice;
 
