@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using RFI.MenuCardsAggregator.Services.Model;
 using RFI.MenuCardsAggregator.Services.Services;
@@ -50,6 +51,24 @@ namespace RFI.MenuCardsAggregator.Web.ViewModels
         {
             await base.Load();
 
+            var resultTasks = new List<Task<MenuCard>>(_restaurantServices.Count);
+            _restaurantServices.ForEach(srv => resultTasks.Add(srv.GetMenuCardAsync()));
+            var menuCards = await Task.WhenAll(resultTasks);
+            menuCards.ToList().ForEach(menuCard=> {
+                try
+                {
+                    menuCard.DayMenus.RemoveAll(d => d.Date != DateTime.Today);
+                    MenuCards.Add(menuCard);
+                }
+                catch (Exception)
+                {
+                    // TODO - handle exception
+                   // MenuCards.Add(new MenuCard($"Something wrong happend for {srv.GetType().Name}", string.Empty));
+                }
+            });
+
+
+            /*
             // TODO - run it in parallel
             _restaurantServices.ForEach(srv =>
             {
@@ -65,6 +84,7 @@ namespace RFI.MenuCardsAggregator.Web.ViewModels
                     MenuCards.Add(new MenuCard($"Something wrong happend for {srv.GetType().Name}", string.Empty));
                 }
             });
+            */
         }
     }
 }
