@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using RFI.MenuCardsAggregator.Services.Model;
 using RFI.MenuCardsAggregator.Services.Services;
@@ -53,38 +52,26 @@ namespace RFI.MenuCardsAggregator.Web.ViewModels
 
             var resultTasks = new List<Task<MenuCard>>(_restaurantServices.Count);
             _restaurantServices.ForEach(srv => resultTasks.Add(srv.GetMenuCardAsync()));
-            var menuCards = await Task.WhenAll(resultTasks);
-            menuCards.ToList().ForEach(menuCard=> {
-                try
-                {
-                    menuCard.DayMenus.RemoveAll(d => d.Date != DateTime.Today);
-                    MenuCards.Add(menuCard);
-                }
-                catch (Exception)
-                {
-                    // TODO - handle exception
-                   // MenuCards.Add(new MenuCard($"Something wrong happend for {srv.GetType().Name}", string.Empty));
-                }
-            });
-
-
-            /*
-            // TODO - run it in parallel
-            _restaurantServices.ForEach(srv =>
+            try
             {
-                try
+                await Task.WhenAll(resultTasks);
+            }
+            catch { }
+
+            foreach (var resultTask in resultTasks)
+            {
+                if (resultTask.IsCompletedSuccessfully)
                 {
-                    var menuCard = srv.GetMenuCardAsync().Result;
+                    var menuCard = resultTask.Result;
                     menuCard.DayMenus.RemoveAll(d => d.Date != DateTime.Today);
                     MenuCards.Add(menuCard);
                 }
-                catch (Exception)
+                else
                 {
                     // TODO - handle exception
-                    MenuCards.Add(new MenuCard($"Something wrong happend for {srv.GetType().Name}", string.Empty));
+                    MenuCards.Add(new MenuCard($"Something wrong happend for {resultTask.Exception.InnerException.TargetSite.ReflectedType.ReflectedType.Name}", string.Empty));
                 }
-            });
-            */
+            }
         }
     }
 }
