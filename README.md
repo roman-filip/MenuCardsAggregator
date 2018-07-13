@@ -2,6 +2,8 @@
 
 This is simple application for aggregation of menu cards from specified restaurants.
 
+Running application is available at [https://rfi-menucards-aggregator.azurewebsites.net](https://rfi-menucards-aggregator.azurewebsites.net)
+
 ***
 ## Change log:
 * v2
