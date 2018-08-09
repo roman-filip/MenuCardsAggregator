@@ -32,19 +32,19 @@ namespace RFI.MenuCardsAggregator.Services.Services
             SetDefaultPrice(htmlDocument);
 
             var date = GetMondayDate(htmlDocument);
-            menuCard.DayMenus.Add(GetMenuForDay(htmlDocument, "Pondělí", date));
+            menuCard.DayMenus.Add(GetMenuForDay(htmlDocument, "PONDĚLÍ", date));
 
             date = date.AddDays(1);
-            menuCard.DayMenus.Add(GetMenuForDay(htmlDocument, "Úterý", date));
+            menuCard.DayMenus.Add(GetMenuForDay(htmlDocument, "ÚTERÝ", date));
 
             date = date.AddDays(1);
-            menuCard.DayMenus.Add(GetMenuForDay(htmlDocument, "Středa", date));
+            menuCard.DayMenus.Add(GetMenuForDay(htmlDocument, "STŘEDA", date));
 
             date = date.AddDays(1);
-            menuCard.DayMenus.Add(GetMenuForDay(htmlDocument, "Čtvrtek", date));
+            menuCard.DayMenus.Add(GetMenuForDay(htmlDocument, "ČTVRTEK", date));
 
             date = date.AddDays(1);
-            menuCard.DayMenus.Add(GetMenuForDay(htmlDocument, "Pátek", date));
+            menuCard.DayMenus.Add(GetMenuForDay(htmlDocument, "PÁTEK", date));
 
             return menuCard;
         }
