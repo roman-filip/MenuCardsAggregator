@@ -18,7 +18,7 @@ namespace RFI.MenuCardsAggregator.Web.ViewModels
             //new UEmilaRestaurantService(),
             new KometaRestaurantService(),
             //new MyFoodRestaurantService(),
-            new IqRestaurantService()
+            //new IqRestaurantService()
         };
 
         public List<MenuCard> MenuCards { get; } = new List<MenuCard>();
