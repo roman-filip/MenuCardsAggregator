@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using RFI.MenuCardsAggregator.Services.Model;
 using RFI.MenuCardsAggregator.Services.Services;
@@ -17,11 +18,14 @@ namespace RFI.MenuCardsAggregator.Web.ViewModels
             new TustoRestaurantService(),
             //new UEmilaRestaurantService(),
             new KometaRestaurantService(),
+            new SportBarRestaurantService()
             //new MyFoodRestaurantService(),
             //new IqRestaurantService()
         };
 
         public List<MenuCard> MenuCards { get; } = new List<MenuCard>();
+
+        public List<MenuCard> ImageMenuCards { get; } = new List<MenuCard>();
 
         public List<DateTime> Days { get; } = new List<DateTime>(5);
 
@@ -63,8 +67,15 @@ namespace RFI.MenuCardsAggregator.Web.ViewModels
                 if (resultTask.IsCompletedSuccessfully)
                 {
                     var menuCard = resultTask.Result;
-                    menuCard.DayMenus.RemoveAll(d => d.Date != DateTime.Today);
-                    MenuCards.Add(menuCard);
+                    if (menuCard.DayMenus.Any())
+                    {
+                        menuCard.DayMenus.RemoveAll(d => d.Date != DateTime.Today);
+                        MenuCards.Add(menuCard);
+                    }
+                    else if (menuCard.MenuImageUri != null)
+                    {
+                        ImageMenuCards.Add(menuCard);
+                    }
                 }
                 else
                 {

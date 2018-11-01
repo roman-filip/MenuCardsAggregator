@@ -20,6 +20,8 @@
     <None Remove="TestData\NaTahuWholeWeekMenu_result.json" />
     <None Remove="TestData\PadowetzWholeWeekMenu.html" />
     <None Remove="TestData\PadowetzWholeWeekMenu_result.json" />
+    <None Remove="TestData\SportBarWholeWeekMenu.html" />
+    <None Remove="TestData\SportBarWholeWeekMenu_result.json" />
     <None Remove="TestData\TustoWholeWeekMenu.html" />
     <None Remove="TestData\TustoWholeWeekMenu_result.json" />
     <None Remove="TestData\UEmilaOneDayMenu.html" />
@@ -58,6 +60,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="TestData\NaTahuWholeWeekMenu.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\SportBarWholeWeekMenu.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\SportBarWholeWeekMenu_result.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="TestData\TustoWholeWeekMenu_result.json">

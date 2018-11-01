@@ -54,5 +54,12 @@
                 </dot:Repeater>
             </ItemTemplate>
         </dot:Repeater>
+
+        <dot:Repeater DataSource="{value: ImageMenuCards}">
+            <ItemTemplate>
+                <h3>{{value: RestaurantName}}</h3>
+                <img src="{value: MenuImageUri}"/>
+            </ItemTemplate>
+        </dot:Repeater>
     </div>
 </dot:Content>

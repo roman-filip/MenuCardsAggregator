@@ -13,6 +13,7 @@ namespace RFI.MenuCardsAggregator.Services.Tests
             Assert.IsNotNull(actualMenuCard);
             Assert.AreEqual(expectedMenuCard.RestaurantName, actualMenuCard.RestaurantName);
             Assert.AreEqual(expectedMenuCard.RestaurantUri, actualMenuCard.RestaurantUri);
+            Assert.AreEqual(expectedMenuCard.MenuImageUri, actualMenuCard.MenuImageUri);
 
             AssertDayMenus(expectedMenuCard.DayMenus, actualMenuCard.DayMenus);
         }
