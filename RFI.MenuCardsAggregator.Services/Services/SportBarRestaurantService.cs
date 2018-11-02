@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using RFI.MenuCardsAggregator.Services.Model;
 
@@ -19,12 +19,16 @@ namespace RFI.MenuCardsAggregator.Services.Services
 
         public override async Task<MenuCard> GetMenuCardAsync()
         {
-            var menuCard = new MenuCard(RestaurantName, Uri)
-            {
-                MenuImageUri = @"https://www.sportbar-arena.cz/wp-content/uploads/2018/10/7EF49B82-CC82-4661-8347-012C8367D50D.jpeg"
-            };
+            var menuCard = new MenuCard(RestaurantName, Uri);
+            var htmlDocument = await GetHtmlDocumentAsync();
+            menuCard.MenuImageUri =
+                htmlDocument
+                    .DocumentNode
+                    .SelectNodes("*//img")
+                    .Last()
+                    .GetAttributeValue("src", "not found");
 
-            return await Task.FromResult(menuCard);
+            return menuCard;
         }
     }
 }
