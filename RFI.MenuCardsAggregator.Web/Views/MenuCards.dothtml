@@ -32,7 +32,7 @@
     <div class="container-fluid col-sm-9">
         <dot:Repeater DataSource="{value: MenuCards}">
             <ItemTemplate>
-                <h3>{{value: RestaurantName}}</h3>
+                <h3><a href="{value: RestaurantUri}">{{value: RestaurantName}}</a></h3>
 
                 <dot:Repeater DataSource="{value: DayMenus}" WrapperTagName="ul">
                     <ItemTemplate>
@@ -57,7 +57,7 @@
 
         <dot:Repeater DataSource="{value: ImageMenuCards}">
             <ItemTemplate>
-                <h3>{{value: RestaurantName}}</h3>
+                <h3><a href="{value: RestaurantUri}">{{value: RestaurantName}}</a></h3>
                 <img src="{value: MenuImageUri}"/>
             </ItemTemplate>
         </dot:Repeater>
