@@ -89,20 +89,27 @@ namespace RFI.MenuCardsAggregator.Services.Services
                     break;
                 }
 
-                var foodStr2 = foodStr.Substring(3);
-                var food = new Food();
-                var match = _regexFoodWithPrice.Match(foodStr2);
-                if (match.Success)
-                {
-                    food.Name = match.Groups[1].ToString();
-                    food.Price = decimal.Parse(match.Groups[2].ToString());
+                if (foodStr.StartsWith("("))
+                {   // This is not next food but additional information for previous one
+                    dayMenu.Foods.Last().Name = dayMenu.Foods.Last().Name + " " + foodStr;
                 }
                 else
                 {
-                    food.Name = foodStr2;
-                    food.Price = _defaultPrice;
+                    var foodStr2 = foodStr.Substring(3);
+                    var food = new Food();
+                    var match = _regexFoodWithPrice.Match(foodStr2);
+                    if (match.Success)
+                    {
+                        food.Name = match.Groups[1].ToString();
+                        food.Price = decimal.Parse(match.Groups[2].ToString());
+                    }
+                    else
+                    {
+                        food.Name = foodStr2;
+                        food.Price = _defaultPrice;
+                    }
+                    dayMenu.Foods.Add(food);
                 }
-                dayMenu.Foods.Add(food);
 
                 foodDivNode = foodDivNode.NextSiblingElement();
             }
