@@ -12,15 +12,9 @@ namespace RFI.MenuCardsAggregator.Services.Services
     {
         private decimal _defaultPrice;
 
-        protected override string CurrencySymbol
-        {
-            get { return ",- Kč"; }
-        }
+        protected override string CurrencySymbol => ",- Kč";
 
-        public override string RestaurantName
-        {
-            get { return "Mamut Pub"; }
-        }
+        public override string RestaurantName => "Mamut Pub";
 
         public MamutPubRestaurantService()
         {
@@ -31,7 +25,7 @@ namespace RFI.MenuCardsAggregator.Services.Services
             : base(httpService)
         { }
 
-        public async override Task<MenuCard> GetMenuCardAsync()
+        public override async Task<MenuCard> GetMenuCardAsync()
         {
             var menuCard = new MenuCard(RestaurantName, Uri);
 
@@ -49,6 +43,7 @@ namespace RFI.MenuCardsAggregator.Services.Services
             {
                 if (!divNode.InnerHtml.Trim().StartsWith("<span"))
                 {
+                    // First food for new day
                     dayMenu = new DayMenu { Date = date };
                     menuCard.DayMenus.Add(dayMenu);
                     dayMenu.Foods.Add(GetFood(divNode.ChildNodes[2]));
@@ -57,7 +52,19 @@ namespace RFI.MenuCardsAggregator.Services.Services
                 }
                 else
                 {
-                    dayMenu.Foods.Add(GetFood(divNode.ChildNodes[1]));
+                    var food = GetFood(divNode.ChildNodes[1]);
+                    if (!string.IsNullOrEmpty(food.Name))
+                    {
+                        if (food.Name[0] == '(')
+                        {
+                            // This is not next food but additional information for previous one
+                            dayMenu.Foods.Last().Name = dayMenu.Foods.Last().Name + " " + food.Name;
+                        }
+                        else
+                        {
+                            dayMenu.Foods.Add(food);
+                        }
+                    }
                 }
             }
 
@@ -74,13 +81,13 @@ namespace RFI.MenuCardsAggregator.Services.Services
 
         private Food GetFood(HtmlNode foodNode)
         {
-            var nodeText = GetStringFomHtmlNode(foodNode);
+            var nodeText = GetStringFomHtmlNode(foodNode).Replace("\xA0", " ");
             var food = new Food();
 
             var re = "(\\d+\\) )?(.*)";
             if (nodeText.EndsWith(CurrencySymbol))
             {
-                re += string.Format("( )(\\d+)({0})", CurrencySymbol);
+                re += $"( )(\\d+)({CurrencySymbol})";
             }
             var regex = new Regex(re, RegexOptions.IgnoreCase | RegexOptions.Singleline);
             var match = regex.Match(nodeText);
