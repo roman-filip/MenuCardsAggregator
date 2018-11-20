@@ -47,7 +47,7 @@ namespace RFI.MenuCardsAggregator.Services.Services
             DayMenu dayMenu = null;
             foreach (var divNode in wholeWeekDivNode.GetChildElements().Where(node => node.InnerHtml != "<br>" && !string.IsNullOrWhiteSpace(node.InnerHtml)))
             {
-                if (!divNode.InnerHtml.StartsWith("<span"))
+                if (!divNode.InnerHtml.Trim().StartsWith("<span"))
                 {
                     dayMenu = new DayMenu { Date = date };
                     menuCard.DayMenus.Add(dayMenu);
