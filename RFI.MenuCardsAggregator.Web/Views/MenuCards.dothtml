@@ -1,0 +1,65 @@
+﻿@viewModel RFI.MenuCardsAggregator.Web.ViewModels.MenuCardsViewModel, RFI.MenuCardsAggregator.Web
+@masterPage Views/MasterPage.dotmaster
+
+<dot:Content ContentPlaceHolderID="MainContent">
+
+    <nav class="navbar navbar-inverse col-sm-3">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle pull-left" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand hidden-sm hidden-md hidden-lg" href="#">
+                    <dot:Literal Text="{value: SelectedDay}" FormatString="d.M.yyyy" />
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" ID="myNavbar">
+                <dot:Repeater DataSource="{value: Days}" WrapperTagName="ul" class="nav nav-pills nav-stacked">
+                    <ItemTemplate>
+                        <li class-active="{value: (_this == _root.SelectedDay)}">
+                            <a href="#">
+                                <dot:Literal Text="{value: _this}" FormatString="d.M.yyyy" />
+                            </a>
+                        </li>
+                    </ItemTemplate>
+                </dot:Repeater>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid col-sm-9">
+        <dot:Repeater DataSource="{value: MenuCards}">
+            <ItemTemplate>
+                <h3><a href="{value: RestaurantUri}">{{value: RestaurantName}}</a></h3>
+
+                <dot:Repeater DataSource="{value: DayMenus}" WrapperTagName="ul">
+                    <ItemTemplate>
+                        <li>
+                            <h4>
+                                <dot:Literal Text="{value: Date}" FormatString="d.M.yyyy" />
+                            </h4>
+                        </li>
+
+                        <dot:Repeater DataSource="{value: Foods}" WrapperTagName="ul">
+                            <ItemTemplate>
+                                <li>
+                                    <%-- We have to use HtmlLiteral because of strange HTML from the Mamut pub --%>
+                                    <dot:HtmlLiteral Html="{value: Name}" WrapperTagName="span" /> <b>({{value: Price}},-)</b>
+                                </li>
+                            </ItemTemplate>
+                        </dot:Repeater>
+                    </ItemTemplate>
+                </dot:Repeater>
+            </ItemTemplate>
+        </dot:Repeater>
+
+        <dot:Repeater DataSource="{value: ImageMenuCards}">
+            <ItemTemplate>
+                <h3><a href="{value: RestaurantUri}">{{value: RestaurantName}}</a></h3>
+                <img src="{value: MenuImageUri}"/>
+            </ItemTemplate>
+        </dot:Repeater>
+    </div>
+</dot:Content>

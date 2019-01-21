@@ -1,275 +1,286 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
- <title>KOMETA ARENA - HALA RONDO</title>
- <meta name="Keywords" content="Mendelu">
- <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
- <link rel="stylesheet" href="css/styles.css" type="text/css" media="screen">
- <link rel="stylesheet" href="css/popup-window.css" type="text/css" media="screen">
+    <title>KOMETA ARENA - HALA RONDO</title>
+    <meta name="Keywords" content="Mendelu">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="css/styles.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="css/popup-window.css" type="text/css" media="screen">
 
-<script src="js/jquery-1.7.2.min.js"></script>
-<script src="js/jquery-ui-1.8.18.custom.min.js"></script>
-<script src="js/jquery.smooth-scroll.min.js"></script>
-<script src="js/popup-window.js"></script>
-<script src="js/calendarpopup.js"></script>
-<script src="js/tigra_hints.js"></script>
-<script src="js/lightbox.js"></script>
-<link href="css/lightbox.css" rel="stylesheet" media="screen,projection" type="text/css" />
+    <script src="js/jquery-1.7.2.min.js"></script>
+    <script src="js/jquery-ui-1.8.18.custom.min.js"></script>
+    <script src="js/jquery.smooth-scroll.min.js"></script>
+    <script src="js/popup-window.js"></script>
+    <script src="js/calendarpopup.js"></script>
+    <script src="js/tigra_hints.js"></script>
+    <script src="js/lightbox.js"></script>
+    <link href="css/lightbox.css" rel="stylesheet" media="screen,projection" type="text/css" />
 
- <script src="js/show_product.js" type="text/javascript"></script>
-<link href='http://fonts.googleapis.com/css?family=Racing+Sans+One&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
- <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
- <link href='http://fonts.googleapis.com/css?family=Shojumaru&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <script src="js/show_product.js" type="text/javascript"></script>
+    <link href='http://fonts.googleapis.com/css?family=Racing+Sans+One&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
+    <link href='http://fonts.googleapis.com/css?family=Shojumaru&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 
 
 
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 
 
 </head>
 <body>
 
-<div id="head" style="background:url(img/tydenni-menu.png) top center no-repeat;">
+    <div id="head" style="background:url(img/tydenni-menu.png) top center no-repeat;">
 
-<div id="header">
-<div id="logo"><a href="index.php"></a></div>
-<div id="menu">
- <ul>
-  <li><a href="jidelni-listek.php" title="Jídelní lístek">JÍDELNÍ LÍSTEK</a></li>
-  <li><a href="napojovy-listek.php" title="Nápojový lístek">NÁPOJOVÝ LÍSTEK</a></li>
-  <li><a href="tydenni-menu.php" title="Týdenní menu">TÝDENNÍ MENU</a></li>
-  <li><a href="sportovni-prenosy.php" title="Sportovní přenosy">SPORTOVNÍ PŘENOSY</a></li>
-  <li><a href="akce.php" title="Akce">AKCE</a></li>
-  <li><a href="fotogalerie.php" title="Fotogalerie">FOTOGALERIE</a></li>
-  <li><a href="kontakty.php" title="Kontakty">KONTAKTY</a></li>
- </ul>
-</div>
+        <div id="header">
+            <div id="logo"><a href="index.php"></a></div>
+            <div id="menu">
+                <ul>
+                    <li><a href="jidelni-listek.php" title="Jídelní lístek">JÍDELNÍ LÍSTEK</a></li>
+                    <li><a href="napojovy-listek.php" title="Nápojový lístek">NÁPOJOVÝ LÍSTEK</a></li>
+                    <li><a href="tydenni-menu.php" title="Týdenní menu">TÝDENNÍ MENU</a></li>
+                    <li><a href="sportovni-prenosy.php" title="Sportovní přenosy">SPORTOVNÍ PŘENOSY</a></li>
+                    <li><a href="akce.php" title="Akce">AKCE</a></li>
+                    <li><a href="fotogalerie.php" title="Fotogalerie">FOTOGALERIE</a></li>
+                    <li><a href="kontakty.php" title="Kontakty">KONTAKTY</a></li>
+                </ul>
+            </div>
 
-</div>
-</div>
+        </div>
+    </div>
 
-<div id="wrap">
+    <div id="wrap">
 
-<script>
-    $(document).ready(function () {
+        <script>
+            $(document).ready(function () {
 
-        $('a').click(function () {
-            var divname = this.name;
-            $("#" + divname).show("slow").siblings().hide("slow");
-        });
+                $('a').click(function () {
+                    var divname = this.name;
+                    $("#" + divname).show("slow").siblings().hide("slow");
+                });
 
-    });
-</script>
+            });
+        </script>
 
-<div id="content">
-<div id="leftcol" class="left">
- <ul id="menu-left">
-		<li><a name="div1" title="PONDĚLÍ">PONDĚLÍ</a></li>
-		<li><a name="div2" title="ÚTERÝ">ÚTERÝ</a></li>
-		<li><a name="div3" title="STŘEDA">STŘEDA</a></li>
-		<li><a name="div4" title="ČTVRTEK">ČTVRTEK</a></li>
-		<li><a name="div5" title="PÁTEK">PÁTEK</a></li>
- </ul>
-</div>
+        <div id="content">
+            <div id="leftcol" class="left">
+                <ul id="menu-left">
+                    <li><a name="div1" title="PONDĚLÍ">PONDĚLÍ</a></li>
+                    <li><a name="div2" title="ÚTERÝ">ÚTERÝ</a></li>
+                    <li><a name="div3" title="STŘEDA">STŘEDA</a></li>
+                    <li><a name="div4" title="ČTVRTEK">ČTVRTEK</a></li>
+                    <li><a name="div5" title="PÁTEK">PÁTEK</a></li>
+                </ul>
+                <br>
+                <br>
 
-<div id="rightcol" class="left">
+                <a class="alergeny" href="http://kometapub.cz/data/alergeny.pdf" title="Přehled alergenů">Přehled alergenů</a>
+            </div>
 
-<div class="superakce" style="background:none;"><img src="img/bar.png" width="657" alt="samoobslužný salátový bar" /></div>
+            <div id="rightcol" class="left">
 
-<h2 class="subh2">týdenní nabídka poledních jídel</h2><div class="subh2text">Podávání menu od 11 do 15 hodin.</div><div>
+                <div class="superakce" style="background:none;"><img src="img/bar.png" width="657" alt="samoobslužný salátový bar" /></div>
 
-<div id="div1" class="none">
-<h3 class="subh3">Pondělí 23.&nbsp;květen&nbsp;2016</h3>
-<table class="table">
-<tr>
-<td>&nbsp;</td><td width="40" align="right">Cena</td>
-</tr>
- <tr class='table-row-1'>
- <td width='840'><strong>POLÉVKA:</strong>&nbsp;<em>Uzená s kroupami a zeleninou                    </em></td>
- <td width='40' align='right'>&nbsp;</td>
- </tr>
- <tr class='table-row-2'>
- <td width='840'><strong></strong>&nbsp;<em>Domažlické vepřové ragú s dušenou rýží</em></td>
- <td width='40' align='right'>84,-</td>
- </tr>
- <tr class='table-row-1'>
- <td width='840'><strong></strong>&nbsp;<em>Kuřecí závitek s listovým špenátem, sušenými rajčaty a mozzarellou s vař. bramborem     </em></td>
- <td width='40' align='right'>84,-</td>
- </tr>
- <tr class='table-row-2'>
- <td width='840'><strong></strong>&nbsp;<em>Smažený hermelín s hranolkami a tatarkou</em></td>
- <td width='40' align='right'>84,-</td>
- </tr>
- <tr class='table-row-1'>
- <td width='840'><strong></strong>&nbsp;<em>Zeleninový salát s vejcem, šunkou a sýrem, americký dresink, pečivo</em></td>
- <td width='40' align='right'>84,-</td>
- </tr>
- <tr class='table-row-2'>
- <td width='840'><strong></strong>&nbsp;<em>200g Vykostěný vepřový kotlet na grilu s opečenou slaninou, sázeným vejcem a mačkaným bramborem s cibulkou  </em></td>
- <td width='40' align='right'>115,-</td>
- </tr>
-</table>
-</div>
+                <h2 class="subh2">týdenní nabídka poledních jídel</h2><div class="subh2text">Podávání menu od 11 do 15 hodin.</div><div>
 
-
-<div id="div2" class="none">
-<h3 class="subh3">Úterý 24.&nbsp;květen&nbsp;2016</h3>
-<table class="table">
-<tr>
-<td>&nbsp;</td><td width="40" align="right">Cena</td>
-</tr>
- <tr class='table-row-1'>
- <td width='840'><strong>POLÉVKA:</strong>&nbsp;<em>Květáková</em></td>
- <td width='40' align='right'>&nbsp;</td>
- </tr>
- <tr class='table-row-2'>
- <td width='840'><strong></strong>&nbsp;<em> Italské špagety ,,Ala Carbonara“ sypané sýrem</em></td>
- <td width='40' align='right'>84,-</td>
- </tr>
- <tr class='table-row-1'>
- <td width='840'><strong></strong>&nbsp;<em>Segedínský guláš ,, Special“ s houskovým knedlíkem     </em></td>
- <td width='40' align='right'>84,-</td>
- </tr>
- <tr class='table-row-2'>
- <td width='840'><strong></strong>&nbsp;<em>Dřevorubecký vepřový steak s americkým bramborem</em></td>
- <td width='40' align='right'>84,-</td>
- </tr>
- <tr class='table-row-1'>
- <td width='840'><strong></strong>&nbsp;<em>Kuřecí steak s rajčatovým concase a zeleninovým kuskusem</em></td>
- <td width='40' align='right'>84,-</td>
- </tr>
- <tr class='table-row-2'>
- <td width='840'><strong></strong>&nbsp;<em>Řecký gyros marinovaný v česneku s hranolkami a tzatziki</em></td>
- <td width='40' align='right'>95,-</td>
- </tr>
-</table>
-</div>
+                    <div id="div1" class="none">
+                        <h3 class="subh3">Pondělí 28.&nbsp;květen&nbsp;2018</h3>
+                        <table class="table">
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td width="40" align="right">Cena</td>
+                            </tr>
+                            <tr class='table-row-1'>
+                                <td width='840'><strong>POLÉVKA:</strong>&nbsp;<em>Kmínová s vejcem 3,9                     </em></td>
+                                <td width='40' align='right'>&nbsp;</td>
+                            </tr>
+                            <tr class='table-row-2'>
+                                <td width='840'><strong></strong>&nbsp;<em>Bratislavská vepřová plec s dušenou rýží 1,7</em></td>
+                                <td width='40' align='right'>95,-</td>
+                            </tr>
+                            <tr class='table-row-1'>
+                                <td width='840'><strong></strong>&nbsp;<em>Kuřecí prsíčka zapečená rajčaty a balkánským sýrem s vařeným bramborem 1,3,7  </em></td>
+                                <td width='40' align='right'>95,-</td>
+                            </tr>
+                            <tr class='table-row-2'>
+                                <td width='840'><strong></strong>&nbsp;<em>Smažený hermelín s hranolkami a tatarkou 1,3,7</em></td>
+                                <td width='40' align='right'>95,-</td>
+                            </tr>
+                            <tr class='table-row-1'>
+                                <td width='840'><strong></strong>&nbsp;<em>Zeleninový salát s vejcem, šunkou a sýrem, francouzský dresink, pečivo 1,3,7,11</em></td>
+                                <td width='40' align='right'>95,-</td>
+                            </tr>
+                            <tr class='table-row-2'>
+                                <td width='840'><strong></strong>&nbsp;<em>Pečený pstruh s bylinkovým máslem a medvědím česnekem, mačkaný brambor s cibulkou 3,4,7</em></td>
+                                <td width='40' align='right'>110,-</td>
+                            </tr>
+                        </table>
+                    </div>
 
 
-<div id="div3" class="none">
-<h3 class="subh3">Středa 25.&nbsp;květen&nbsp;2016</h3>
-<table class="table">
-<tr>
-<td>&nbsp;</td><td width="40" align="right">Cena</td>
-</tr>
- <tr class='table-row-1'>
- <td width='840'><strong>POLÉVKA:</strong>&nbsp;<em>Fazolová</em></td>
- <td width='40' align='right'>&nbsp;</td>
- </tr>
- <tr class='table-row-2'>
- <td width='840'><strong></strong>&nbsp;<em>Smažené žampiony s vařeným bramborem a tatarkou</em></td>
- <td width='40' align='right'>84,-</td>
- </tr>
- <tr class='table-row-1'>
- <td width='840'><strong></strong>&nbsp;<em>Obalovaný losos s medem a hořčicí s bramborovou kaší  </em></td>
- <td width='40' align='right'>84,-</td>
- </tr>
- <tr class='table-row-2'>
- <td width='840'><strong></strong>&nbsp;<em>Pikantní kuřecí nudličky s dušenou rýží</em></td>
- <td width='40' align='right'>84,-</td>
- </tr>
- <tr class='table-row-1'>
- <td width='840'><strong></strong>&nbsp;<em>Těstovinový salát s kuřecím masem, zeleninou, jogurtovým dresinkem a pečivem</em></td>
- <td width='40' align='right'>84,-</td>
- </tr>
- <tr class='table-row-2'>
- <td width='840'><strong></strong>&nbsp;<em>Svíčková na smetaně s houskovým knedlíkem</em></td>
- <td width='40' align='right'>95,-</td>
- </tr>
-</table>
-</div>
+                    <div id="div2" class="none">
+                        <h3 class="subh3">Úterý 29.&nbsp;květen&nbsp;2018</h3>
+                        <table class="table">
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td width="40" align="right">Cena</td>
+                            </tr>
+                            <tr class='table-row-1'>
+                                <td width='840'><strong>POLÉVKA:</strong>&nbsp;<em>Fazolová 1,7,9</em></td>
+                                <td width='40' align='right'>&nbsp;</td>
+                            </tr>
+                            <tr class='table-row-2'>
+                                <td width='840'><strong></strong>&nbsp;<em>Segedínský guláš ,,Speciál“ s houskovým knedlíkem 1,3,7</em></td>
+                                <td width='40' align='right'>95,-</td>
+                            </tr>
+                            <tr class='table-row-1'>
+                                <td width='840'><strong></strong>&nbsp;<em>Italské penne se špenátem a kuřecím masem 1,3,7</em></td>
+                                <td width='40' align='right'>95,-</td>
+                            </tr>
+                            <tr class='table-row-2'>
+                                <td width='840'><strong></strong>&nbsp;<em>Vepřový steak po cikánsku s americkým bramborem 1</em></td>
+                                <td width='40' align='right'>95,-</td>
+                            </tr>
+                            <tr class='table-row-1'>
+                                <td width='840'><strong></strong>&nbsp;<em>Řecký gyros marinovaný v česneku s hranolkami a tzatziky 1,3,7</em></td>
+                                <td width='40' align='right'>110,-</td>
+                            </tr>
+                            <tr class='table-row-2'>
+                                <td width='840'><strong></strong>&nbsp;<em>150g Pečený losos na másle s chřestem, holandskou omáčkou a novým bramborem 3,4,7	</em></td>
+                                <td width='40' align='right'>165,-</td>
+                            </tr>
+                        </table>
+                    </div>
 
 
-<div id="div4" class="block">
-<h3 class="subh3">Čtvrtek 26.&nbsp;květen&nbsp;2016</h3>
-<table class="table">
-<tr>
-<td>&nbsp;</td><td width="40" align="right">Cena</td>
-</tr>
- <tr class='table-row-1'>
- <td width='840'><strong>POLÉVKA:</strong>&nbsp;<em>Italská s těstovinou  </em></td>
- <td width='40' align='right'>&nbsp;</td>
- </tr>
- <tr class='table-row-2'>
- <td width='840'><strong></strong>&nbsp;<em>Smažený holandský řízek se sýrem, bramborovou kaší a okurkou</em></td>
- <td width='40' align='right'>84,-</td>
- </tr>
- <tr class='table-row-1'>
- <td width='840'><strong></strong>&nbsp;<em>Kuřecí prsa na grilu s dušenou rýží </em></td>
- <td width='40' align='right'>84,-</td>
- </tr>
- <tr class='table-row-2'>
- <td width='840'><strong></strong>&nbsp;<em>Pikantní kovbojské fazole s grilovanou klobásou, chléb</em></td>
- <td width='40' align='right'>84,-</td>
- </tr>
- <tr class='table-row-1'>
- <td width='840'><strong></strong>&nbsp;<em>Zeleninový salát se smaženými tvarůžkami, medovo-hořčičný dresink a pečivo</em></td>
- <td width='40' align='right'>84,-</td>
- </tr>
- <tr class='table-row-2'>
- <td width='840'><strong></strong>&nbsp;<em>Jelení gulášek s cibulkou a houskovým knedlíkem </em></td>
- <td width='40' align='right'>105,-</td>
- </tr>
-</table>
-</div>
+                    <div id="div3" class="none">
+                        <h3 class="subh3">Středa 30.&nbsp;květen&nbsp;2018</h3>
+                        <table class="table">
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td width="40" align="right">Cena</td>
+                            </tr>
+                            <tr class='table-row-1'>
+                                <td width='840'><strong>POLÉVKA:</strong>&nbsp;<em>Italská s těstovinou 1,3,7,9</em></td>
+                                <td width='40' align='right'>&nbsp;</td>
+                            </tr>
+                            <tr class='table-row-2'>
+                                <td width='840'><strong></strong>&nbsp;<em>Zbojnická vepřová kýta na česneku a slanince s dušenou rýží 1</em></td>
+                                <td width='40' align='right'>95,-</td>
+                            </tr>
+                            <tr class='table-row-1'>
+                                <td width='840'><strong></strong>&nbsp;<em>Pečené koleno se zelím a bramborovým knedlíkem 1,3,7</em></td>
+                                <td width='40' align='right'>95,-</td>
+                            </tr>
+                            <tr class='table-row-2'>
+                                <td width='840'><strong></strong>&nbsp;<em>Kuřecí prsa na grilu s dijonskou omáčkou, dolar chips 1,7,10</em></td>
+                                <td width='40' align='right'>95,-</td>
+                            </tr>
+                            <tr class='table-row-1'>
+                                <td width='840'><strong></strong>&nbsp;<em>Svíčková na smetaně s houskovým knedlíkem 1,3,7,9,10</em></td>
+                                <td width='40' align='right'>110,-</td>
+                            </tr>
+                            <tr class='table-row-2'>
+                                <td width='840'><strong></strong>&nbsp;<em>   Hovězí cheeseburger s plátky slaniny, sýru, cibule a okurky s hranolkami 1,3,7 </em></td>
+                                <td width='40' align='right'>120,-</td>
+                            </tr>
+                        </table>
+                    </div>
 
 
-<div id="div5" class="none">
-<h3 class="subh3">Pátek 27.&nbsp;květen&nbsp;2016</h3>
-<table class="table">
-<tr>
-<td>&nbsp;</td><td width="40" align="right">Cena</td>
-</tr>
- <tr class='table-row-1'>
- <td width='840'><strong>POLÉVKA:</strong>&nbsp;<em>Kulajda</em></td>
- <td width='40' align='right'>&nbsp;</td>
- </tr>
- <tr class='table-row-2'>
- <td width='840'><strong></strong>&nbsp;<em>Smažená kuřecí kapsa se šunkou a sýrem, šťouchaný bramborem </em></td>
- <td width='40' align='right'>84,-</td>
- </tr>
- <tr class='table-row-1'>
- <td width='840'><strong></strong>&nbsp;<em>Labužnická vepřová játra s dušenou rýží</em></td>
- <td width='40' align='right'>84,-</td>
- </tr>
- <tr class='table-row-2'>
- <td width='840'><strong></strong>&nbsp;<em>Komeťácký flamendr s bramboráčky</em></td>
- <td width='40' align='right'>84,-</td>
- </tr>
- <tr class='table-row-1'>
- <td width='840'><strong></strong>&nbsp;<em>Lívanečky s medovo-brusinkovou omáčkou, tvarohem a cukrem </em></td>
- <td width='40' align='right'>84,-</td>
- </tr>
- <tr class='table-row-2'>
- <td width='840'><strong></strong>&nbsp;<em>Pečené kachní stehno s červeným zelím, 1/2 bramborový a 1/2houskový </em></td>
- <td width='40' align='right'>115,-</td>
- </tr>
-</table>
-</div>
-</div><h3 class="subh3ri">Přejeme dobrou chuť</h3></div>
+                    <div id="div4" class="none">
+                        <h3 class="subh3">Čtvrtek 31.&nbsp;květen&nbsp;2018</h3>
+                        <table class="table">
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td width="40" align="right">Cena</td>
+                            </tr>
+                            <tr class='table-row-1'>
+                                <td width='840'><strong>POLÉVKA:</strong>&nbsp;<em>Kuřecí vývar s nudlemi a zeleninou 1,3,9</em></td>
+                                <td width='40' align='right'>&nbsp;</td>
+                            </tr>
+                            <tr class='table-row-2'>
+                                <td width='840'><strong></strong>&nbsp;<em>Pikantní vídeňské kuřecí  smaženky s mačkaným bramborem s cibulkou a barbeque omáčkou 1,3,7</em></td>
+                                <td width='40' align='right'>95,-</td>
+                            </tr>
+                            <tr class='table-row-1'>
+                                <td width='840'><strong></strong>&nbsp;<em>Milánská roštěná s červeným vínem, bylinkové tagliatelle 1,3,7</em></td>
+                                <td width='40' align='right'>95,-</td>
+                            </tr>
+                            <tr class='table-row-2'>
+                                <td width='840'><strong></strong>&nbsp;<em>Labužnická vepřová játra s dušenou rýží 1</em></td>
+                                <td width='40' align='right'>95,-</td>
+                            </tr>
+                            <tr class='table-row-1'>
+                                <td width='840'><strong></strong>&nbsp;<em>Směs listových salátů s chřestem, kuřecím masem, bazalkovým pestem a bylinkovou bagetou 1,3</em></td>
+                                <td width='40' align='right'>110,-</td>
+                            </tr>
+                            <tr class='table-row-2'>
+                                <td width='840'><strong></strong>&nbsp;<em>Jelení sekané biftečky s brusinkovou omáčkou,červeným vínem a bramborovými kroketami 1,3,7</em></td>
+                                <td width='40' align='right'>120,-</td>
+                            </tr>
+                        </table>
+                    </div>
+
+
+                    <div id="div5" class="block">
+                        <h3 class="subh3">Pátek 1.&nbsp;červen&nbsp;2018</h3>
+                        <table class="table">
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td width="40" align="right">Cena</td>
+                            </tr>
+                            <tr class='table-row-1'>
+                                <td width='840'><strong>POLÉVKA:</strong>&nbsp;<em>Frankfurtská 1,7,9</em></td>
+                                <td width='40' align='right'>&nbsp;</td>
+                            </tr>
+                            <tr class='table-row-2'>
+                                <td width='840'><strong></strong>&nbsp;<em>Přírodní vepřová kapsa plněná zelím,uzeným masem a cibulkou s mačkaným bramborem 1</em></td>
+                                <td width='40' align='right'>95,-</td>
+                            </tr>
+                            <tr class='table-row-1'>
+                                <td width='840'><strong></strong>&nbsp;<em>Kuřecí živáňské maso pečené s hranolkami a tatarkou 1,3</em></td>
+                                <td width='40' align='right'>95,-</td>
+                            </tr>
+                            <tr class='table-row-2'>
+                                <td width='840'><strong></strong>&nbsp;<em>Kuřecí steak se zeleninovým kuskusem a rajčatovým concasé </em></td>
+                                <td width='40' align='right'>95,-</td>
+                            </tr>
+                            <tr class='table-row-1'>
+                                <td width='840'><strong></strong>&nbsp;<em>Lívanečky s brusinkovo-medovou omáčkou, tvarohem a cukrem 1,3,7</em></td>
+                                <td width='40' align='right'>95,-</td>
+                            </tr>
+                            <tr class='table-row-2'>
+                                <td width='840'><strong></strong>&nbsp;<em>Pečené kachní stehno s červeným zelím 1/2bramborový a 1/2houskový knedlík 1,3,7   </em></td>
+                                <td width='40' align='right'>125,-</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div><h3 class="subh3ri">Přejeme dobrou chuť</h3>
+            </div>
 
 
 
-<!--content end--> <div class="clearfoot"></div> 
-</div>
+            <!--content end--> <div class="clearfoot"></div>
+        </div>
 
 
 
-<!--wrap end--> </div>
+        <!--wrap end-->
+    </div>
 
-<div id="footer"></div>
-<script>
-    (function (i, s, o, g, r, a, m) {
+    <div id="footer"></div>
+    <script>
+        (function (i, s, o, g, r, a, m) {
         i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
             (i[r].q = i[r].q || []).push(arguments)
         }, i[r].l = 1 * new Date(); a = s.createElement(o),
-        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-    ga('create', 'UA-47872310-1', 'kometapub.cz');
-    ga('send', 'pageview');
+        ga('create', 'UA-47872310-1', 'kometapub.cz');
+        ga('send', 'pageview');
 
-</script>
+    </script>
 </body>
 </html>
 

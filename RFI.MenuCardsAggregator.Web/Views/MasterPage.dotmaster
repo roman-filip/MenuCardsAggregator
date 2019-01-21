@@ -1,0 +1,17 @@
+﻿@viewModel RFI.MenuCardsAggregator.Web.ViewModels.MasterPageViewModel, RFI.MenuCardsAggregator.Web
+<!DOCTYPE html>
+<html lang="cs" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>{{value: Title}}</title>
+    <dot:RequiredResource Name="bootstrap" />
+    <link href="css/custom.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="jumbotron jumbotron-custom text-center">
+        <h1>{{value: Title}}</h1>
+    </div>
+
+    <dot:ContentPlaceHolder ID="MainContent" />
+</body>
+</html>

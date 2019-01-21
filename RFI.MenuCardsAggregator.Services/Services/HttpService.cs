@@ -9,7 +9,7 @@ namespace RFI.MenuCardsAggregator.Services.Services
 
         public async Task<string> GetAsync(string uri)
         {
-            using (var client = new HttpClient())
+            using (var client = new HttpClient(new HttpClientHandler { UseProxy = false }))
             {
                 var response = await client.GetAsync(uri);
                 response.EnsureSuccessStatusCode();

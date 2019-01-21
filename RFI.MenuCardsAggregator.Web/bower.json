@@ -1,0 +1,7 @@
+{
+  "name": "rfi.menucardsaggregator.web",
+  "private": true,
+  "dependencies": {
+		"bootstrap" : "3.3.7"
+  }
+}

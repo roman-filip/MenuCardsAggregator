@@ -1,0 +1,240 @@
+﻿{
+  "RestaurantName": "Padowetz restaurant",
+  "DayMenus": [
+    {
+      "Date": "2018-05-21T00:00:00",
+      "Foods": [
+        {
+          "Name": "Slepičí vývar s drobením  (1,3,7,9)",
+          "Price": 0.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Brokolicový krém s krutony (7)",
+          "Price": 0.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Bramborové gnocchi s gorgonzolovou omáčkou a kuřecími kousky, sypané vlašskými ořechy (1,3,7,8)",
+          "Price": 99.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Kuřecí steak na máslové kukuřici, šťouchané brambory se slaninou a cibulkou (1,3,7)",
+          "Price": 99.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Koprová omáčka, uzené maso, houskový knedlík (1,3,7)",
+          "Price": 99.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Grilovaný hermelín na lůžku čerstvých salátů, rozpečená bageta (1,3,7)",
+          "Price": 119.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "MINUTKA: Vepřové medailonky v parmazánovo-bylinkové krustě, mačkané brambory s jarní cibulkou (1,3,7)",
+          "Price": 159.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        }
+      ]
+    },
+    {
+      "Date": "2018-05-22T00:00:00",
+      "Foods": [
+        {
+          "Name": "Hovězí vývar s masem a nudlemi(1,3,7,9)",
+          "Price": 0.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Zelná polévka s klobásou (1,3,7)",
+          "Price": 0.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Cmunda po kaplicku, zelí, uzené maso (0)",
+          "Price": 99.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Vepřový gyros, opékané brambory a salátek Tzatziki (1,3,7)",
+          "Price": 99.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Kuřecí špíz s cherry rajčátky, bazalková omáčka, šťouchané brambory s cibulkou (1,3,7)",
+          "Price": 109.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "CAESAR salát s krutony a krůtím masem (římský salát, ančovičky, slanina, krutony, parmezán, dresing) (1,3,7,10)",
+          "Price": 119.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Minutka: PORTHAUS (smažená česneková roštěná), sedlácké brambory, tatarka (1,3,7)",
+          "Price": 159.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        }
+      ]
+    },
+    {
+      "Date": "2018-05-23T00:00:00",
+      "Foods": [
+        {
+          "Name": "Slepičí vývar s bylinkovým kapáním (1,3,7)",
+          "Price": 0.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Sedlácká polévka (1,3,7,9)",
+          "Price": 0.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Srbské rizoto sypané sýrem, okurek (1,7,10)",
+          "Price": 99.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Kuře na paprice, houskový knedlík (1,3,7)",
+          "Price": 99.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Original Twister \"PADOWETZ\" (1,3,7)",
+          "Price": 109.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Fazolový salát s pečenými rajčaty, chorizem a vepřovou panenkou(1,3,7)",
+          "Price": 119.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Anglický ROASTBEEF propečený do růžova, steakové hranolky, tatarská omáčka (3,10)",
+          "Price": 159.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        }
+      ]
+    },
+    {
+      "Date": "2018-05-24T00:00:00",
+      "Foods": [
+        {
+          "Name": "Hovězí vývar s krupicovými noky (1,3,7,3,9)",
+          "Price": 0.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Francouzká cibulačka se zapečeným toustem (1,3,7)",
+          "Price": 0.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Kuřecí prsíčka gratinovaná mozzarelou a rajčaty, mačkané brambory (1,3,7)",
+          "Price": 99.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Smažený vepřový řízek s česnekem, vařené brambory s máslem, okurek (1,3,7)",
+          "Price": 109.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Hovězí kostky na černém pivu, houskový knedlík (1,3,7)",
+          "Price": 119.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Salát s grilovaným lososem, granátovým jablkem a pomerančem (1,3,4)",
+          "Price": 129.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "MINUTKA: Hovězí FLANK STEAK s pečenou bramborou v alobalu se zakysanou smetanou (7)",
+          "Price": 159.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        }
+      ]
+    },
+    {
+      "Date": "2018-05-25T00:00:00",
+      "Foods": [
+        {
+          "Name": "Slepičí vývar s celestýnskými nudlemi (1,3,7,9)",
+          "Price": 0.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Maďarská fazolová (1,3,7)",
+          "Price": 0.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Kuřecí medajlonky na šalvěji a víně, zeleninové spätzle (1,3,7)",
+          "Price": 99.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Cordon bleu, bramborová kaše, okurkový salát (1,3,7)",
+          "Price": 109.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Lasagne bolognese s hovězím masem (1,3,7)",
+          "Price": 109.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Variace listových salátů s rukolou a cherry rajčaty, kuřecí nudličky v corn flakes, bylinkový dip, rozpečená bageta (1,3,7)",
+          "Price": 119.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "MINUTKA: Žebro Šunka Vejce, (Vepřová kotleta s kostí na grilu se sázeným vejcem s šunkou), steakové hranolky, tatarská omáčka (1,7)",
+          "Price": 149.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        }
+      ]
+    }
+  ]
+}

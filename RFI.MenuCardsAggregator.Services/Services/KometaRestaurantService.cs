@@ -3,6 +3,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using HtmlAgilityPack;
+using HtmlAgilityPack.CssSelectors.NetCore;
 using RFI.MenuCardsAggregator.Services.Model;
 
 namespace RFI.MenuCardsAggregator.Services.Services

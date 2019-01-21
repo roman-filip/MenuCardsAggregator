@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using HtmlAgilityPack;
+using HtmlAgilityPack.CssSelectors.NetCore;
 using RFI.MenuCardsAggregator.Services.Model;
 
 namespace RFI.MenuCardsAggregator.Services.Services
@@ -10,26 +12,25 @@ namespace RFI.MenuCardsAggregator.Services.Services
     {
         private decimal _defaultPrice;
 
-        protected override string CurrencySymbol
-        {
-            get { return ",- Kč"; }
-        }
+        private Regex _regexFoodWithPrice;
 
-        public override string RestaurantName
-        {
-            get { return "Na Tahu"; }
-        }
+        protected override string CurrencySymbol => ",\\s*- Kč";
+
+        public override string RestaurantName => "Na Tahu";
 
         public NaTahuRestaurantService()
         {
             Uri = @"http://www.na-tahu.cz/tydenni-menu/";
+
+            InitRegex();
         }
 
-        public NaTahuRestaurantService(IHttpService httpService)
-            : base(httpService)
-        { }
+        public NaTahuRestaurantService(IHttpService httpService) : base(httpService)
+        {
+            InitRegex();
+        }
 
-        public async override Task<MenuCard> GetMenuCardAsync()
+        public override async Task<MenuCard> GetMenuCardAsync()
         {
             var menuCard = new MenuCard(RestaurantName, Uri);
             var htmlDocument = await GetHtmlDocumentAsync();
@@ -56,8 +57,7 @@ namespace RFI.MenuCardsAggregator.Services.Services
 
         private void SetDefaultPrice(HtmlDocument htmlDocument)
         {
-            var soupDivNode = htmlDocument.DocumentNode.SelectNodes(".//div[contains(., 'cena menu')]").Last();
-            var menuPriceNode = soupDivNode.ChildNodes[soupDivNode.ChildNodes.Count - 3];
+            var menuPriceNode = htmlDocument.DocumentNode.SelectNodes(".//div[contains(., 'cena menu')]").Last();
             _defaultPrice = GetPriceFromHtmlNode(menuPriceNode);
         }
 
@@ -75,7 +75,7 @@ namespace RFI.MenuCardsAggregator.Services.Services
         {
             var dayMenu = new DayMenu { Date = date };
 
-            var soupDivNode = htmlDocument.DocumentNode.SelectNodes(string.Format(".//div[contains(., '{0}')]", dayName)).Last();
+            var soupDivNode = htmlDocument.DocumentNode.SelectNodes($".//div[contains(., '{dayName}')]").Last();
             var dayAndSoupStr = GetStringFomHtmlNode(soupDivNode);
             var soupName = dayAndSoupStr.Split(':')[1].Trim();
             dayMenu.Foods.Add(new Food { Name = soupName });
@@ -84,25 +84,42 @@ namespace RFI.MenuCardsAggregator.Services.Services
             while (foodDivNode != null && !foodDivNode.GetChildElements().Any())
             {
                 var foodStr = GetStringFomHtmlNode(foodDivNode);
-                var foodName = foodStr.Substring(3);
-                var foodPrice = _defaultPrice;
-
-                if (foodName.EndsWith(CurrencySymbol))
+                if (string.IsNullOrEmpty(foodStr))
                 {
-                    foodPrice = GetPriceFromHtmlNode(foodDivNode);
-                    foodName = foodName.Replace(" " + foodPrice + CurrencySymbol, "");
+                    break;
                 }
 
-                dayMenu.Foods.Add(new Food
+                if (foodStr.StartsWith("("))
+                {   // This is not next food but additional information for previous one
+                    dayMenu.Foods.Last().Name = dayMenu.Foods.Last().Name + " " + foodStr;
+                }
+                else
                 {
-                    Name = foodName,
-                    Price = foodPrice
-                });
+                    var foodStr2 = foodStr.Substring(3);
+                    var food = new Food();
+                    var match = _regexFoodWithPrice.Match(foodStr2);
+                    if (match.Success)
+                    {
+                        food.Name = match.Groups[1].ToString();
+                        food.Price = decimal.Parse(match.Groups[2].ToString());
+                    }
+                    else
+                    {
+                        food.Name = foodStr2;
+                        food.Price = _defaultPrice;
+                    }
+                    dayMenu.Foods.Add(food);
+                }
 
                 foodDivNode = foodDivNode.NextSiblingElement();
             }
 
             return dayMenu;
+        }
+
+        private void InitRegex()
+        {
+            _regexFoodWithPrice = new Regex($"(.*?) (\\d+)({CurrencySymbol})", RegexOptions.IgnoreCase | RegexOptions.Singleline);
         }
     }
 }
