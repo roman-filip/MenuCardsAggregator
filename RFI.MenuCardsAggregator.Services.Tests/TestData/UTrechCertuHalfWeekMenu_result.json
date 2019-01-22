@@ -1,0 +1,110 @@
+{
+  "RestaurantName": "U Tøech èertù",
+  "DayMenus": [
+    {
+      "Date": "2019-01-23T00:00:00",
+      "Foods": [
+        {
+          "Name": "Kuøecí vıvar s fritátovımi nudlemi a koøenovou zeleninou",
+          "Price": 0.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Èoèka na kyselo s opeèenou èertovskou klobásou, okurek, peèivo",
+          "Price": 89.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Smaenı hermelín s brusinkovou majonézou, šouchanı brambor s petrelkou",
+          "Price": 98.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Kachní filované prsíèko na pomeranèích s peèenou bramborovou kaší",
+          "Price": 108.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Babièèina svíèková na smetanì s brusinkami, šlehaèkou a houskovım knedlíkem",
+          "Price": 119.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        }
+      ]
+    },
+    {
+      "Date": "2019-01-24T00:00:00",
+      "Foods": [
+        {
+          "Name": "Brokolicovı krém se sırovımi krutony",
+          "Price": 0.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Peèené kuøecí stehno s nádivkou, okurkovı salát, šouchané brambory",
+          "Price": 89.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Vepøovı øízek s vídeòskım salátem, citrón",
+          "Price": 98.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Štìpánská hovìzí peèenì s domácím špekovım knedlíkem",
+          "Price": 108.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Babièèina svíèková na smetanì s brusinkami, šlehaèkou a houskovım knedlíkem",
+          "Price": 119.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        }
+      ]
+    },
+    {
+      "Date": "2019-01-25T00:00:00",
+      "Foods": [
+        {
+          "Name": "Èesneková se sırem a chlebovım krutonem",
+          "Price": 0.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Játra na roštu a cibulce s èervenım vínem, dušená rıe",
+          "Price": 89.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Kuøecí steak s houbovım ragù, peèená polenta, rukolovı salát",
+          "Price": 98.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Špalíèky z vepøové panenky se slaninovım kabátkem, švestkovou omáèkou s portskım a hranolky",
+          "Price": 108.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Babièèina svíèková na smetanì s brusinkami, šlehaèkou a houskovım knedlíkem",
+          "Price": 119.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        }
+      ]
+    }
+  ]
+}
