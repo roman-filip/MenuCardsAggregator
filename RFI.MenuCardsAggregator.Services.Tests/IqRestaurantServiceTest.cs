@@ -42,7 +42,7 @@ namespace RFI.MenuCardsAggregator.Services.Tests
 
         private void AssertMondayFoods(DayMenu dayMenu)
         {
-            Assert.AreEqual(new DateTime(2018, 5, 23), dayMenu.Date);
+            Assert.AreEqual(new DateTime(2019, 5, 23), dayMenu.Date);
             Assert.AreEqual(18, dayMenu.Foods.Count);
 
             AssertFood("Polévka: 0,33l Podkrkonošské kyselo", 22, dayMenu.Foods[0]);
@@ -62,7 +62,7 @@ namespace RFI.MenuCardsAggregator.Services.Tests
 
         private void AssertTuesdayFoods(DayMenu dayMenu)
         {
-            Assert.AreEqual(new DateTime(2018, 5, 24), dayMenu.Date);
+            Assert.AreEqual(new DateTime(2019, 5, 24), dayMenu.Date);
             Assert.AreEqual(18, dayMenu.Foods.Count);
 
             AssertFood("Polévka: 0,33l Marocká harira", 22, dayMenu.Foods[0]);
@@ -82,7 +82,7 @@ namespace RFI.MenuCardsAggregator.Services.Tests
 
         private void AssertWednesdayFoods(DayMenu dayMenu)
         {
-            Assert.AreEqual(new DateTime(2018, 5, 25), dayMenu.Date);
+            Assert.AreEqual(new DateTime(2019, 5, 25), dayMenu.Date);
             Assert.AreEqual(19, dayMenu.Foods.Count);
 
             AssertFood("Polévka: 0,33l Staročeská houbová omáčka s bramborami", 22, dayMenu.Foods[0]);
@@ -103,7 +103,7 @@ namespace RFI.MenuCardsAggregator.Services.Tests
 
         private void AssertThursdayFoods(DayMenu dayMenu)
         {
-            Assert.AreEqual(new DateTime(2018, 5, 26), dayMenu.Date);
+            Assert.AreEqual(new DateTime(2019, 5, 26), dayMenu.Date);
             Assert.AreEqual(19, dayMenu.Foods.Count);
 
             AssertFood("Polévka: 0,33l Čočková polévka s párkem", 22, dayMenu.Foods[0]);
@@ -124,7 +124,7 @@ namespace RFI.MenuCardsAggregator.Services.Tests
 
         private void AssertFridayFoods(DayMenu dayMenu)
         {
-            Assert.AreEqual(new DateTime(2018, 5, 27), dayMenu.Date);
+            Assert.AreEqual(new DateTime(2019, 5, 27), dayMenu.Date);
             Assert.AreEqual(18, dayMenu.Foods.Count);
 
             AssertFood("Polévka: 0,33l Ukrajinský boršč", 25, dayMenu.Foods[0]);
