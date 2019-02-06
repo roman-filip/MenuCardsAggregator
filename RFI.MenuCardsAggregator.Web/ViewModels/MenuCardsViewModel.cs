@@ -18,6 +18,7 @@ namespace RFI.MenuCardsAggregator.Web.ViewModels
             new TustoRestaurantService(),
             //new UEmilaRestaurantService(),
             new KometaRestaurantService(),
+            new UTrechCertuRestaurantService(),
             new SportBarRestaurantService()
             //new MyFoodRestaurantService(),
             //new IqRestaurantService()
