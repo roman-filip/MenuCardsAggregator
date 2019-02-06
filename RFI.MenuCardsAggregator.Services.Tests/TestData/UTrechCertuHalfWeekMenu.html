@@ -1,0 +1,1869 @@
+﻿<head>
+    <meta charset="utf-8">
+    <title>U Třech čertů</title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <link rel="icon" href="favicon.ico">
+    <!-- Le styles -->
+    <link href="/wp-content/themes/twentysixteen/style.css" rel="stylesheet">
+
+    <!-- jQuery library -->
+    <script src="/jquery-2.2.0.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script>
+        (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-80303097-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+    <script>
+        function initialize() {
+            var isDraggable = document.body.clientWidth > 480;
+            if (jQuery('#map-canvas-dvor').length > 0) {
+                var mapCanvasDvor = document.getElementById('map-canvas-dvor');
+                var myLatlngDvor = new google.maps.LatLng(49.1958017, 16.6107008);
+                var mapOptionsDvor = {
+                    draggable: isDraggable,
+                    center: myLatlngDvor,
+                    zoom: 15,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                    styles: [{ "featureType": "landscape", "stylers": [{ "saturation": -100 }, { "lightness": 65 }, { "visibility": "on" }] }, { "featureType": "poi", "stylers": [{ "saturation": -100 }, { "lightness": 51 }, { "visibility": "simplified" }] }, { "featureType": "road.highway", "stylers": [{ "saturation": -100 }, { "visibility": "simplified" }] }, { "featureType": "road.arterial", "stylers": [{ "saturation": -100 }, { "lightness": 30 }, { "visibility": "on" }] }, { "featureType": "road.local", "stylers": [{ "saturation": -100 }, { "lightness": 40 }, { "visibility": "on" }] }, { "featureType": "transit", "stylers": [{ "saturation": -100 }, { "visibility": "simplified" }] }, { "featureType": "administrative.province", "stylers": [{ "visibility": "off" }] }, { "featureType": "water", "elementType": "labels", "stylers": [{ "visibility": "on" }, { "lightness": -25 }, { "saturation": -100 }] }, { "featureType": "water", "elementType": "geometry", "stylers": [{ "hue": "#ffff00" }, { "lightness": -25 }, { "saturation": -97 }] }],
+                    scrollwheel: false,
+                    disableDefaultUI: true
+                };
+                var mapDvor = new google.maps.Map(mapCanvasDvor, mapOptionsDvor);
+                var markerDvor = new google.maps.Marker({
+                    position: myLatlngDvor,
+                    map: mapDvor,
+                    title: 'U Třech Čertů'
+                });
+            }
+            if (jQuery('#map-canvas-star').length > 0) {
+                var mapCanvasStar = document.getElementById('map-canvas-star');
+                var myLatlngStar = new google.maps.LatLng(49.1922922, 16.6071383);
+                var mapOptionsStar = {
+                    draggable: isDraggable,
+                    center: myLatlngStar,
+                    zoom: 15,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                    styles: [{ "featureType": "landscape", "stylers": [{ "saturation": -100 }, { "lightness": 65 }, { "visibility": "on" }] }, { "featureType": "poi", "stylers": [{ "saturation": -100 }, { "lightness": 51 }, { "visibility": "simplified" }] }, { "featureType": "road.highway", "stylers": [{ "saturation": -100 }, { "visibility": "simplified" }] }, { "featureType": "road.arterial", "stylers": [{ "saturation": -100 }, { "lightness": 30 }, { "visibility": "on" }] }, { "featureType": "road.local", "stylers": [{ "saturation": -100 }, { "lightness": 40 }, { "visibility": "on" }] }, { "featureType": "transit", "stylers": [{ "saturation": -100 }, { "visibility": "simplified" }] }, { "featureType": "administrative.province", "stylers": [{ "visibility": "off" }] }, { "featureType": "water", "elementType": "labels", "stylers": [{ "visibility": "on" }, { "lightness": -25 }, { "saturation": -100 }] }, { "featureType": "water", "elementType": "geometry", "stylers": [{ "hue": "#ffff00" }, { "lightness": -25 }, { "saturation": -97 }] }],
+                    scrollwheel: false,
+                    disableDefaultUI: true
+                };
+                var mapStar = new google.maps.Map(mapCanvasStar, mapOptionsStar);
+                var markerStar = new google.maps.Marker({
+                    position: myLatlngStar,
+                    map: mapStar,
+                    title: 'U Třech Čertů'
+                });
+            }
+
+            if (jQuery('#map-canvas-stef').length > 0) {
+                var mapCanvasStef = document.getElementById('map-canvas-stef');
+                var myLatlngStef = new google.maps.LatLng(49.2170000, 16.5992303);
+                var mapOptionsStef = {
+                    draggable: isDraggable,
+                    center: myLatlngStef,
+                    zoom: 15,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                    styles: [{ "featureType": "landscape", "stylers": [{ "saturation": -100 }, { "lightness": 65 }, { "visibility": "on" }] }, { "featureType": "poi", "stylers": [{ "saturation": -100 }, { "lightness": 51 }, { "visibility": "simplified" }] }, { "featureType": "road.highway", "stylers": [{ "saturation": -100 }, { "visibility": "simplified" }] }, { "featureType": "road.arterial", "stylers": [{ "saturation": -100 }, { "lightness": 30 }, { "visibility": "on" }] }, { "featureType": "road.local", "stylers": [{ "saturation": -100 }, { "lightness": 40 }, { "visibility": "on" }] }, { "featureType": "transit", "stylers": [{ "saturation": -100 }, { "visibility": "simplified" }] }, { "featureType": "administrative.province", "stylers": [{ "visibility": "off" }] }, { "featureType": "water", "elementType": "labels", "stylers": [{ "visibility": "on" }, { "lightness": -25 }, { "saturation": -100 }] }, { "featureType": "water", "elementType": "geometry", "stylers": [{ "hue": "#ffff00" }, { "lightness": -25 }, { "saturation": -97 }] }],
+                    disableDefaultUI: true,
+                    scrollwheel: false
+                };
+                var mapStef = new google.maps.Map(mapCanvasStef, mapOptionsStef);
+                var markerStef = new google.maps.Marker({
+                    position: myLatlngStef,
+                    map: mapStef,
+                    title: 'U Třech Čertů'
+                });
+            }
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+</head>
+<body>
+
+    <a id="facebookIcon" href="https://www.facebook.com/U-třech-čertů-Starobrněnská-266529430124702/" target="_blank"><img src="/images/facebook.ico" alt=""></a>
+    <a id="instagramIcon" href="https://www.instagram.com/u_trech_certu/" target="_blank"><img src="/images/instagram.png" alt=""></a>
+    <div class="pub_menu">
+        <div class="container menu_big" style="padding: 0px;">
+            <a href="/"><img id="logo" src="/images/logo.png" alt="logo"></a>
+            <nav id="nav-main">
+                <ul>
+                    <li><a href="/">PODNIKY</a></li>
+                    <li>
+                        <a href="" class="d">NABÍDKA</a>
+                        <ul>
+                            <li><a href="/nabidka-dvorakova">DVOŘÁKOVA</a></li>
+                            <li><a href="/nabidka-stefanikova">ŠTEFÁNIKOVA</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/rezervace">REZERVACE</a></li>
+                    <li><a href="#mapa">OTEVÍRACÍ DOBA</a></li>
+                    <li><a href="#mapa">KONTAKT</a></li>
+                </ul>
+            </nav>
+        </div>
+        <a href="#menu" id="toggle"><span></span></a>
+        <div id="menu">
+            <ul>
+                <li><a href="/">PODNIKY</a></li>
+                <li><a href="/nabidka-dvorakova">NABÍDKA DVOŘÁKOVA</a></li>
+                <li><a href="/nabidka-stefanikova">NABÍDKA ŠTEFÁNIKOVA</a></li>
+                <li><a href="/rezervace">REZERVACE</a></li>
+                <li><a href="#mapa">OTEVÍRACÍ DOBA</a></li>
+                <li><a href="#mapa">KONTAKT</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="star_header">
+        <div class="container">
+            <div class="row uvod-pub">
+                <div class="col-sm-12 dvorakova_header">
+                    <h1>U Třech čertů</h1>
+                    <h5>Starobrněnská 7</h5>
+                    <a href="/rezervace">
+                        <button type="button">REZERVOVAT<img id="stolek" src="/images/rezervace-stul-ico.png"></button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#denni_menu" aria-controls="denni_menu" role="tab" data-toggle="tab">Denní menu</a></li>
+            <li role="presentation"><a href="#jidelak" aria-controls="profile" role="tab" data-toggle="tab">Jídelní lístek</a></li>
+            <li role="presentation"><a href="#napojak" aria-controls="messages" role="tab" data-toggle="tab">Nápojový lístek</a></li>
+            <li role="presentation"><a href="#vinny" aria-controls="messages" role="tab" data-toggle="tab">Vinný lístek</a></li>
+        </ul>
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="denni_menu">
+                <table id="menuTable"><tr class="menu_line"><td colspan="2">Středa</td></tr><tr><td>Kuřecí vývar s fritátovými nudlemi a kořenovou zeleninou</td><td></td></tr><tr><td>Čočka na kyselo s opečenou čertovskou klobásou, okurek, pečivo</td><td>89Kč</td></tr><tr><td>Smažený hermelín s brusinkovou majonézou, šťouchaný brambor s petrželkou</td><td>98Kč</td></tr><tr><td>Kachní filované prsíčko na pomerančích s pečenou bramborovou kaší</td><td>108Kč</td></tr><tr><td>Babiččina svíčková na smetaně s brusinkami, šlehačkou a houskovým knedlíkem</td><td>119Kč</td></tr><tr class="menu_line"><td colspan="2">Čtvrtek</td></tr><tr><td>Brokolicový krém se sýrovými krutony</td><td></td></tr><tr><td>Pečené kuřecí stehno s nádivkou, okurkový salát, šťouchané brambory</td><td>89Kč</td></tr><tr><td>Vepřový řízek s vídeňským salátem, citrón</td><td>98Kč</td></tr><tr><td>Štěpánská hovězí pečeně s domácím špekovým knedlíkem</td><td>108Kč</td></tr><tr><td>Babiččina svíčková na smetaně s brusinkami, šlehačkou a houskovým knedlíkem</td><td>119Kč</td></tr><tr class="menu_line"><td colspan="2">Pátek</td></tr><tr><td>Česneková se sýrem a chlebovým krutonem</td><td></td></tr><tr><td>Játra na roštu a cibulce s červeným vínem, dušená rýže</td><td>89Kč</td></tr><tr><td>Kuřecí steak s houbovým ragů, pečená polenta, rukolový salát</td><td>98Kč</td></tr><tr><td>Špalíčky z vepřové panenky se slaninovým kabátkem, švestkovou omáčkou s portským a hranolky</td><td>108Kč</td></tr><tr><td>Babiččina svíčková na smetaně s brusinkami, šlehačkou a houskovým knedlíkem</td><td>119Kč</td></tr></table>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="jidelak">
+                &lt;
+                <table width="511">
+                    <tbody>
+                        <tr>
+                            <td width="464"><span style="font-size: 24pt;"><strong>Polévky:</strong></span></td>
+                            <td width="47"></td>
+                        </tr>
+                        <tr>
+                            <td>Gulášová polévka s bramborem (cibulkou, pečivo) 1,3,12</td>
+                            <td>56,-</td>
+                        </tr>
+                        <tr>
+                            <td>Česneková polévka (s chlebovými krutony) 9,12</td>
+                            <td>53,-</td>
+                        </tr>
+                        <tr>
+                            <td>Polévka dle denní nabídky</td>
+                            <td>50,-</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><span style="font-size: 24pt;"><strong>Něco k pivu:</strong></span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Tatarský biftek s topinkami a česnekem</td>
+                            <td>198,-</td>
+                        </tr>
+                        <tr>
+                            <td>(tataráček Vám na požádání namícháme) 1,3,7,12</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Nakládané tvarůžky</td>
+                            <td>115,-</td>
+                        </tr>
+                        <tr>
+                            <td>(Nakládané tvarůžky s červenou cibulkou, s čertovským salátkem) 1,7,3,12</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Domácí nakládaný hermelín s ořechy a brusinkami</td>
+                            <td>115,-</td>
+                        </tr>
+                        <tr>
+                            <td>(hermelín naložený s vlašskými ořechy a kořením, pečivo) 1,3,8,12</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Domácí čertovský nakládaný hermelín</td>
+                            <td>115,-</td>
+                        </tr>
+                        <tr>
+                            <td>(hermelín naložený v pikantní zelenině a chilli, pečivo) 1,3,12</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Utopenec (lehce pikantní š čertovským salátkem) 1,3,7,12</td>
+                            <td>99,-</td>
+                        </tr>
+                        <tr>
+                            <td>Čertovská klobáska na grilu, hořčice, křen, pečivo 1,3,7,10,12</td>
+                            <td>119,-</td>
+                        </tr>
+                        <tr>
+                            <td width="464">Česneková pivní sláma (s omáčkou z modrého sýra a čertovskou omáčkou) 1,3,7,10,12</td>
+                            <td>92,-</td>
+                        </tr>
+                        <tr>
+                            <td>Staročeské bramborové chipsy s čertovskou majonézou 3,7,10,12</td>
+                            <td>92,-</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><span style="font-size: 24pt;"><strong>Hotovky:</strong></span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Starobrněnský gulášek s houskovým knedlíkem 1,3,7,12</td>
+                            <td>194,-</td>
+                        </tr>
+                        <tr>
+                            <td width="464">(hovězí guláš na základu z Bratčického černého piva, s houskovým knedlíkem , slaninkou a cibulkou)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Svíčková na smetaně</td>
+                            <td>198,-</td>
+                        </tr>
+                        <tr>
+                            <td width="464">(domácím žemlovým knedlíkem s brusinkami a zakysanou smetanou) 1,3,7,9,12</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Pečené filované kolínko se zelím, houskový knedlík</td>
+                            <td>178,-</td>
+                        </tr>
+                        <tr>
+                            <td>(pečené koleno na černém pivě s kysaným zelím, houskový knedlík) 12</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td> Staročeské pečené kachní stehýnko na sádle a tymiánu</td>
+                            <td>199,-</td>
+                        </tr>
+                        <tr>
+                            <td width="464">(konfitované a dozlatova propečené stehýnko s kysaným zelím a houskovým knedlíkem) 1,3,7,12</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><span style="font-size: 24pt;"><strong>Čertovská klasika:</strong></span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Smažený sýr s hranolkami</td>
+                            <td>174,-</td>
+                        </tr>
+                        <tr>
+                            <td>(jídlo oblíbené napříč generacemi, servírujeme s domácí tatarkou) 1,3,7</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Kuřecí řízek s bramborovým salátem</td>
+                            <td>194,-</td>
+                        </tr>
+                        <tr>
+                            <td>(v kukuřičné strouhance se sezamovými semínky a limetkou) 1,3,7</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Vepřový řízek s bramborovým salátem</td>
+                            <td>194,-</td>
+                        </tr>
+                        <tr>
+                            <td>(marinovaný v česneku a bylinkách) 1,3,7</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Pěčený prstruh na bylinkách s opečenou bagetou, citron</td>
+                            <td>178,-</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><span style="font-size: 24pt;"><strong>Speciality:</strong></span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Čertovy vidle 3,7,10,12</td>
+                            <td>219,-</td>
+                        </tr>
+                        <tr>
+                            <td width="464">(vepřová panenka obalená v anglické slanině s cibulkou, paprikou, žampiony, cuketou, lilkem, s omáčkou Blue cheese a čertovským salátkem)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Čertovy vidle 3,7,10,12</td>
+                            <td>219,-</td>
+                        </tr>
+                        <tr>
+                            <td width="464">(Kuřecí prsa obalená v anglické slanině s cibulkou, paprikou, žampiony, cuketou, lilkem, s omáčkou Blue cheese a čertovským salátkem)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Pekelně prouzená masitá žebra</td>
+                            <td>229,-</td>
+                        </tr>
+                        <tr>
+                            <td>(křen, hořčice, s čertovským salátkem, okurek) 1,3,7,10,12</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Vepřová žebra - Spare ribs</td>
+                            <td>229,-</td>
+                        </tr>
+                        <tr>
+                            <td>(naložená v medu a chilli s křenem a hořčicí) 1,3,7,10,12</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Grilovaná kuřecí křídla</td>
+                            <td>198,-</td>
+                        </tr>
+                        <tr>
+                            <td>(naložená v medu, chilli a pivu s omáčkami blue cheese a BBQ) 1,3,7,10,12</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><span style="font-size: 24pt;"><strong>Burgery:</strong></span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Hovězí burger</td>
+                            <td>198,-</td>
+                        </tr>
+                        <tr>
+                            <td width="464">(Hovězí maso v naši domácí bulce se sýrem chedar, slaninkou a čerstvou zeleninou  s kopou hranolek) 1,3,710,12</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Kuřecí Burger</td>
+                            <td>198,-</td>
+                        </tr>
+                        <tr>
+                            <td width="464">(kuřecí maso v naši domácí bulce se slaninovým chipsem, pikantním dresinkem, čerstvou zeleninou a kopou hranolek) 1,3,7,10,12</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><span style="font-size: 24pt;"><strong>XXL žranice:</strong></span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Koryto (jídlo pro celý stůl)</td>
+                            <td>666,-</td>
+                        </tr>
+                        <tr>
+                            <td width="464">(koryto napěchované těmi nejlepšími čertovskými dobrotami k pivu (kuřecí křídla, vepřové koleno bez kosti, Vepřová žebírka, grilovaná klobása, uzená žebra, hořčice, křen, okurek) 1,3,7,10</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Řízková fošna</td>
+                            <td>429,-</td>
+                        </tr>
+                        <tr>
+                            <td width="464">(půl kila smažených kuřecích a vepřových řízečků, okurek, kozí rohy a čertovský salátek, vhodné pro menší partičku) 1,3,7,10</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Pečené vepřové koleno (vykoštěné) 10,12</td>
+                            <td>339,-</td>
+                        </tr>
+                        <tr>
+                            <td width="464">(pečené vykoštěné  koleno na česneku, čertovský salátek, okurek, křen, hořčice, kozí rohy)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><span style="font-size: 24pt;"><strong>Steaky:</strong></span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Hovězí svíčková s grilovanou zeleninou (s pepřovou omáčkou) 1,7,10,12</td>
+                            <td>286,-</td>
+                        </tr>
+                        <tr>
+                            <td>Vepřová krkovice s demi glace</td>
+                            <td>198,-</td>
+                        </tr>
+                        <tr>
+                            <td>Kuřecí steak s fazolkami se slaninou</td>
+                            <td>189,-</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><span style="font-size: 24pt;"><strong>Omáčky:</strong></span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Pepřová (teplá) 7,10,12                          BBQ (studená) 10,12</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Hřibková (teplá) 7,12                              Sweet Chilli (studená) 12</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Demi glace (teplá) 1,10,12                    Čertovská majonéza (studená) 3,7,10,12</td>
+                        </tr>
+                        <tr>
+                            <td>Blue cheese (studená) 3,7,12               Tatarská omáčka (studená) 3,7,10,12</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Česneková (studená) 3,7,10,12</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><span style="font-size: 24pt;"><strong>Dětská jídla:</strong></span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Smažený sýr s hranolkami a tatarkou</td>
+                            <td>95,-</td>
+                        </tr>
+                        <tr>
+                            <td>Kuřecí řízek se šťouchaným bramborem</td>
+                            <td>98,-</td>
+                        </tr>
+                        <tr>
+                            <td>Vepřový řízek se šťouchaným bramborem</td>
+                            <td>98,-</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><span style="font-size: 24pt;"><strong>Přílohy:</strong></span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Vařené brambory maštěné máslem</td>
+                            <td>41,-</td>
+                        </tr>
+                        <tr>
+                            <td>Šťouchané brambory s cibulkou a slaninkou</td>
+                            <td>45,-</td>
+                        </tr>
+                        <tr>
+                            <td>Opékané brambory s tymiánem</td>
+                            <td>44,-</td>
+                        </tr>
+                        <tr>
+                            <td>Domácí hranolky se slupkou</td>
+                            <td>46,-</td>
+                        </tr>
+                        <tr>
+                            <td>Zelené fazolové lusky se zauzenou slaninou</td>
+                            <td>49,-</td>
+                        </tr>
+                        <tr>
+                            <td>Domácí žemlový knedlík 1,3,7</td>
+                            <td>44,-</td>
+                        </tr>
+                        <tr>
+                            <td> Rozpečený chlebový hřebínek 1,3,7</td>
+                            <td>39,-</td>
+                        </tr>
+                        <tr>
+                            <td>Rozpečená bylinková bagetka 1,3,7</td>
+                            <td>39,-</td>
+                        </tr>
+                        <tr>
+                            <td>Grilovaná zelenina na olivovém oleji</td>
+                            <td>59,-</td>
+                        </tr>
+                        <tr>
+                            <td>Ošatka pečiva 1,3,7</td>
+                            <td>25,-</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><span style="font-size: 24pt;"><strong>Saláty:</strong></span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Caesar salát (s kuřecím masem, hoblinami parmazánu, krutony) 1,3,7,10,12</td>
+                            <td>165,-</td>
+                        </tr>
+                        <tr>
+                            <td>Řecký salát (zeleninový salát s řeckým sýrem feta, černé olivy) 7,12</td>
+                            <td>149,-</td>
+                        </tr>
+                        <tr>
+                            <td>Šopský salát</td>
+                            <td>55,-</td>
+                        </tr>
+                        <tr>
+                            <td>Čertovský zelný salátek (zelný salát s feferonkou)</td>
+                            <td>46,-</td>
+                        </tr>
+                        <tr>
+                            <td>Maly míchaný salát (ve sladko-kyselém nálevu)</td>
+                            <td>51,-</td>
+                        </tr>
+                        <tr>
+                            <td>Okurkový salát (ve sladko-kyselém nálevu)</td>
+                            <td>51,-</td>
+                        </tr>
+                        <tr>
+                            <td>Rajčatový salát (s cibulkou)</td>
+                            <td>51,-</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><span style="font-size: 24pt;"><strong>Moučníky:</strong></span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Cheese Cake s malinovým přelivem</td>
+                            <td>76,-</td>
+                        </tr>
+                        <tr>
+                            <td>Domácí jablečný štrůdl s hrozinkami a kopečkem zmrzliny 1,3,7,12</td>
+                            <td>56,-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="napojak">
+                <table width="575">
+                    <tbody>
+                        <tr>
+                            <td width="464"><span style="font-size: 18pt;"><strong>Nápojový lístek</strong></span></td>
+                            <td width="47"></td>
+                            <td width="64"></td>
+                        </tr>
+                        <tr>
+                            <td><span style="font-size: 18pt;"><strong>Naše piva čepujeme na hladinku</strong></span></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Zámecké pivo Bratčice nefiltrované 10°</td>
+                            <td colspan="2">34,-/23,-   /1p.</td>
+                        </tr>
+                        <tr>
+                            <td>Zámecké pivo Bratčice nefiltrované 12°</td>
+                            <td colspan="2">38,-/27,-   /1p.</td>
+                        </tr>
+                        <tr>
+                            <td>Zámecké pivo Bratčice nefiltrované polotmavé 13°</td>
+                            <td colspan="2">39,-/28,-   /1p.</td>
+                        </tr>
+                        <tr>
+                            <td>Zámecké pivo Bratčice filtrovaná 11°</td>
+                            <td colspan="2">37,-/26,-   /1p.</td>
+                        </tr>
+                        <tr>
+                            <td>Zámecké pivo Bratčice černá 12°</td>
+                            <td colspan="2">37,-/26,-   /1p.</td>
+                        </tr>
+                        <tr>
+                            <td>Pšeničný ležák z Krušovic</td>
+                            <td colspan="2">39,-/28,-   /1p</td>
+                        </tr>
+                        <tr>
+                            <td>Nealkoholické pivo Zlatopramen fríí</td>
+                            <td colspan="2">34,-/23,-   /1p.</td>
+                        </tr>
+                        <tr>
+                            <td>Apple Cider Strongbow (Čepovaný)    0,3l</td>
+                            <td colspan="2">38,-            /1p.</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><span style="font-size: 18pt;"><strong>Pivní koktejl:</strong></span></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Radler – pivo světlá 11°+ Sprite</td>
+                            <td colspan="2">44,-/36,-    /1p.</td>
+                        </tr>
+                        <tr>
+                            <td>Pivní ochutnávková lišta 5x 0,2l</td>
+                            <td>90,-</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><span style="font-size: 18pt;"><strong>Káva:</strong></span></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Ristretto</td>
+                            <td></td>
+                            <td>44,-</td>
+                        </tr>
+                        <tr>
+                            <td>Expresso</td>
+                            <td></td>
+                            <td>44,-</td>
+                        </tr>
+                        <tr>
+                            <td>Expresso Lungo</td>
+                            <td></td>
+                            <td>44,-</td>
+                        </tr>
+                        <tr>
+                            <td>Expresso Machiato</td>
+                            <td></td>
+                            <td>46,-</td>
+                        </tr>
+                        <tr>
+                            <td>Cappuccino</td>
+                            <td></td>
+                            <td>49,-</td>
+                        </tr>
+                        <tr>
+                            <td>Latte Machiato</td>
+                            <td></td>
+                            <td>56,-</td>
+                        </tr>
+                        <tr>
+                            <td>Frappe</td>
+                            <td></td>
+                            <td>56,-</td>
+                        </tr>
+                        <tr>
+                            <td>Eis cafe se zmrzlinou</td>
+                            <td></td>
+                            <td>65,-</td>
+                        </tr>
+                        <tr>
+                            <td>Turecká káva</td>
+                            <td></td>
+                            <td>43,-</td>
+                        </tr>
+                        <tr>
+                            <td>Veškeré teplé kávy Vám rádi připravíme i bez kofeinu</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td width="464">Na Vaši domácí oslavu nebo ke sportovním událostem v pohodlí domova si můžete všechny druhy našich Bratčických piv odnést v 1,5 l. petlahvích  nebo v pětilitrových soudcích, které lze použít opakovaně a pivo z nich chutná stejně jako u nás v hospůdce.</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td width="464"></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Hladinka velkého piva 0,45l, malého 0,25l</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><span style="font-size: 18pt;"><strong>Čaje Teekanee a ostatní teplé nápoje</strong></span></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Černý čaj</td>
+                            <td></td>
+                            <td>39,-</td>
+                        </tr>
+                        <tr>
+                            <td>Zelený čaj</td>
+                            <td></td>
+                            <td>39,-</td>
+                        </tr>
+                        <tr>
+                            <td>Bylinné čaje (heřmánek, máta)</td>
+                            <td></td>
+                            <td>39,-</td>
+                        </tr>
+                        <tr>
+                            <td>Ovocné čaje dle výběru</td>
+                            <td></td>
+                            <td>39,-</td>
+                        </tr>
+                        <tr>
+                            <td>Čaj z čerstvé máty</td>
+                            <td></td>
+                            <td>49,-</td>
+                        </tr>
+                        <tr>
+                            <td>Čaj z čerstvého zázvoru</td>
+                            <td></td>
+                            <td>49,-</td>
+                        </tr>
+                        <tr>
+                            <td>0,3l Grog s citrónem</td>
+                            <td></td>
+                            <td>49,-</td>
+                        </tr>
+                        <tr>
+                            <td>0,3l Svařené víno – bílé/červené</td>
+                            <td></td>
+                            <td>55,-</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><span style="font-size: 18pt;"><strong>Nealko</strong></span></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Domácí malinovo-bezinková limonáda</td>
+                            <td>0,4l</td>
+                            <td>54,-</td>
+                        </tr>
+                        <tr>
+                            <td>Domácí pomerančová limonáda se zázvorem</td>
+                            <td>0,4l</td>
+                            <td>54,-</td>
+                        </tr>
+                        <tr>
+                            <td>Domácí limetková limonáda s mátou</td>
+                            <td>0,4l</td>
+                            <td>54,-</td>
+                        </tr>
+                        <tr>
+                            <td>Coca-cola</td>
+                            <td>0,33l</td>
+                            <td>41,-</td>
+                        </tr>
+                        <tr>
+                            <td>Coca-cola LIGHT</td>
+                            <td>0,33l</td>
+                            <td>41,-</td>
+                        </tr>
+                        <tr>
+                            <td>Coca-cola ZERO</td>
+                            <td>0,33l</td>
+                            <td>41,-</td>
+                        </tr>
+                        <tr>
+                            <td>Sprite</td>
+                            <td>0,33l</td>
+                            <td>41,-</td>
+                        </tr>
+                        <tr>
+                            <td>Orangina</td>
+                            <td>0,25l</td>
+                            <td>41,-</td>
+                        </tr>
+                        <tr>
+                            <td>Chito Tonic</td>
+                            <td>0,25l</td>
+                            <td>41,-</td>
+                        </tr>
+                        <tr>
+                            <td>Chito GINGER</td>
+                            <td>0,25l</td>
+                            <td>41,-</td>
+                        </tr>
+                        <tr>
+                            <td>Rajec neperlivá</td>
+                            <td>0,25l</td>
+                            <td>38,-</td>
+                        </tr>
+                        <tr>
+                            <td>Rajec jemně perlivá</td>
+                            <td>0,25l</td>
+                            <td>38,-</td>
+                        </tr>
+                        <tr>
+                            <td>Rajec 0,75l</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>      -Neperlivá minerální voda</td>
+                            <td>0,75l</td>
+                            <td>72,-</td>
+                        </tr>
+                        <tr>
+                            <td>      -Jemně perlivá minerální voda</td>
+                            <td>0,75l</td>
+                            <td>72,-</td>
+                        </tr>
+                        <tr>
+                            <td>Džbán vody z kohoutku</td>
+                            <td>1 litr</td>
+                            <td>59,-</td>
+                        </tr>
+                        <tr>
+                            <td>Kofola</td>
+                            <td>0,5l/0,3l</td>
+                            <td>39,-/28,-</td>
+                        </tr>
+                        <tr>
+                            <td>Točená VInnea limonáda</td>
+                            <td>0,5l/0,3l</td>
+                            <td>38,-/27,-</td>
+                        </tr>
+                        <tr>
+                            <td>Red Bull</td>
+                            <td>0,25l</td>
+                            <td>56,-</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><span style="font-size: 18pt;"><strong>Rauch 0,2l:</strong></span></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Pomeranč s dužinou</td>
+                            <td></td>
+                            <td>41,-</td>
+                        </tr>
+                        <tr>
+                            <td>Jablko</td>
+                            <td></td>
+                            <td>41,-</td>
+                        </tr>
+                        <tr>
+                            <td>Jahoda</td>
+                            <td></td>
+                            <td>41,-</td>
+                        </tr>
+                        <tr>
+                            <td>Multivitamin</td>
+                            <td></td>
+                            <td>41,-</td>
+                        </tr>
+                        <tr>
+                            <td>Černý rybíz</td>
+                            <td></td>
+                            <td>41,-</td>
+                        </tr>
+                        <tr>
+                            <td>Mix Rajec + Rauch</td>
+                            <td></td>
+                            <td>79,-</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><span style="font-size: 18pt;"><strong>Aperitivy</strong></span></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Aperol</td>
+                            <td>0,1l</td>
+                            <td>49,-</td>
+                        </tr>
+                        <tr>
+                            <td>Campari</td>
+                            <td>0,04l</td>
+                            <td>42,-</td>
+                        </tr>
+                        <tr>
+                            <td>Cinzano (rossi/extra dry/bianco)</td>
+                            <td>0,08l</td>
+                            <td>49,-</td>
+                        </tr>
+                        <tr>
+                            <td>Crodino (nealko)</td>
+                            <td>0,1l</td>
+                            <td>39,-</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><span style="font-size: 18pt;"><strong>Cognac a Brandy</strong></span></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Remy Martin VSOP</td>
+                            <td>0,04l</td>
+                            <td>119,-</td>
+                        </tr>
+                        <tr>
+                            <td>Remy Martin Coeur De Cognac</td>
+                            <td>0,04l</td>
+                            <td>169,-</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><span style="font-size: 18pt;"><strong>Metaxa</strong></span></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Metaxa 5*</td>
+                            <td>0,04l</td>
+                            <td>59,-</td>
+                        </tr>
+                        <tr>
+                            <td>Metaxa Honey</td>
+                            <td>0,04l</td>
+                            <td>59,-</td>
+                        </tr>
+                        <tr>
+                            <td>Metaxa 7*</td>
+                            <td>0,04l</td>
+                            <td>79,-</td>
+                        </tr>
+                        <tr>
+                            <td>Metaxa Private reserva</td>
+                            <td>0,04l</td>
+                            <td>179,-</td>
+                        </tr>
+                        <tr>
+                            <td><span style="font-size: 18pt;"><strong>Vodka</strong></span></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Smirnoff Red</td>
+                            <td>0,04l</td>
+                            <td>59,-</td>
+                        </tr>
+                        <tr>
+                            <td>Absolut</td>
+                            <td>0,04l</td>
+                            <td>59,-</td>
+                        </tr>
+                        <tr>
+                            <td>Russian Standard</td>
+                            <td>0,04l</td>
+                            <td>59,-</td>
+                        </tr>
+                        <tr>
+                            <td>Pravda Vodka</td>
+                            <td>0,04l</td>
+                            <td>99,-</td>
+                        </tr>
+                        <tr>
+                            <td><span style="font-size: 18pt;"><strong>Tequila</strong></span></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>El Jimador Blanco</td>
+                            <td>0,04l</td>
+                            <td>55,-</td>
+                        </tr>
+                        <tr>
+                            <td>El Jimador Reposado</td>
+                            <td>0,04l</td>
+                            <td>55,-</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><span style="font-size: 18pt;"><strong>Gin</strong></span></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Beefeater</td>
+                            <td>0,04l</td>
+                            <td>59,-</td>
+                        </tr>
+                        <tr>
+                            <td>Bombay gin</td>
+                            <td>0,04l</td>
+                            <td>65,-</td>
+                        </tr>
+                        <tr>
+                            <td>Hendrick´s</td>
+                            <td>0,04l</td>
+                            <td>99,-</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><span style="font-size: 18pt;"><strong>Likéry</strong></span></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Black Fox</td>
+                            <td>0,04l</td>
+                            <td>59,-</td>
+                        </tr>
+                        <tr>
+                            <td>Jägermeister - ledově namražený</td>
+                            <td>0,04l</td>
+                            <td>59,-</td>
+                        </tr>
+                        <tr>
+                            <td>Baileys Original</td>
+                            <td>0,04l</td>
+                            <td>59,-</td>
+                        </tr>
+                        <tr>
+                            <td>Kahlua</td>
+                            <td>0,04l</td>
+                            <td>59,-</td>
+                        </tr>
+                        <tr>
+                            <td>Underberg Bylinný likér/digestiv</td>
+                            <td>0,02l</td>
+                            <td>29,-</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><span style="font-size: 18pt;"><strong>Čertovská rumotéka s Rumy</strong></span></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Božkov Republica – Rum Exclusive 38% -  blend -Nicaragua,</td>
+                            <td>0,04l</td>
+                            <td>59,-</td>
+                        </tr>
+                        <tr>
+                            <td>Captain Bucanero elixir – Dominikánská Republika</td>
+                            <td>0,04l</td>
+                            <td>59,-</td>
+                        </tr>
+                        <tr>
+                            <td>Captain Morgan Spiced Gold</td>
+                            <td>0,04l</td>
+                            <td>59,-</td>
+                        </tr>
+                        <tr>
+                            <td>Havana Club Anejo 3 anos – Cuba</td>
+                            <td>0,04l</td>
+                            <td>59,-</td>
+                        </tr>
+                        <tr>
+                            <td>Bacardi Carta Bianca – Porto Rico</td>
+                            <td>0,04l</td>
+                            <td>59,-</td>
+                        </tr>
+                        <tr>
+                            <td>Kraken black spice – Panenské ostrovy</td>
+                            <td>0,04l</td>
+                            <td>59,-</td>
+                        </tr>
+                        <tr>
+                            <td>Ron Tabú – Dominikánská republica</td>
+                            <td>0,04l</td>
+                            <td>69,-</td>
+                        </tr>
+                        <tr>
+                            <td>Havana Club Anejo 7 anos – Cuba</td>
+                            <td>0,04l</td>
+                            <td>69,-</td>
+                        </tr>
+                        <tr>
+                            <td>Legendario Elixir – Cuba</td>
+                            <td>0,04l</td>
+                            <td>69,-</td>
+                        </tr>
+                        <tr>
+                            <td>Ron Barcelo Imperial 8 y.o. – Dominikánská Rep.</td>
+                            <td>0,04l</td>
+                            <td>69,-</td>
+                        </tr>
+                        <tr>
+                            <td>Sailor Jerry – Panenské ostrovy</td>
+                            <td>0,04l</td>
+                            <td>69,-</td>
+                        </tr>
+                        <tr>
+                            <td>Malteco 10 y.o.</td>
+                            <td>0,04l</td>
+                            <td>69,-</td>
+                        </tr>
+                        <tr>
+                            <td>Mount Gay Black Barrel – Barbados (první rum na světě)</td>
+                            <td>0,04l</td>
+                            <td>79,-</td>
+                        </tr>
+                        <tr>
+                            <td>Diplomatico 8 y.o. Mantuano – Venezuela</td>
+                            <td>0,04l</td>
+                            <td>89,-</td>
+                        </tr>
+                        <tr>
+                            <td>Diplomatico 12 y.o. Reseva Exclusiva – Venezuela</td>
+                            <td>0,04l</td>
+                            <td>99,-</td>
+                        </tr>
+                        <tr>
+                            <td>Don Papa 7 y.o. – Filipíny</td>
+                            <td>0,04l</td>
+                            <td>109,-</td>
+                        </tr>
+                        <tr>
+                            <td>Pampero Aniversario Reserva Exclusiva – Venezuela</td>
+                            <td>0,04l</td>
+                            <td>109,-</td>
+                        </tr>
+                        <tr>
+                            <td>Abuelo Anejo 12 y.o. – Panama</td>
+                            <td>0,04l</td>
+                            <td>109,-</td>
+                        </tr>
+                        <tr>
+                            <td>Presidente Marti 15 y.o. – Dominikánská Rep.</td>
+                            <td>0,04l</td>
+                            <td>109,-</td>
+                        </tr>
+                        <tr>
+                            <td>Matusalem 15 y.o. Grand Reserva – Dominikánská Rep.</td>
+                            <td>0,04l</td>
+                            <td>109,-</td>
+                        </tr>
+                        <tr>
+                            <td>Zacapa 23 y.o. Grand Reserva – Guatemala</td>
+                            <td>0,04l</td>
+                            <td>119,-</td>
+                        </tr>
+                        <tr>
+                            <td>Pyrat x.o. Reserve 15.y.o. - Anguilla</td>
+                            <td>0,04l</td>
+                            <td>129,-</td>
+                        </tr>
+                        <tr>
+                            <td>Matusalem 23 y.o. Grand Reserva – Dominikánskká Rep.</td>
+                            <td>0,04l</td>
+                            <td>129,-</td>
+                        </tr>
+                        <tr>
+                            <td>Plantation X.O. – Panenské ostrovy</td>
+                            <td>0,04l</td>
+                            <td>129,-</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><span style="font-size: 18pt;"><strong>České destiláty</strong></span></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Fernet Stock</td>
+                            <td>0,04l</td>
+                            <td>45,-</td>
+                        </tr>
+                        <tr>
+                            <td>Fernet Stock Citrus</td>
+                            <td>0,04l</td>
+                            <td>45,-</td>
+                        </tr>
+                        <tr>
+                            <td>Becherovka</td>
+                            <td>0,04l</td>
+                            <td>45,-</td>
+                        </tr>
+                        <tr>
+                            <td>Becherovka Lemond</td>
+                            <td>0,04l</td>
+                            <td>45,-</td>
+                        </tr>
+                        <tr>
+                            <td>Zelená</td>
+                            <td>0,04l</td>
+                            <td>45,-</td>
+                        </tr>
+                        <tr>
+                            <td>Stará Myslivecká</td>
+                            <td>0,04l</td>
+                            <td>45,-</td>
+                        </tr>
+                        <tr>
+                            <td>Tuzemák</td>
+                            <td>0,04l</td>
+                            <td>45,-</td>
+                        </tr>
+                        <tr>
+                            <td>Absint</td>
+                            <td>0,04l</td>
+                            <td>59,-</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><span style="font-size: 18pt;"><strong>Pálenky pana Rudolfa Jelínka</strong></span></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>ČERTOVICE domácí pálenka</td>
+                            <td>0,04l</td>
+                            <td>64,-</td>
+                        </tr>
+                        <tr>
+                            <td>Hruškovice s hruškou</td>
+                            <td>0,04l</td>
+                            <td>56,-</td>
+                        </tr>
+                        <tr>
+                            <td>Slivovice se švestkou</td>
+                            <td>0,04l</td>
+                            <td>56,-</td>
+                        </tr>
+                        <tr>
+                            <td>Slivovice medová</td>
+                            <td>0,04l</td>
+                            <td>56,-</td>
+                        </tr>
+                        <tr>
+                            <td>Slivovice Kosher stříbrná</td>
+                            <td>0,04l</td>
+                            <td>119,-</td>
+                        </tr>
+                        <tr>
+                            <td>Slivovice Kosher zlatá 10 y.o.</td>
+                            <td>0,04l</td>
+                            <td>139,-</td>
+                        </tr>
+                        <tr>
+                            <td>Hruškovice Williams Kosher</td>
+                            <td>0,04l</td>
+                            <td>119,-</td>
+                        </tr>
+                        <tr>
+                            <td>Jahodovice R. Jelínek</td>
+                            <td>0,02l</td>
+                            <td>39,-</td>
+                        </tr>
+                        <tr>
+                            <td>Borůvkovice R. Jelínek</td>
+                            <td>0,02l</td>
+                            <td>39,-</td>
+                        </tr>
+                        <tr>
+                            <td>Trnkovice R. Jelínek</td>
+                            <td>0,02l</td>
+                            <td>39,-</td>
+                        </tr>
+                        <tr>
+                            <td>Jadernička R. Jelínek</td>
+                            <td>0,02l</td>
+                            <td>39,-</td>
+                        </tr>
+                        <tr>
+                            <td>Kdoulovice R. Jelínek</td>
+                            <td>0,02l</td>
+                            <td>39,-</td>
+                        </tr>
+                        <tr>
+                            <td>Černý jeřáb R. Jelínek</td>
+                            <td>0,02l</td>
+                            <td>39,-</td>
+                        </tr>
+                        <tr>
+                            <td>Černý bez R. Jelínek</td>
+                            <td>0,02l</td>
+                            <td>39,-</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><span style="font-size: 18pt;"><strong>Whisky, Whiskey Bourbon, Tennesee:</strong></span></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Jack Daniel’s</td>
+                            <td>0,04l</td>
+                            <td>62,-</td>
+                        </tr>
+                        <tr>
+                            <td>Jack Daniel’s Honey</td>
+                            <td>0,04l</td>
+                            <td>59,-</td>
+                        </tr>
+                        <tr>
+                            <td>Jack Daniel’s Gentleman’s Jack</td>
+                            <td>0,04l</td>
+                            <td>109,-</td>
+                        </tr>
+                        <tr>
+                            <td>Tullamore D.E.W.</td>
+                            <td>0,04l</td>
+                            <td>59,-</td>
+                        </tr>
+                        <tr>
+                            <td>Tullamore D.E.W. XO</td>
+                            <td>0,04l</td>
+                            <td>95,-</td>
+                        </tr>
+                        <tr>
+                            <td>Tullamore D.E.W. Special Reserve 12 y.o</td>
+                            <td>0,04l</td>
+                            <td>95,-</td>
+                        </tr>
+                        <tr>
+                            <td>Tullamore D.E.W. Special Reserve 14.y.o.</td>
+                            <td>0,04l</td>
+                            <td>99,-</td>
+                        </tr>
+                        <tr>
+                            <td>Bushmills</td>
+                            <td>0,04l</td>
+                            <td>59,-</td>
+                        </tr>
+                        <tr>
+                            <td>Four Rose’s</td>
+                            <td>0,04l</td>
+                            <td>59,-</td>
+                        </tr>
+                        <tr>
+                            <td>Glenfidich 12 y.o. Special Reserve 12 y.o.</td>
+                            <td>0,04l</td>
+                            <td>109,-</td>
+                        </tr>
+                        <tr>
+                            <td>Talisker 10 y.o.</td>
+                            <td>0,04l</td>
+                            <td>129,-</td>
+                        </tr>
+                        <tr>
+                            <td>Laphroaig 10 y.o.</td>
+                            <td>0,04l</td>
+                            <td>129,-</td>
+                        </tr>
+                        <tr>
+                            <td>Bruichladdich THE CLASSIC LADDIE</td>
+                            <td>0,04l</td>
+                            <td>169,-</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><span style="font-size: 18pt;"><strong>Míchané drinky a Koktejly</strong></span></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Aperol spritz</td>
+                            <td>89,-</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td> Aperol, Prosecco, soda, led, pomeranč</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Campari Orange</td>
+                            <td>55,-</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td> Campari, pomerančový juice, led, pomeranč</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>B52 – Shot</td>
+                            <td>72,-</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td> Kahlua, Baileys, Absint</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Mojito</td>
+                            <td>99,-</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td> White rum, soda, led, třtinový cukr, limeta, máta</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Cuba Libre</td>
+                            <td>89,-</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td> White rum, cola, led, limeta</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Piňa Colada</td>
+                            <td>89,-</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td> White rum, ananas juice, kokosový sirup, smetana</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Cointreau Fizz</td>
+                            <td>89,-</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Caintreau, limetka, led, soda</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><span style="font-size: 18pt;"><strong>Speciální čertovská nabídka na pařbu:</strong></span></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Red Bull Boat</td>
+                            <td>666,-</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0,7l Smirnoffc vodka, 6x Red Bull)</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Cuba Libre XXL</td>
+                            <td>666,-</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td> 8 x 0,04 White Rum, Coca Cola, limeta</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><span style="font-size: 18pt;"><strong>Něco k pivu</strong></span></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Tyčinky</td>
+                            <td>39,-</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Pražené mandle</td>
+                            <td>55,-</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Arašídy</td>
+                            <td>39,-</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="vinny">
+                <table width="511">
+                    <tbody>
+                        <tr>
+                            <td width="464"><span style="font-size: 18pt;"><strong>Rozlévaná vína</strong></span></td>
+                            <td width="47"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Z odrůd bílých hroznů Rulandské Šedé cuvée , polosuché        0,2 l</td>
+                            <td>44,-</td>
+                        </tr>
+                        <tr>
+                            <td>Z odrůd červených hroznů Modrý portugal , polosuché           0,2 l</td>
+                            <td>44,-</td>
+                        </tr>
+                        <tr>
+                            <td>Růžové zemské víno Frankovka Rosé, polosuché                       0,2 l</td>
+                            <td>44,-</td>
+                        </tr>
+                        <tr>
+                            <td>Prosecco (dle nabídky)                                                                            0,2 l</td>
+                            <td>54,-</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><span style="font-size: 18pt;"><strong>Lahvová vína 0,75 l.</strong></span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Vinařství Kubík - Velké Bílovice</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td width="464">je středně velké rodinné vinařství, které se nachází v největší vinařské obci v ČR Velké Bílovice. Vyrábí se zde poctivá moravská jakostní a přívlastková vína, která ve Vás zanechají příjemný pocit a vytvoří dobrou náladu. Výrobě vína i vinici zde věnují mnoho péče a času, protože jen tak vyrobí vína, za kterými se budete rádi vracet a která si vychutnáte.</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><span style="font-size: 18pt;"><strong>Bílé odrůdové jakostní víno :</strong></span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Veltlínské zelené   2015</td>
+                            <td>240,-</td>
+                        </tr>
+                        <tr>
+                            <td>Tramín červený   2017</td>
+                            <td>240,-</td>
+                        </tr>
+                        <tr>
+                            <td>Sauvignon MZV</td>
+                            <td>240,-</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><span style="font-size: 18pt;"><strong>Červené odrůdové jakostní víno :</strong></span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Frankovka MZV</td>
+                            <td>240,-</td>
+                        </tr>
+                        <tr>
+                            <td>Modrý portugal  2016</td>
+                            <td>240,-</td>
+                        </tr>
+                        <tr>
+                            <td>Zweigeltrebe  2016</td>
+                            <td>240,-</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><span style="font-size: 18pt;"><strong>Bílé víno přívlastkové :</strong></span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Pálava – výběr z hroznů / polosladké</td>
+                            <td>350,-</td>
+                        </tr>
+                        <tr>
+                            <td>Ryzling rýnský – pozdní sběr / suché</td>
+                            <td>350,-</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><span style="font-size: 18pt;"><strong>Červené víno přívlastkové :</strong></span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Merlot 2015  – pozdní sběr barrique / suché</td>
+                            <td>350,-</td>
+                        </tr>
+                        <tr>
+                            <td>Rulandské modré 2015  –výběr z hroznů / suché</td>
+                            <td>350,-</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><span style="font-size: 18pt;"><strong>Růžová vína :</strong></span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Frankovka rosé  – MZV / polosuché</td>
+                            <td>350,-</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><span style="font-size: 18pt;"><strong>Šumivá vína a sekty</strong></span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Prosecco       (dle nabídky)                0,75 l</td>
+                            <td>210,-</td>
+                        </tr>
+                        <tr>
+                            <td>Bohemia sekt      (demi sec/brut)    0,75 l</td>
+                            <td>290,-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div style="background-color: #f4f4f4">
+        <div class="container" id="mapa">
+            <div class="row mapa">
+                <div class="col-sm-4">
+                    <h3>Starobrněnská 7</h3>
+                    <p>Centrum Brna</p>
+                    <p>542 211 056</p>
+                    <table class="kontakt" id="dvorakova">
+                        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                        <tr><td>Pondělí až čtvrtek:</td><td>11:00 - 24:00</td></tr>
+                        <tr><td>Pátek:</td><td>11:00 - &nbsp;&nbsp;&nbsp;&nbsp;?&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+                        <tr><td>Sobota:</td><td>11:30 - &nbsp;&nbsp;&nbsp;&nbsp;?&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+                        <tr><td>Neděle:</td><td>11:30 - 24:00</td></tr>
+                    </table>
+                </div>
+                <div class="col-sm-8">
+                    <div id="map-canvas-star" style="width: 100%;height: 350px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <p>
+                <a href="http://ucertu.cz/wp-content/uploads/2016/08/Prohlášení-o-zpracování-osobních-údaju.docx" data-mce-href="http://ucertu.cz/wp-content/uploads/2016/08/Prohlášení-o-zpracování-osobních-údaju.docx">Prohlášení o zpracování osobních údaju</a><br>
+                Copyright 2016, restaurace U všech čertů.
+            </p>
+        </div>
+    </footer>
+    <script>
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 500);
+            });
+            var date = new Date();
+            $("#date").datepicker({
+                dateFormat: 'dd.mm.yy'
+            }).datepicker('setDate', date);
+        });
+
+        var theToggle = document.getElementById('toggle');
+
+        // based on Todd Motto functions
+        // http://toddmotto.com/labs/reusable-js/
+
+        // hasClass
+        function hasClass(elem, className) {
+            return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
+        }
+        // addClass
+        function addClass(elem, className) {
+            if (!hasClass(elem, className)) {
+                elem.className += ' ' + className;
+            }
+        }
+        // removeClass
+        function removeClass(elem, className) {
+            var newClass = ' ' + elem.className.replace(/[\t\r\n]/g, ' ') + ' ';
+            if (hasClass(elem, className)) {
+                while (newClass.indexOf(' ' + className + ' ') >= 0) {
+                    newClass = newClass.replace(' ' + className + ' ', ' ');
+                }
+                elem.className = newClass.replace(/^\s+|\s+$/g, '');
+            }
+        }
+        // toggleClass
+        function toggleClass(elem, className) {
+            var newClass = ' ' + elem.className.replace(/[\t\r\n]/g, " ") + ' ';
+            if (hasClass(elem, className)) {
+                while (newClass.indexOf(" " + className + " ") >= 0) {
+                    newClass = newClass.replace(" " + className + " ", " ");
+                }
+                elem.className = newClass.replace(/^\s+|\s+$/g, '');
+            } else {
+                elem.className += ' ' + className;
+            }
+        }
+
+        theToggle.onclick = function () {
+            toggleClass(this, 'on');
+            return false;
+        };
+    </script>
+</body>
+</html>

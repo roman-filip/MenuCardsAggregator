@@ -2,7 +2,7 @@
   "RestaurantName": "Tusto restaurant",
   "DayMenus": [
     {
-      "Date": "2018-06-04T00:00:00",
+      "Date": "2019-06-04T00:00:00",
       "Foods": [
         {
           "Name": "Polévka: Kapustová s uzeninou",
@@ -43,7 +43,7 @@
       ]
     },
     {
-      "Date": "2018-06-05T00:00:00",
+      "Date": "2019-06-05T00:00:00",
       "Foods": [
         {
           "Name": "Polévka: Kapustová s uzeninou",
@@ -84,7 +84,7 @@
       ]
     },
     {
-      "Date": "2018-06-06T00:00:00",
+      "Date": "2019-06-06T00:00:00",
       "Foods": [
         {
           "Name": "Polévka: Italská kroupová",
@@ -125,7 +125,7 @@
       ]
     },
     {
-      "Date": "2018-06-07T00:00:00",
+      "Date": "2019-06-07T00:00:00",
       "Foods": [
         {
           "Name": "Polévka: Minestrone",
@@ -166,7 +166,7 @@
       ]
     },
     {
-      "Date": "2018-06-08T00:00:00",
+      "Date": "2019-06-08T00:00:00",
       "Foods": [
         {
           "Name": "Polévka: Podkrkonošské kyselo",

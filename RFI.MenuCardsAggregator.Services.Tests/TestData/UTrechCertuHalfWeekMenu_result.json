@@ -1,0 +1,110 @@
+﻿{
+  "RestaurantName": "U Třech čertů",
+  "DayMenus": [
+    {
+      "Date": "2019-01-23T00:00:00",
+      "Foods": [
+        {
+          "Name": "Kuřecí vývar s fritátovými nudlemi a kořenovou zeleninou",
+          "Price": 0.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Čočka na kyselo s opečenou čertovskou klobásou, okurek, pečivo",
+          "Price": 89.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Smažený hermelín s brusinkovou majonézou, šťouchaný brambor s petrželkou",
+          "Price": 98.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Kachní filované prsíčko na pomerančích s pečenou bramborovou kaší",
+          "Price": 108.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Babiččina svíčková na smetaně s brusinkami, šlehačkou a houskovým knedlíkem",
+          "Price": 119.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        }
+      ]
+    },
+    {
+      "Date": "2019-01-24T00:00:00",
+      "Foods": [
+        {
+          "Name": "Brokolicový krém se sýrovými krutony",
+          "Price": 0.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Pečené kuřecí stehno s nádivkou, okurkový salát, šťouchané brambory",
+          "Price": 89.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Vepřový řízek s vídeňským salátem, citrón",
+          "Price": 98.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Štěpánská hovězí pečeně s domácím špekovým knedlíkem",
+          "Price": 108.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Babiččina svíčková na smetaně s brusinkami, šlehačkou a houskovým knedlíkem",
+          "Price": 119.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        }
+      ]
+    },
+    {
+      "Date": "2019-01-25T00:00:00",
+      "Foods": [
+        {
+          "Name": "Česneková se sýrem a chlebovým krutonem",
+          "Price": 0.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Játra na roštu a cibulce s červeným vínem, dušená rýže",
+          "Price": 89.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Kuřecí steak s houbovým ragů, pečená polenta, rukolový salát",
+          "Price": 98.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Špalíčky z vepřové panenky se slaninovým kabátkem, švestkovou omáčkou s portským a hranolky",
+          "Price": 108.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Babiččina svíčková na smetaně s brusinkami, šlehačkou a houskovým knedlíkem",
+          "Price": 119.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        }
+      ]
+    }
+  ]
+}
