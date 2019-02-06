@@ -1,35 +1,35 @@
-{
-  "RestaurantName": "U Tøech èertù",
+ï»¿{
+  "RestaurantName": "U TÅ™ech ÄertÅ¯",
   "DayMenus": [
     {
       "Date": "2019-01-23T00:00:00",
       "Foods": [
         {
-          "Name": "Kuøecí vıvar s fritátovımi nudlemi a koøenovou zeleninou",
+          "Name": "KuÅ™ecÃ­ vÃ½var s fritÃ¡tovÃ½mi nudlemi a koÅ™enovou zeleninou",
           "Price": 0.0,
           "Weight": 0,
           "IsWeekFood": false
         },
         {
-          "Name": "Èoèka na kyselo s opeèenou èertovskou klobásou, okurek, peèivo",
+          "Name": "ÄŒoÄka na kyselo s opeÄenou Äertovskou klobÃ¡sou, okurek, peÄivo",
           "Price": 89.0,
           "Weight": 0,
           "IsWeekFood": false
         },
         {
-          "Name": "Smaenı hermelín s brusinkovou majonézou, šouchanı brambor s petrelkou",
+          "Name": "SmaÅ¾enÃ½ hermelÃ­n s brusinkovou majonÃ©zou, Å¡Å¥ouchanÃ½ brambor s petrÅ¾elkou",
           "Price": 98.0,
           "Weight": 0,
           "IsWeekFood": false
         },
         {
-          "Name": "Kachní filované prsíèko na pomeranèích s peèenou bramborovou kaší",
+          "Name": "KachnÃ­ filovanÃ© prsÃ­Äko na pomeranÄÃ­ch s peÄenou bramborovou kaÅ¡Ã­",
           "Price": 108.0,
           "Weight": 0,
           "IsWeekFood": false
         },
         {
-          "Name": "Babièèina svíèková na smetanì s brusinkami, šlehaèkou a houskovım knedlíkem",
+          "Name": "BabiÄÄina svÃ­ÄkovÃ¡ na smetanÄ› s brusinkami, Å¡lehaÄkou a houskovÃ½m knedlÃ­kem",
           "Price": 119.0,
           "Weight": 0,
           "IsWeekFood": false
@@ -40,31 +40,31 @@
       "Date": "2019-01-24T00:00:00",
       "Foods": [
         {
-          "Name": "Brokolicovı krém se sırovımi krutony",
+          "Name": "BrokolicovÃ½ krÃ©m se sÃ½rovÃ½mi krutony",
           "Price": 0.0,
           "Weight": 0,
           "IsWeekFood": false
         },
         {
-          "Name": "Peèené kuøecí stehno s nádivkou, okurkovı salát, šouchané brambory",
+          "Name": "PeÄenÃ© kuÅ™ecÃ­ stehno s nÃ¡divkou, okurkovÃ½ salÃ¡t, Å¡Å¥ouchanÃ© brambory",
           "Price": 89.0,
           "Weight": 0,
           "IsWeekFood": false
         },
         {
-          "Name": "Vepøovı øízek s vídeòskım salátem, citrón",
+          "Name": "VepÅ™ovÃ½ Å™Ã­zek s vÃ­deÅˆskÃ½m salÃ¡tem, citrÃ³n",
           "Price": 98.0,
           "Weight": 0,
           "IsWeekFood": false
         },
         {
-          "Name": "Štìpánská hovìzí peèenì s domácím špekovım knedlíkem",
+          "Name": "Å tÄ›pÃ¡nskÃ¡ hovÄ›zÃ­ peÄenÄ› s domÃ¡cÃ­m Å¡pekovÃ½m knedlÃ­kem",
           "Price": 108.0,
           "Weight": 0,
           "IsWeekFood": false
         },
         {
-          "Name": "Babièèina svíèková na smetanì s brusinkami, šlehaèkou a houskovım knedlíkem",
+          "Name": "BabiÄÄina svÃ­ÄkovÃ¡ na smetanÄ› s brusinkami, Å¡lehaÄkou a houskovÃ½m knedlÃ­kem",
           "Price": 119.0,
           "Weight": 0,
           "IsWeekFood": false
@@ -75,31 +75,31 @@
       "Date": "2019-01-25T00:00:00",
       "Foods": [
         {
-          "Name": "Èesneková se sırem a chlebovım krutonem",
+          "Name": "ÄŒesnekovÃ¡ se sÃ½rem a chlebovÃ½m krutonem",
           "Price": 0.0,
           "Weight": 0,
           "IsWeekFood": false
         },
         {
-          "Name": "Játra na roštu a cibulce s èervenım vínem, dušená rıe",
+          "Name": "JÃ¡tra na roÅ¡tu a cibulce s ÄervenÃ½m vÃ­nem, duÅ¡enÃ¡ rÃ½Å¾e",
           "Price": 89.0,
           "Weight": 0,
           "IsWeekFood": false
         },
         {
-          "Name": "Kuøecí steak s houbovım ragù, peèená polenta, rukolovı salát",
+          "Name": "KuÅ™ecÃ­ steak s houbovÃ½m ragÅ¯, peÄenÃ¡ polenta, rukolovÃ½ salÃ¡t",
           "Price": 98.0,
           "Weight": 0,
           "IsWeekFood": false
         },
         {
-          "Name": "Špalíèky z vepøové panenky se slaninovım kabátkem, švestkovou omáèkou s portskım a hranolky",
+          "Name": "Å palÃ­Äky z vepÅ™ovÃ© panenky se slaninovÃ½m kabÃ¡tkem, Å¡vestkovou omÃ¡Äkou s portskÃ½m a hranolky",
           "Price": 108.0,
           "Weight": 0,
           "IsWeekFood": false
         },
         {
-          "Name": "Babièèina svíèková na smetanì s brusinkami, šlehaèkou a houskovım knedlíkem",
+          "Name": "BabiÄÄina svÃ­ÄkovÃ¡ na smetanÄ› s brusinkami, Å¡lehaÄkou a houskovÃ½m knedlÃ­kem",
           "Price": 119.0,
           "Weight": 0,
           "IsWeekFood": false
