@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using RFI.MenuCardsAggregator.Services.Model;
 using RFI.MenuCardsAggregator.Services.Services;
@@ -61,19 +60,21 @@ namespace RFI.MenuCardsAggregator.Web.ViewModels
             {
                 await Task.WhenAll(resultTasks);
             }
-            catch { }
+            catch
+            { }
 
             foreach (var resultTask in resultTasks)
             {
                 if (resultTask.IsCompletedSuccessfully)
                 {
                     var menuCard = resultTask.Result;
-                    if (menuCard.DayMenus.Any())
+
+                    if (menuCard.MenuImageUri == null)
                     {
                         menuCard.DayMenus.RemoveAll(d => d.Date != DateTime.Today);
                         MenuCards.Add(menuCard);
                     }
-                    else if (menuCard.MenuImageUri != null)
+                    else
                     {
                         ImageMenuCards.Add(menuCard);
                     }
