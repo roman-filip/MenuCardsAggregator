@@ -35,7 +35,7 @@ namespace RFI.MenuCardsAggregator.Services.Services
                 }
                 else
                 {
-                    dayMenu.Foods.Add(new Food
+                    dayMenu?.Foods.Add(new Food
                     {
                         Name = GetStringFomHtmlNode(tr.ChildNodes[0]),
                         Price = GetPriceFromHtmlNode(tr.ChildNodes[1])
@@ -62,7 +62,7 @@ namespace RFI.MenuCardsAggregator.Services.Services
                 case "Pátek":
                     return DateTime.Today.AddDays(-(double)DateTime.Today.DayOfWeek + 5);
                 default:
-                    throw new ArgumentOutOfRangeException("Unsupported day name");
+                    throw new ArgumentOutOfRangeException(nameof(dayName), "Unsupported day name");
             }
         }
     }
