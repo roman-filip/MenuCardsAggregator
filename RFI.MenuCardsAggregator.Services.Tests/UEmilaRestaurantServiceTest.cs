@@ -19,5 +19,17 @@ namespace RFI.MenuCardsAggregator.Services.Tests
 
             AssertMenuCard(expectedMenuCard, menuCard);
         }
+
+        [TestMethod]
+        public async Task OneDayMenuTest2()
+        {
+            var data = File.ReadAllText(@"TestData\UEmilaOneDayMenu2.html");
+            IRestaurantService service = new UEmilaRestaurantService(new HttpServiceMock(() => data));
+            var menuCard = await service.GetMenuCardAsync();
+
+            var expectedMenuCard = LoadExpectedMenuCard(@"TestData\UEmilaOneDayMenu2_result.json");
+
+            AssertMenuCard(expectedMenuCard, menuCard);
+        }
     }
 }
