@@ -27,8 +27,6 @@
     <None Remove="TestData\TustoWholeWeekMenu.html" />
     <None Remove="TestData\TustoWholeWeekMenu_result.json" />
     <None Remove="TestData\UEmilaOneDayMenu.html" />
-    <None Remove="TestData\UEmilaOneDayMenu2.html" />
-    <None Remove="TestData\UEmilaOneDayMenu2_result.json" />
     <None Remove="TestData\UEmilaOneDayMenu_result.json" />
     <None Remove="TestData\UTrechCertuHalfWeekMenu.html" />
     <None Remove="TestData\UTrechCertuHalfWeekMenu_result.json" />
@@ -93,12 +91,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="TestData\UEmilaOneDayMenu.html">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="TestData\UEmilaOneDayMenu2.html">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="TestData\UEmilaOneDayMenu2_result.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="TestData\UEmilaOneDayMenu_result.json">

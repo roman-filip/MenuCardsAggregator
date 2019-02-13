@@ -2,7 +2,7 @@
   "RestaurantName": "Restaurace U Emila",
   "DayMenus": [
     {
-      "Date": "2019-06-07T00:00:00",
+      "Date": "2019-02-11T00:00:00",
       "Foods": [
         {
           "Name": "Brokolicová polévka s krutony",
@@ -11,8 +11,8 @@
           "IsWeekFood": false
         },
         {
-          "Name": "130g/160g Štěpánská vepřová pečeně, náš houskový knedlík",
-          "Price": 99.0,
+          "Name": "130g  Grilovaná krkovička na pepři, dollar chips",
+          "Price": 105.0,
           "Weight": 0,
           "IsWeekFood": false
         },
@@ -23,32 +23,14 @@
           "IsWeekFood": false
         },
         {
-          "Name": "130g/200g Kuřecí stehenní steak s grilovanou zeleninou, pečené brambory",
-          "Price": 99.0,
+          "Name": "130g Hovězí nudličky na žampionech, jasmínová rýže (hovězí roštěná)",
+          "Price": 110.0,
           "Weight": 0,
           "IsWeekFood": false
         },
         {
-          "Name": "200g/200g Hovězí líčka na červeném víně se zeleninou, bramborová kaše",
-          "Price": 118.0,
-          "Weight": 0,
-          "IsWeekFood": false
-        },
-        {
-          "Name": "420g Míchaný zeleninový salát s bylinkovým dresinkem a hovězím masem pečené sous vide, vejce",
-          "Price": 103.0,
-          "Weight": 0,
-          "IsWeekFood": false
-        },
-        {
-          "Name": "150g Míchaný zeleninový salát",
-          "Price": 18.0,
-          "Weight": 0,
-          "IsWeekFood": false
-        },
-        {
-          "Name": "150g Zelný salát",
-          "Price": 18.0,
+          "Name": "110g Smažený sýr se šunkou, vařený brambor, tatarka",
+          "Price": 98.0,
           "Weight": 0,
           "IsWeekFood": false
         }

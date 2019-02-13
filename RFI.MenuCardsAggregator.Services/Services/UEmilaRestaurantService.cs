@@ -11,11 +11,11 @@ namespace RFI.MenuCardsAggregator.Services.Services
     {
         public override string RestaurantName => "Restaurace U Emila";
 
-        protected override string CurrencySymbol => " Kč";
+        protected override string CurrencySymbol => " Kč";
 
         public UEmilaRestaurantService()
         {
-            Uri = "https://www.restauraceuemila.cz/dennimenu/";
+            Uri = "https://www.zomato.com/cs/brno/u-emila-star%C3%A9-brno-brno-st%C5%99ed/denn%C3%AD-menu";
         }
 
         public UEmilaRestaurantService(IHttpService httpService)
@@ -29,16 +29,16 @@ namespace RFI.MenuCardsAggregator.Services.Services
 
             var dayMenu = new DayMenu { Date = GetDate(htmlDocument) };
 
-            var notFoods = new List<string> { "Bezlepkové menu", "stálé menu", "Přílohový salát", "XXL menu příplatek (1/2 menu)", "Seznam alergenů na vyžádání u obsluhy", "Jídlo zakoupené s sebou uchovejte v teplotě do 6 C spotřebovat do 2 hodin", "Gramáž masa na porci je uvedena v syrovém stavu a v minimální hmotnosti" };
+            var notFoods = new List<string> { "Bezlepkové menu :", "stálé menu", "Přílohový salát", "XXL menu příplatek (1/2 menu)", "Seznam alergenů na vyžádání u obsluhy", "Jídlo zakoupené s sebou uchovejte v teplotě do 6 °C spotřebovat do 2 hodin", "Gramáž masa na porci je uvedena v syrovém stavu a v minimální hmotnosti" };
             var foodDivNodes = htmlDocument.DocumentNode
-                .SelectNodes("*//div[@class='left-div item-name']")
+                .SelectNodes("*//div[@class='tmi-name']")
                 .Where(d => !notFoods.Contains(d.InnerText.Trim()));
             foreach (var foodDivNode in foodDivNodes)
             {
                 var food = new Food
                 {
                     Name = GetFoodName(foodDivNode.InnerText.Trim()),
-                    Price = GetPriceFromHtmlNode(foodDivNode.NextSibling.NextSibling)
+                    Price = GetPriceFromHtmlNode(foodDivNode.ParentNode.ParentNode.NextSibling.NextSibling)
                 };
                 dayMenu.Foods.Add(food);
             }
@@ -49,7 +49,7 @@ namespace RFI.MenuCardsAggregator.Services.Services
 
         private static DateTime GetDate(HtmlDocument htmlDocument)
         {
-            var dateParts = htmlDocument.DocumentNode.SelectNodes("*//div[@class='date inner-layer']")
+            var dateParts = htmlDocument.DocumentNode.SelectNodes("*//div[@class='tmi-group-name bold fontsize3 pb5 bb']")
                 .First().InnerText.Trim().Split(' ');
             return CreateDate(dateParts[1], dateParts[2]);
         }
