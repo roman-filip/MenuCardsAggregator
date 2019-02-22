@@ -1,0 +1,87 @@
+﻿{
+  "RestaurantName": "Restaurace U Emila",
+  "DayMenus": [
+    {
+      "Date": "2019-02-14T00:00:00",
+      "Foods": [
+        {
+          "Name": "Kulajda (1,3,7)",
+          "Price": 0.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "130g Hovězí pěčeně s dušeným špenátem a vejcem, vařený brambor (1,3,7)",
+          "Price": 110.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Kulajda (3,7)",
+          "Price": 0.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "1/4 Pečené kuře na másle s kmínem, jasmínová rýže, okurek (7)",
+          "Price": 103.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "450g Halušky s brynzou a slaninou (1,3,7)",
+          "Price": 99.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "130g Segedínský guláš, náš houskový knedlík (1,3,7)",
+          "Price": 105.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        }
+      ]
+    },
+    {
+      "Date": "2019-02-15T00:00:00",
+      "Foods": [
+        {
+          "Name": "Gulášová polévka (1)",
+          "Price": 0.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "200g Emilovy smažené marinované řízečky (vepřové křenové a kuřecí česnekové), bramborový salát s majonézou (1,3,7,9,10)",
+          "Price": 103.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "Gulášová polévka",
+          "Price": 0.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "145g Záhorácký kuřecí závitek, šťouchané brambory (plněný restovanou cibulkou se slaninou a brynzou) (7)",
+          "Price": 103.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "140g Hovězí španělský ptáček speciál, jasmínová rýže (3,10)",
+          "Price": 105.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        },
+        {
+          "Name": "130g Segedínský guláš, náš houskový knedlík (1,3,7)",
+          "Price": 105.0,
+          "Weight": 0,
+          "IsWeekFood": false
+        }
+      ]
+    }
+  ]
+}

@@ -15,7 +15,7 @@ namespace RFI.MenuCardsAggregator.Web.ViewModels
             new NaTahuRestaurantService(),
             new MamutPubRestaurantService(),
             new TustoRestaurantService(),
-            //new UEmilaRestaurantService(),
+            new UEmilaRestaurantService(),
             new KometaRestaurantService(),
             new UTrechCertuRestaurantService(),
             new SportBarRestaurantService()

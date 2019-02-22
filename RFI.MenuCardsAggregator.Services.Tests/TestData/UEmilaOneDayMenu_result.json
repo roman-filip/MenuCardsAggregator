@@ -5,19 +5,19 @@
       "Date": "2019-02-11T00:00:00",
       "Foods": [
         {
-          "Name": "Brokolicová polévka s krutony",
+          "Name": "Brokolicová polévka s krutony (1,7)",
           "Price": 0.0,
           "Weight": 0,
           "IsWeekFood": false
         },
         {
-          "Name": "130g  Grilovaná krkovička na pepři, dollar chips",
+          "Name": "130g Grilovaná krkovička na pepři, dollar chips (1,7)",
           "Price": 105.0,
           "Weight": 0,
           "IsWeekFood": false
         },
         {
-          "Name": "Brokolicová polévka",
+          "Name": "Brokolicová polévka (7)",
           "Price": 0.0,
           "Weight": 0,
           "IsWeekFood": false
@@ -29,7 +29,7 @@
           "IsWeekFood": false
         },
         {
-          "Name": "110g Smažený sýr se šunkou, vařený brambor, tatarka",
+          "Name": "110g Smažený sýr se šunkou, vařený brambor, tatarka (1,3,7)",
           "Price": 98.0,
           "Weight": 0,
           "IsWeekFood": false
