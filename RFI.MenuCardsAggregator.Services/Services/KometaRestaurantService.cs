@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using HtmlAgilityPack;
@@ -17,7 +16,7 @@ namespace RFI.MenuCardsAggregator.Services.Services
 
         public KometaRestaurantService()
         {
-            Uri = "http://arena.kometapub.cz/tydenni-menu.php";
+            Uri = "https://arena.kometapub.cz/tydenni-menu.php";
         }
 
         public KometaRestaurantService(IHttpService httpService)
