@@ -52,17 +52,20 @@ namespace RFI.MenuCardsAggregator.Services.Services
                 }
                 else
                 {
-                    var food = GetFood(divNode.ChildNodes[1]);
-                    if (!string.IsNullOrEmpty(food.Name))
+                    if (divNode.ChildNodes.Count > 1)
                     {
-                        if (food.Name[0] == '(')
+                        var food = GetFood(divNode.ChildNodes[1]);
+                        if (!string.IsNullOrEmpty(food.Name))
                         {
-                            // This is not next food but additional information for previous one
-                            dayMenu.Foods.Last().Name = dayMenu.Foods.Last().Name + " " + food.Name;
-                        }
-                        else
-                        {
-                            dayMenu.Foods.Add(food);
+                            if (food.Name[0] == '(')
+                            {
+                                // This is not next food but additional information for previous one
+                                dayMenu.Foods.Last().Name = dayMenu.Foods.Last().Name + " " + food.Name;
+                            }
+                            else
+                            {
+                                dayMenu.Foods.Add(food);
+                            }
                         }
                     }
                 }

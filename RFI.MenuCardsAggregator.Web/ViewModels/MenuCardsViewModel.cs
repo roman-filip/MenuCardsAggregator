@@ -15,7 +15,7 @@ namespace RFI.MenuCardsAggregator.Web.ViewModels
             new NaTahuRestaurantService(),
             new MamutPubRestaurantService(),
             new TustoRestaurantService(),
-            new UEmilaRestaurantService(),
+            //new UEmilaRestaurantService(),
             new KometaRestaurantService(),
             new UTrechCertuRestaurantService(),
             new SportBarRestaurantService()
@@ -82,7 +82,8 @@ namespace RFI.MenuCardsAggregator.Web.ViewModels
                 else
                 {
                     // TODO - handle exception
-                    MenuCards.Add(new MenuCard($"Something wrong happend for {resultTask.Exception.InnerException.TargetSite.ReflectedType.ReflectedType.Name}", string.Empty));
+                    //MenuCards.Add(new MenuCard($"Something wrong happend for {resultTask.Exception.InnerException.TargetSite.ReflectedType.ReflectedType.Name}", string.Empty));
+                    MenuCards.Add(new MenuCard($"Something wrong happend", string.Empty));
                 }
             }
         }
